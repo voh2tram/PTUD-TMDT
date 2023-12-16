@@ -1,0 +1,2467 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--Biểu tượng-->
+    <link href="images/logo/Logo.png" rel="shortcut icon">
+    <title>SCENTIA</title>
+
+    <!--====== Google Font ======-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
+    <!--====== Vendor Css ======-->
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!--====== Utility-Spacing ======-->
+    <link rel="stylesheet" href="css/utility.css">
+
+    <!--====== App ======-->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="config">
+    <div class="preloader is-active">
+        <div class="preloader__wrap">
+            <img class="preloader__img" src="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-loading-icon-vector-transparent-png-image_5687537.png" alt="">
+        </div>
+    </div>
+    <!--Nút gọi ngay-->
+    <section class="call-buton">
+        <a class="cc-calto-action-ripple" href="tel:9999999">
+            <i class="fa fa-phone"></i>
+        </a>
+    </section>
+    <!--Nút chatbox-->
+    <button class="nut-mo-chatbox" onclick="moForm()"><i class="fa fa-headset"></i></button>
+    <!--Form lời nhắn-->
+    <div class="Chatbox" id="myForm">
+        <form action="" class="form-container" onsubmit="guiForm()">
+            <!--Tiêu đề form-->
+            <h4 style="color:black">Để lại lời nhắn cho chúng tôi</h4>
+            <!--Ô nhập ten-->
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="* Tên" required>
+            </div>
+            <!--Ô nhập sđt-->
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="* Điện thoại" required>
+            </div>
+            <!--Ô nhập email-->
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="* Email" required>
+            </div>
+            <!--Ô nhập nội dung lời nhắn-->
+            <div id="form-group">
+                <textarea style="background-color:white" class="form-control" placeholder="* Nội dung lời nhắn" required></textarea>
+            </div>
+            <div>
+                <!--Nút gửi form-->
+                <button style="margin-top: 1rem" type="submit" class="btn nut-gui-chatbox">Gửi</button>
+                <!--Nút đóng form-->
+                <button type="button" class="btn nut-dong-chatbox" onclick="dongForm()">Đóng</button>
+            </div>
+        </form>
+    </div>
+    <!--====== Nội dung chính của trang ======-->
+    <div id="app">
+
+        <!--====== Phần Header ======-->
+        <header class="header--style-1 header--box-shadow">
+
+            <!--====== Điều hướng 1 ======-->
+            <nav class="primary-nav primary-nav-wrapper--border">
+                <div class="container">
+
+                    <!--====== Điều hướng chính ======-->
+                    <div class="primary-nav">
+
+                        <!--====== Main Logo ======-->
+                        <!--quay lại trang chủ khi nhấp vào logo -->        
+                        <a class="main-logo" href="index.html">
+
+                            <img src="images/logo/Logo.png" alt="" width="70"></a>
+                        <!--====== Kết thúc - Main Logo ======-->
+
+
+                        <!--====== Khung search ======-->
+                        <form class="main-form">
+
+                            <label for="main-search"></label>
+
+                            <input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" placeholder="Tìm kiếm">
+
+                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button></form>
+                        <!--====== Kết thúc khung search ======-->
+
+                        <!--====== Dropdown Main plugin ======-->
+                        <div class="menu-init" id="navigation">
+
+                            <button class="btn btn--icon toggle-button fas fa-cogs" type="button"></button>
+
+                            <!--====== Menu ======-->
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Đóng</span>
+
+                                <!--====== List ======-->
+                                <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
+                                    <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Tài khoản">
+
+                                        <a><i class="far fa-user-circle"></i></a>
+
+                                        <!--====== Dropdown ======-->
+
+                                        <span class="js-menu-toggle"></span>
+                                        <ul style="width:120px">
+                                            <li>
+
+                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+
+                                                    <span>Tài khoản</span></a></li>
+                                            <li>
+
+                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+
+                                                    <span>Đăng kí</span></a></li>
+                                            <li>
+
+                                                <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
+
+                                                    <span>Đăng nhập</span></a></li>
+                                            <li>
+
+                                                <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
+
+                                                    <span>Đăng xuất</span></a></li>
+                                        </ul>
+                                        <!--====== End - Dropdown ======-->
+                                    </li>
+                                    <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Cài đặt">
+
+                                        <a><i class="fas fa-user-cog"></i></a>
+
+                                        <!--====== Dropdown ======-->
+
+                                        <span class="js-menu-toggle"></span>
+                                        <ul style="width:120px">
+                                            <li class="has-dropdown has-dropdown--ul-right-100">
+
+                                                <a>Ngôn ngữ<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+                                                <!--====== Dropdown ======-->
+
+                                                <span class="js-menu-toggle"></span>
+                                                <ul style="width:120px">
+                                                    <li>
+
+                                                        <a class="u-c-brand">Tiếng Anh</a></li>
+                                                    <li>
+
+                                                        <a>Tiếng Việt</a></li>
+                                                    <li>
+
+                                                        <a>Tiếng Pháp</a></li>
+                                                </ul>
+                                                <!--====== End - Dropdown ======-->
+                                            </li>
+                                        </ul>
+                                        <!--====== End - Dropdown ======-->
+                                    </li>
+                                    <li data-tooltip="tooltip" data-placement="left" title="Liên hệ">
+
+                                        <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a></li>
+                                    <li data-tooltip="tooltip" data-placement="left" title="Mail">
+
+                                        <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a></li>
+                                </ul>
+                                <!--====== End - List ======-->
+                            </div>
+                            <!--====== End - Menu ======-->
+                        </div>
+                        <!--====== End - Dropdown Main plugin ======-->
+                    </div>
+                    <!--====== Kết thúc - Điều hướng chính ======-->
+                </div>
+            </nav>
+            <!--====== Kết thúc - Điều hướng 1 ======-->
+
+
+            <!--====== Điều hướng 2 ======-->
+            <nav class="secondary-nav-wrapper">
+                <div class="container">
+
+                    <!--====== Điều hướng phụ ======-->
+                    <div class="secondary-nav">
+
+
+                        <!--====== Dropdown Main plugin ======-->
+                        <div class="menu-init" id="navigation2">
+
+                            <button class="btn btn--icon toggle-button fas fa-cog" type="button"></button>
+
+                            <!--====== Menu ======-->
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Close</span>
+
+                                <!--====== List ======-->
+                                <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
+                                    <li>
+                                        <a href="index.html">TRANG CHỦ</a></li>
+                                    <li>
+                                        <a href="shop-grid-left.html">CỬA HÀNG</a></li>
+
+                                    <li class="has-dropdown">
+
+                                        <a>BLOG<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+                                    </li>
+                                    <li>
+
+                                        <a href="shop-side-version-2.html">VỀ CHÚNG TÔI</a></li>
+                                    <li>
+
+                                        <a href="shop-side-version-2.html">LIÊN HỆ</a></li>
+                                </ul>
+                                <!--====== End - List ======-->
+                            </div>
+                            <!--====== End - Menu ======-->
+                        </div>
+                        <!--====== End - Dropdown Main plugin ======-->
+
+                        <!--====== Dropdown Main plugin ======-->
+                        <div class="menu-init" id="navigation3">
+
+                            <button class="btn btn--icon toggle-button fas fa-shopping-bag toggle-button-shop" type="button"></button>
+
+                            <span class="total-item-round">2</span>
+
+                            <!--====== Menu ======-->
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Close</span>
+
+                                <!--====== List ======-->
+                                <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
+                                    <li>
+
+                                        <a href="index.html"><i class="fas fa-home"></i></a></li>
+                                    <li>
+
+                                        <a class="mini-cart-shop-link" href="wishlist.html"><i class="far fa-heart"></i><span class="total-item-round">3</span></a></a></li>
+                                    <li class="has-dropdown">
+
+                                        <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
+
+                                            <span class="total-item-round">2</span></a>
+
+                                        <!--====== Dropdown ======-->
+
+                                        <span class="js-menu-toggle"></span>
+                                        <div class="mini-cart">
+
+                                            <!--====== Mini Product Container ======-->
+                                            <div class="mini-product-container gl-scroll u-s-m-b-15">
+
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="https://product.hstatic.net/200000455999/product/orange___mint_15ml_new_66f65958cfb649f09705abe05e2c2aa4_grande.jpg" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Tinh dầu thiên nhiên</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">Tinh dầu Cam Bạc hà</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">330.000đ</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
+
+
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="images/product/tinh dầu/product2.png" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Tinh dầu thiên nhiên</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">Tinh dầu Sả</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">300.000đ</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
+
+
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="images/product/tinh dầu/product3.png" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Tinh dầu thiên nhiên</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">Tinh dầu Gừng Sen</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">300.000đ</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
+
+
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="images/product/tinh dầu/product3.png" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Tinh dầu thiên nhiên</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">Tinh dầu Chanh Lavender</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">450.000đ</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
+                                            </div>
+                                            <!--====== End - Mini Product Container ======-->
+
+
+                                            <!--====== Mini Product Statistics ======-->
+                                            <div class="mini-product-stat">
+                                                <div class="mini-total">
+
+                                                    <span class="subtotal-text">TỔNG CỘNG</span>
+
+                                                    <span class="subtotal-value">660.000đ</span></div>
+                                                <div class="mini-action">
+
+                                                    <a class="mini-link btn--e-brand-b-2" href="checkout.html">THANH TOÁN NGAY</a>
+
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">XEM GIỎ HÀNG</a></div>
+                                            </div>
+                                            <!--====== End - Mini Product Statistics ======-->
+                                        </div>
+                                        <!--====== End - Dropdown ======-->
+                                    </li>
+                                </ul>
+                                <!--====== End - List ======-->
+                            </div>
+                            <!--====== End - Menu ======-->
+                        </div>
+                        <!--====== End - Dropdown Main plugin ======-->
+                    </div>
+                    <!--====== Kết thúc - Điều hướng phụ ======-->
+                </div>
+            </nav>
+            <!--====== Kết thúc - Điều hướng 2 ======-->
+        </header>
+        <!--====== Kết thúc - Phần Header ======-->
+
+        <!--====== App Content ======-->
+        <div class="app-content">
+            <!--====== Primary Slider ======-->
+            <!-- Tạo hiệu ứng "skeleton loading" (hiển thị hình ảnh giả mạo để làm cho người dùng cảm thấy trang web đang tải dữ liệu) có chiều cao là 600px và có màu nền xám -->
+            <div class="s-skeleton s-skeleton--h-600 s-skeleton--bg-grey">
+                <!-- Tạo một carousel sử dụng thư viện Owl Carousel có ID là "hero-slider" -->
+                <div class="owl-carousel primary-style-1" id="hero-slider">
+                    <!-- Tạo thẻ div đại diện cho một slide cụ thể, các slide tiếp theo có số thứ tự khác nhau -->
+                    <div class="hero-slide hero-slide--1">
+                        <!-- Trong mỗi slide, có một thẻ div "container" để đặt nội dung slide vào giữa trang -->
+                        <div class="container">
+                            <!-- Tạo một hàng để chia cột trong grid system -->
+                            <div class="row">
+                                <!-- Tạo một cột có độ rộng tương đương với toàn bộ chiều rộng của slide -->
+                                <div class="col-12">
+                                    <!-- Thẻ div chứa nội dung của slide, với lớp CSS để tạo hiệu ứng animation -->
+                                    <div class="slider-content slider-content--animation">
+                                        <!-- Các thẻ <span> chứa các phần tử văn bản với các lớp CSS khác nhau để định dạng và tạo kiểu cho nội dung của slide -->
+                                        <span class="content-span-2">Chương trình Giáng Sinh 16/12-20/12!</span>
+                                        <span class="content-span-4">Khuyến mãi lên đến 50%</span>
+                                        <span class="content-span-5">Áp dụng cho toàn bộ hệ thống Scentina từ 16/12-20/12</span><br><br><br>
+                                        <!-- Một liên kết (link) có văn bản "SHOP NOW" với các lớp CSS để tạo kiểu như một nút, và liên kết đến trang "shop-side-version-2.html" -->
+                                        <a class="shop-now-link btn--e-brand" href="shop-grid-left.html">MUA NGAY</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tương tự slide 1 -->
+                    <div class="hero-slide hero-slide--2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="slider-content slider-content--animation">
+                                        <span class="content-span-4">Top sản phẩm mùa đông 2023!</span>
+                                        <span class="content-span-5">Tổng hợp sản phẩm được yêu thích nhất mùa đông 2023 tại Scentia</span> <br /> <br /><br>
+                                        <a class="shop-now-link btn--e-brand" href="shop-grid-left.html">MUA NGAY</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!--====== End - Primary Slider ======-->
+            <!--====== Section 1 ======-->
+            <!-- Tạo banner-->
+            <div class="banner-bg">
+                <!--====== Section Content ======-->
+                <!--Content trong banner -->
+                <div class="section__content">
+                    <div class="container">
+                        <div class="row">
+                            <!-- 12 cột, kích thước large-->
+                            <div class="col-lg-12">
+                                <!-- Đồng hồ đếm ngược -->
+                                <div class="banner-bg__countdown">
+                                    <!-- Hiệu ứng, kiểu dáng, ngày kết thúc đếm ngược-->
+                                    <div class="countdown countdown--style-banner u-c-secondary" data-countdown="2023/12/21"></div>
+                                </div>
+                                <!-- Nội dung trong banner -->
+                                <div class="banner-bg__wrap">
+                                    <!-- Dòng text 1-->
+                                    <div class="banner-bg__text-1">
+
+                                        <span class="u-c-white" style="text-shadow: 2px 2px 0 #333333, 2px -2px 0 #333333, -2px 2px 0 #333333, -2px -2px 0 #333333, 2px 0px 0 #333333, 0px 2px 0 #333333, -2px 0px 0 #333333, 0px -2px 0 #333333;">CHƯƠNG TRÌNH</span>
+
+                                        <span class="banner-text" style="color: rgb(255, 255, 156);">GIÁNG SINH</span>
+                                    </div>
+                                    <!-- Dòng text 2-->
+                                    <div class="banner-bg__text-2">
+
+                                        <span class="banner-text" style="color: rgb(255, 255, 156);">
+                                            Khuyến mãi lên đến 50% từ 16/12-20/12
+                                        </span>
+
+                                        <span class="u-c-white banner-text ">Đừng bỏ lỡ!</span>
+                                    </div>
+
+                                    <span class="banner-bg__text-block banner-bg__text-3 banner-text" style="color: white">
+                                        Miễn phí vận chuyển khi mua từ 2 sản phẩm trở lên!
+                                    </span>
+                                    <!-- Liên kết "Mua ngay" chuyển hướng đến shop-grid-left.html-->
+                                    <a class="banner-bg__shop-now btn--e-secondary-banner u-c-secondary" href="shop-grid-left.html">Mua ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Content ======-->
+            </div>
+            <!--====== End - Section 2 ======-->
+            <!--====== Section 3 ======-->
+            <!-- đặt giá trị padding-top của phần tử là 120 -->
+            <div class="u-s-p-t-120">
+                <!--====== Section Intro ======-->
+                <!-- đặt giá trị margin-bottom của phần tử là 46-->
+                <div class="section__intro u-s-m-b-46">
+                    <div class="container">
+                        <div class="row">
+                            <!-- 12 cột với kích thước large-->
+                            <div class="col-lg-12">
+                                <!-- text -->
+                                <div class="section__text-wrap">
+                                    <h1 class="section__heading u-c-secondary u-s-m-b-12">KHUYẾN MÃI TRONG NGÀY</h1>
+                                    <span class="section__span u-c-silver">NHANH TAY BỎ SẢN PHẨM VÀO GIỎ HÀNG TRONG HÔM NAY NHÉ!</span>
+                                    <span class="section__span u-c-silver">KHUYẾN MÃI KHÔNG THỂ BỎ LỠ!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Intro ======-->
+                <!--====== Section Content ======-->
+                <div class="section__content">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Một cột chiếm 6/12 cột trên lớp lớn (lg) và 6/12 cột trên lớp trung bình (md).  "u-s-m-b-30": đặt giá trị margin bottome là 30-->
+                            <div class="col-lg-6 col-md-6 u-s-m-b-30">
+                                <!-- chứa thông tin sản phẩm với các class để tạo bo góc, hiệu ứng hover-off và chiều cao 100%.-->
+                                <div class="product-o product-o--radius product-o--hover-off u-h-100">
+                                    <div class="product-o__wrap">
+                                        <!-- Một liên kết với class để tạo hình vuông và một lớp màu nền xám. Liên kết này dẫn đến trang chi tiết sản phẩm.-->
+                                        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <!-- Một hình ảnh sản phẩm với class aspect__img điều chỉnh kích thước.-->
+                                            <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/lavender_a5b17f52e0814bb9b4a69dc9ae454645_1024x1024.png" alt="">
+                                        </a>
+                                        <!--  đồng hồ đếm ngược đặc biệt cho sản phẩm. -->
+                                        <div class="product-o__special-count-wrap">
+                                            <!-- đồng hồ đếm ngược với lớp countdown--style-special điều chỉnh cách hiển thị, và ngày kết thúc là "2023/12/21".-->
+                                            <div class="countdown countdown--style-special" data-countdown="2023/12/21"></div>
+                                        </div>
+                                        <!-- class điều chỉnh vị trí sản phẩm -->
+                                        <div class="product-o__action-wrap">
+                                            <!-- class điều chỉnh các thành phần trong danh sách-->
+                                            <ul class="product-o__action-list">
+                                                <li>
+                                                    <!--tạo ra một liên kết có biểu tượng kính lúp, khi người dùng click vào liên kết, kích hoạt một modal có ID là "quick-look" để hiển thị thông tin xem nhanh về sản phẩm liên quan.-->
+                                                    <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                </li>
+                                                <li>
+                                                    <!-- Thêm vào giỏ hàng -->
+                                                    <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                </li>
+                                                <li>
+                                                    <!-- liên kết có biểu tượng trái tim, khi người dùng click chuyển hướng sang trang đăng nhập để thêm sản phẩm vào wishlist-->
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <!-- gửi email khi giá giảm-->
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- class điều chỉnh loại sản phẩm-->
+                                    <span class="product-o__category">
+                                        <!-- Liên kết qua danh mục nến thơm-->
+                                        <a href="shop-grid-left.html">Nến thơm</a>
+                                    </span>
+                                    <!-- class điều chỉnh tên sản phẩm -->
+                                    <span class="product-o__name">
+                                        <!--Liên kết đến chi tiết sản phẩm-->
+                                        <a href="product-detail.html">Nến Thơm Lavender</a>
+                                    </span>
+                                    <!-- class điều chỉnh đánh giá sản phẩm-->
+                                    <div class="product-o__rating gl-rating-style">
+                                        <!-- biểu tượng sao-->
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        <!-- class điều chỉnh số lượt đánh giá-->
+                                        <span class="product-o__review">(544)</span>
+                                    </div>
+                                    <!-- Class điều chỉnh giá sản phẩm -->
+                                    <span class="product-o__price">
+                                        400.000đ/120g
+                                        <!-- class điều chỉnh tỷ lệ giảm giá -->
+                                        <span class="product-o__discountpercent">(20% OFF)</span>
+                                        <!-- giá gốc sản phẩm-->
+                                        <span class="product-o__discount">500.000đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- tương tự sản phẩm trước -->
+                            <div class="col-lg-6 col-md-6 u-s-m-b-30">
+                                <div class="product-o product-o--radius product-o--hover-off u-h-100">
+                                    <div class="product-o__wrap">
+                                        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <img class="aspect__img" src="https://file.hstatic.net/200000455999/file/phun-thuoc-diet-muoi_cb14d13c65994e2d9467a88323add933_grande.png" alt="">
+                                        </a>
+                                        <div class="product-o__special-count-wrap">
+                                            <div class="countdown countdown--style-special" data-countdown="2023/12/21"></div>
+                                        </div>
+                                        <div class="product-o__action-wrap">
+                                            <ul class="product-o__action-list">
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="product-o__category">
+                                        <a href="shop-grid-left.html">Tinh dầu thiên nhiên</a>
+                                    </span>
+                                    <span class="product-o__name">
+                                        <a href="product-detail.html">Tinh Dầu Lemongrass & Ginger</a>
+                                    </span>
+                                    <div class="product-o__rating gl-rating-style">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        <span class="product-o__review">(600)</span>
+                                    </div>
+                                    <span class="product-o__price">
+                                        264.000đ/15ml
+                                        <span class="product-o__discountpercent">(20% OFF)</span>
+                                        <span class="product-o__discount">330.000đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- tương tự sản phẩm trước -->
+                            <div class="col-lg-6 col-md-6 u-s-m-b-30">
+                                <div class="product-o product-o--radius product-o--hover-off u-h-100">
+                                    <div class="product-o__wrap">
+                                        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/honey_suckle_343g_f2c885ffad59461284dbc6fcead5b0ec_1024x1024.jpg" alt="">
+                                        </a>
+                                        <div class="product-o__special-count-wrap">
+                                            <div class="countdown countdown--style-special" data-countdown="2023/12/21"></div>
+                                        </div>
+                                        <div class="product-o__action-wrap">
+                                            <ul class="product-o__action-list">
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="product-o__category">
+                                        <a href="shop-grid-left.html">Nến thơm</a>
+                                    </span>
+                                    <span class="product-o__name">
+                                        <a href="product-detail.html">Nến Thơm Honeysuckle & Jasmine (2 bấc)</a>
+                                    </span>
+                                    <div class="product-o__rating gl-rating-style">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        <span class="product-o__review">(205)</span>
+                                    </div>
+                                    <span class="product-o__price">
+                                        621.000đ/400g
+                                        <span class="product-o__discountpercent">(10% OFF)</span>
+                                        <span class="product-o__discount">690.000đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- tương tự sản phẩm trước -->
+                            <div class="col-lg-6 col-md-6 u-s-m-b-30">
+                                <div class="product-o product-o--radius product-o--hover-off u-h-100">
+                                    <div class="product-o__wrap">
+                                        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/cinamon_stick_8247cd60ba724f2f8157ba7494c4226f_1024x1024.png" alt="">
+                                        </a>
+                                        <div class="product-o__special-count-wrap">
+                                            <div class="countdown countdown--style-special" data-countdown="2023/12/21"></div>
+                                        </div>
+                                        <div class="product-o__action-wrap">
+                                            <ul class="product-o__action-list">
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="product-o__category">
+                                        <a href="shop-grid-left.html">Tinh dầu thiên nhiên</a>
+                                    </span>
+                                    <span class="product-o__name">
+                                        <a href="product-detail.html">Tinh Dầu Cinnamon Stick</a>
+                                    </span>
+                                    <div class="product-o__rating gl-rating-style">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        <span class="product-o__review">(128)</span>
+                                    </div>
+                                    <span class="product-o__price">
+                                        351.000đ/20ml
+                                        <span class="product-o__discountpercent">(10% OFF)</span>
+                                        <span class="product-o__discount">390.000đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Content ======-->
+            </div>
+            <!--====== End - Section 2 ======-->
+            <!--====== Section 3 ======-->
+            <!-- padding trên dưới 60-->
+            <div class="u-s-p-y-60">
+                <!--====== Section Intro ======-->
+                <!-- margin bottom 46-->
+                <div class="section__intro u-s-m-b-46">
+                    <div class="container">
+                        <div class="row">
+                            <!-- 1 cột chiếm 12 cột với kích thước large-->
+                            <div class="col-lg-12">
+                                <div class="section__text-wrap">
+                                    <!-- section__heading: điều chỉnh text, margin bottom 12 -->
+                                    <h1 class="section__heading u-s-m-b-12">DANH MỤC SẢN PHẨM</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Intro ======-->
+                <!--====== Section Content ======-->
+                <div class="section__content">
+                    <div class="container">
+                        <div class="row">
+                            <!-- 4 cột với lớp lớn (lg) và trung bình (768-991), màn hình nhỏ 1 cột chiếm toàn bộ chiều rộng, margin-bottom: 30-->
+                            <div class="col-lg-4 col-md-4 col-sm-12 u-s-m-b-30">
+                                <!-- điều chỉnh vị trí và cách hiển thị của danh mục, liên kết đến danh mục-->
+                                <a class="promotion" href="shop-grid-left.html">
+                                    <!-- điều chỉnh thuộc tính khung -->
+                                    <div class="aspect aspect--bg-grey aspect--3x4">
+                                        <!-- điều chỉnh vị trí, kích thước hình-->
+                                        <img class="aspect__img promotion__img" src="https://theme.hstatic.net/200000455999/1001046693/14/banner_coll_1_1.jpg?v=347" alt="">
+                                    </div>
+                                    <!-- điều chỉnh thuộc tính của content (text)-->
+                                    <div class="promotion__content">
+                                        <!-- điều chỉnh kích thước text -->
+                                        <span class="promotion__text-2">
+                                            <!-- màu chữ -->
+                                            <span class="u-c-secondary">TINH DẦU THIÊN NHIÊN</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- TƯƠNG TỰ Ở TRÊN (DÒNG 787)-->
+                            <div class="col-lg-4 col-md-4 col-sm-12 u-s-m-b-30">
+                                <a class="promotion" href="shop-grid-left.html">
+                                    <div class="aspect aspect--bg-grey aspect--3x4">
+                                        <img class="aspect__img promotion__img" src="https://theme.hstatic.net/200000455999/1001046693/14/banner_coll_1_2.jpg?v=347" alt="">
+                                    </div>
+                                    <div class="promotion__content">
+                                        <span class="promotion__text-2">
+                                            <span class="u-c-secondary">NẾN THƠM</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- TƯƠNG TỰ Ở TRÊN (DÒNG 787)-->
+                            <div class="col-lg-4 col-md-4 col-sm-12 u-s-m-b-30">
+                                <a class="promotion" href="shop-grid-left.html">
+                                    <div class="aspect aspect--bg-grey aspect--3x4">
+                                        <img class="aspect__img promotion__img" src="https://theme.hstatic.net/200000455999/1001046693/14/banner_coll_1_3.jpg?v=347" alt="">
+                                    </div>
+                                    <div class="promotion__content">
+                                        <span class="promotion__text-2">
+                                            <span class="u-c-secondary">COMBO TÁN HƯƠNG</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====== End - Section 3 ======-->
+            <!--====== Section 4 ======-->
+            <!-- Padding bottom 60-->
+            <div class="u-s-p-b-60">
+                <!--====== Section Intro ======-->
+                <!-- margin bottom 16-->
+                <div class="section__intro u-s-m-b-16">
+                    <div class="container">
+                        <!-- Tạo hàng chứa các cột -->
+                        <div class="row">
+                            <!-- Tạo một cột chiếm toàn bộ chiều rộng của container trên các thiết bị có độ rộng lớn -->
+                            <div class="col-lg-12">
+                                <!-- Chứa các phần tử văn bản và có thể được sử dụng để định dạng và tạo kiểu cho vùng văn bản -->
+                                <div class="section__text-wrap">
+                                    <!-- Tiêu đề -->
+                                    <h1 class="section__heading u-c-secondary u-s-m-b-12">SẢN PHẨM BÁN CHẠY</h1>
+                                    <span class="section__span u-c-silver">CHỌN DANH MỤC SẢN PHẨM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Intro ======-->
+                <!--====== Section Content ======-->
+                <div class="section__content">
+                    <div class="container">
+                        <!-- Tạo hàng chứa các cột -->
+                        <div class="row">
+                            <!-- Tạo một cột chiếm toàn bộ chiều rộng của container trên các thiết bị có độ rộng lớn -->
+                            <div class="col-lg-12">
+                                <!-- Chứa các nút lọc danh mục sản phẩm -->
+                                <div class="filter-category-container">
+                                    <!-- Mỗi thẻ div này là một container cho một nút lọc danh mục -->
+                                    <div class="filter__category-wrapper">
+                                        <!-- Nút lọc "ALL" có một lớp js-checked => Nút này được chọn mặc định -->
+                                        <button class="btn filter__btn filter__btn--style-1 js-checked" type="button" data-filter="*">TẤT CẢ</button>
+                                    </div>
+                                    <!-- Các nút lọc danh mục khác được thể hiện tương tự với các giá trị khác nhau cho thuộc tính data-filter -->
+                                    <div class="filter__category-wrapper">
+                                        <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".tinhdau">TINH DẦU</button>
+                                    </div>
+                                    <div class="filter__category-wrapper">
+                                        <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".sapthom">NẾN THƠM</button>
+                                    </div>
+                                    <div class="filter__category-wrapper">
+                                        <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".combotanhuong">COMBO TÁN HƯƠNG</button>
+                                    </div>
+                                </div>
+                                <!-- Thẻ div này chứa danh sách sản phẩm hiển thị dưới dạng grid -->
+                                <div class="filter__grid-wrapper u-s-m-t-30">
+                                    <!-- Tạo hàng chứa các cột -->
+                                    <div class="row">
+                                        <!-- Một cột trong grid, chiếm độ rộng khác nhau tùy thuộc vào kích thước màn hình. Có một lớp filter__item và tinhdau để xác định danh mục của sản phẩm này -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item tinhdau">
+                                            <!-- Thẻ div chính của sản phẩm -->
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <!-- Thẻ div chứa toàn bộ nội dung của sản phẩm, bao gồm ảnh, các nút hành động và thông tin chi tiết -->
+                                                <div class="product-o__wrap">
+                                                    <!-- Tạo ra một khung hình vuông với một màu nền xám nhạt -->
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <!-- Hình ảnh của sản phẩm -->
+                                                        <img class="aspect__img" src="images/product/tinh dầu/product3.png" alt="">
+                                                    </div>
+                                                    <!-- Chứa các nút hành động như xem nhanh, thêm vào giỏ hàng, thêm vào danh sách mong muốn và gửi email thông báo giảm giá -->
+                                                    <div class="product-o__action-wrap">
+                                                        <!-- Một danh sách chứa các nút hành động với biểu tượng của nó -->
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <!-- data-modal: Mở các hộp thoại modal khi được nhấp -->
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <!-- Chuyển hướng tới trang đăng nhập -->
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- Chứa liên kết đến danh mục sản phẩm -->
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Tinh dầu</a>
+                                                </span>
+                                                <!-- Chứa tên của sản phẩm liên kết đến trang chi tiết sản phẩm -->
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Tinh Dầu Amber Noir</a>
+                                                </span>
+                                                <!-- Chứa đánh giá của sản phẩm -->
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                    <!-- Chứa số lượng đánh giá sản phẩm -->
+                                                    <span class="product-o__review">(500)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 1273</span>
+                                                <!-- Chứa giá của sản phẩm -->
+                                                <span class="product-o__price">
+                                                    351,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Tương tự với các sản phẩm còn lại (DÒNG 889) -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item tinhdau">
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <div class="product-o__wrap">
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <img class="aspect__img" src="images/product/tinh dầu/product2.png" alt="">
+                                                    </div>
+                                                    <div class="product-o__action-wrap">
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Tinh dầu</a>
+                                                </span>
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Tinh Dầu Bahama Breeze</a>
+                                                </span>
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                    <span class="product-o__review">(600)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 1373</span>
+                                                <span class="product-o__price">
+                                                    390,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Tương tự với các sản phẩm còn lại (DÒNG 889) -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item tinhdau">
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <div class="product-o__wrap">
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <img class="aspect__img" src="images/product/tinh dầu/product1.png" alt="">
+                                                    </div>
+                                                    <div class="product-o__action-wrap">
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Tinh dầu</a>
+                                                </span>
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Tinh Dầu Bamboo</a>
+                                                </span>
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                    <span class="product-o__review">(237)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 1266</span>
+                                                <span class="product-o__price">
+                                                    390,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Tương tự với các sản phẩm còn lại (DÒNG 889) -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item tinhdau">
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <div class="product-o__wrap">
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <img class="aspect__img" src="images/product/tinh dầu/product4.png" alt="">
+                                                    </div>
+                                                    <div class="product-o__action-wrap">
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Tinh dầu</a>
+                                                </span>
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Tinh Dầu Beach Walk</a>
+                                                </span>
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                    <span class="product-o__review">(688)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 1222</span>
+                                                <span class="product-o__price">
+                                                    390,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Tương tự với các sản phẩm còn lại (DÒNG 889) -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item sapthom">
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <div class="product-o__wrap">
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <img class="aspect__img" src="images/product/sáp thơm/product5.png" alt="">
+                                                    </div>
+                                                    <div class="product-o__action-wrap">
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Nến thơm</a>
+                                                </span>
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Nến Thơm Amber Noir (2 bấc)</a>
+                                                </span>
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                    <span class="product-o__review">(763)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 3573</span>
+                                                <span class="product-o__price">
+                                                    690,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Tương tự với các sản phẩm còn lại (DÒNG 889) -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item sapthom">
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <div class="product-o__wrap">
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <img class="aspect__img" src="images/product/sáp thơm/product5.png" alt="">
+                                                    </div>
+                                                    <div class="product-o__action-wrap">
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Nến thơm</a>
+                                                </span>
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Nến Thơm Sea Salt & Orchid (2 bấc)</a>
+                                                </span>
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                    <span class="product-o__review">(997)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 2273</span>
+                                                <span class="product-o__price">
+                                                    690,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Tương tự với các sản phẩm còn lại (DÒNG 889) -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item combotanhuong">
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <div class="product-o__wrap">
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <img class="aspect__img" src="images/product/combo tán hương/product7.jpg" alt="">
+                                                    </div>
+                                                    <div class="product-o__action-wrap">
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Combo tán hương</a>
+                                                </span>
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Combo Tinh Dầu Tán Hương - Beach Walk</a>
+                                                </span>
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                    <span class="product-o__review">(893)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 1773</span>
+                                                <span class="product-o__price">
+                                                    1,190,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Tương tự với các sản phẩm còn lại (DÒNG 889) -->
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item combotanhuong">
+                                            <div class="product-o product-o--hover-on product-o--radius">
+                                                <div class="product-o__wrap">
+                                                    <div class="aspect aspect--bg-grey aspect--square u-d-block">
+                                                        <img class="aspect__img" src="images/product/combo tán hương/product8.jpg" alt="">
+                                                    </div>
+                                                    <div class="product-o__action-wrap">
+                                                        <ul class="product-o__action-list">
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="product-o__category">
+                                                    <a href="shop-side-version-2.html">Combo tán hương</a>
+                                                </span>
+                                                <span class="product-o__name">
+                                                    <a href="product-detail.html">Combo Tinh Dầu Tán Hương - Caribbean Teakwood</a>
+                                                </span>
+                                                <div class="product-o__rating gl-rating-style">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                    <span class="product-o__review">(756)</span>
+                                                </div>
+                                                <!--Chứa lượt bán ra sản phẩm-->
+                                                <span class="sl-ban-ra">Đã bán 2743</span>
+                                                <span class="product-o__price">
+                                                    1,190,000₫
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section 4 ======-->
+                <!--====== Section 5 ======-->
+                <div class="u-s-p-t-60 u-s-p-b-60">
+                    <!--====== Section Intro ======-->
+                    <div class="section__intro">
+                        <div class="container">
+                            <div class="row">
+                                <!--màn hình lg: chiều rộng 12/12-->
+                                <div class="col-lg-12">
+                                    <!--tạo vùng chứa header-->
+                                    <div class="section__text-wrap">
+                                        <h1 class="section__heading u-c-secondary u-s-m-b-12">SẢN PHẨM XU HƯỚNG</h1>
+                                        <span class="section__span u-c-silver">SẴN SÀNG BÙNG NỔ VỚI NHỮNG SẢN PHẨM ĐANG ĐƯỢC TÌM KIẾM NHIỀU NHẤT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--====== End - Section Intro ======-->
+                    <!--====== Section Content ======-->
+                    <div class="section__content">
+                        <div class="container">
+                            <div class="slider-fouc">
+                                <!--carousel sản phẩm hiển thị 4 sản phẩm trên mỗi lượt trượt-->
+                                <div class="owl-carousel product-slider" data-item="4">
+                                    <div class="u-s-m-b-30">
+                                        <!--xác định kiểu dáng và hiệu ứng khi di chuột qua sản phẩm-->
+                                        <div class="product-o product-o--hover-on">
+                                            <div class="product-o__wrap">
+                                                <!--link vô sản phẩm-->
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                                    <!--hình sản phẩm sản phẩm-->
+                                                    <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/z4951978890905_e53905fa34b3fc0755a27c46c91a0b49_3cb160b89aa442a28aa25fea4d25c5da_grande.jpg" alt="">
+                                                </a>
+                                                <!--hoạt động tương tác của sản phẩm-->
+                                                <div class="product-o__action-wrap">
+                                                    <ul class="product-o__action-list">
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--Danh mục sản phẩm-->
+                                            <span class="product-o__category">
+
+                                                <a href="shop-side-version-2.html">Nến thơm</a>
+                                            </span>
+                                            <!--Tên-->
+                                            <span class="product-o__name">
+
+                                                <a href="product-detail.html">Nến Thơm Cinnamon Stick (140g)</a>
+                                            </span>
+                                            <!--đánh giá sao-->
+                                            <div class="product-o__rating gl-rating-style">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                                <span class="product-o__review">(721)</span>
+                                            </div>
+                                            <!--lượt tìm kiếm-->
+                                            <strong class="sl-ban-ra" style="color:red">11k lượt tìm kiếm/tuần</strong>
+                                            <!--giá-->
+                                            <span class="product-o__price">
+                                                390,000₫
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--tương tự-->
+                                    <div class="u-s-m-b-30">
+                                        <div class="product-o product-o--hover-on">
+                                            <div class="product-o__wrap">
+
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+
+                                                    <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/z4951978890905_e53905fa34b3fc0755a27c46c91a0b49_3cb160b89aa442a28aa25fea4d25c5da_grande.jpg" alt="">
+                                                </a>
+                                                <div class="product-o__action-wrap">
+                                                    <ul class="product-o__action-list">
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <span class="product-o__category">
+
+                                                <a href="shop-side-version-2.html">Nến thơm</a>
+                                            </span>
+
+                                            <span class="product-o__name">
+
+                                                <a href="product-detail.html">Nến Thơm White Coffee (140g)</a>
+                                            </span>
+                                            <div class="product-o__rating gl-rating-style">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                                <span class="product-o__review">(149)</span>
+                                            </div>
+                                            <strong class="sl-ban-ra" style="color:red">10k lượt tìm kiếm/tuần</strong>
+                                            <span class="product-o__price">
+                                                390,000₫
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--tương tự-->
+                                    <div class="u-s-m-b-30">
+                                        <div class="product-o product-o--hover-on">
+                                            <div class="product-o__wrap">
+
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+
+                                                    <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/pink_sands_007b1285fedf40b9bb7ad1402eecf5d1_grande.png" alt="">
+                                                </a>
+                                                <div class="product-o__action-wrap">
+                                                    <ul class="product-o__action-list">
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <span class="product-o__category">
+
+                                                <a href="shop-side-version-2.html">Nến thơm</a>
+                                            </span>
+
+                                            <span class="product-o__name">
+
+                                                <a href="product-detail.html">Nến Thơm Pink Sands (140g)</a>
+                                            </span>
+                                            <div class="product-o__rating gl-rating-style">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                                <span class="product-o__review">(907)</span>
+                                            </div>
+                                            <strong class="sl-ban-ra" style="color:red">7k lượt tìm kiếm/tuần</strong>
+                                            <span class="product-o__price">
+                                                390,000₫
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--tương tự-->
+                                    <div class="u-s-m-b-30">
+                                        <div class="product-o product-o--hover-on">
+                                            <div class="product-o__wrap">
+
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+
+                                                    <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/palo_santo_140gr_e6fda003169a40ebbfd8d79c3b20e3c7_grande.png" alt="">
+                                                </a>
+                                                <div class="product-o__action-wrap">
+                                                    <ul class="product-o__action-list">
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <span class="product-o__category">
+
+                                                <a href="shop-side-version-2.html">Nến thơm</a>
+                                            </span>
+
+                                            <span class="product-o__name">
+
+                                                <a href="product-detail.html">Nến Thơm Palo Santo (140g) (140g)</a>
+                                            </span>
+                                            <div class="product-o__rating gl-rating-style">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                                <span class="product-o__review">(322)</span>
+                                            </div>
+                                            <strong class="sl-ban-ra" style="color:red">5k lượt tìm kiếm/tuần</strong>
+                                            <span class="product-o__price">
+                                                390,000₫
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--tương tự-->
+                                    <div class="u-s-m-b-30">
+                                        <div class="product-o product-o--hover-on">
+                                            <div class="product-o__wrap">
+
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+
+                                                    <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/dat_at_the_spa_286a131c32e94fa894d55c7fd74ba589_grande.png" alt="">
+                                                </a>
+                                                <div class="product-o__action-wrap">
+                                                    <ul class="product-o__action-list">
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <span class="product-o__category">
+
+                                                <a href="shop-side-version-2.html">Nến thơm</a>
+                                            </span>
+
+                                            <span class="product-o__name">
+
+                                                <a href="product-detail.html">Nến Thơm Day At The Spa (140g)</a>
+                                            </span>
+                                            <div class="product-o__rating gl-rating-style">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                                <span class="product-o__review">(168)</span>
+                                            </div>
+                                            <strong class="sl-ban-ra" style="color:red">4k lượt tìm kiếm/tuần</strong>
+                                            <span class="product-o__price">
+                                                390,000₫
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--tương tự-->
+                                    <div class="u-s-m-b-30">
+                                        <div class="product-o product-o--hover-on">
+                                            <div class="product-o__wrap">
+
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+
+                                                    <img class="aspect__img" src="https://product.hstatic.net/200000455999/product/white_tea_140gr_a26f794f47224c6bb795981aa3758063_grande.png" alt="">
+                                                </a>
+                                                <div class="product-o__action-wrap">
+                                                    <ul class="product-o__action-list">
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem nhanh"><i class="fas fa-search-plus"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng"><i class="fas fa-plus-circle"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào danh sách yêu thích"><i class="fas fa-heart"></i></a>
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Gửi mail khi có khuyến mãi"><i class="fas fa-envelope"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <span class="product-o__category">
+
+                                                <a href="shop-side-version-2.html">Nến thơm</a>
+                                            </span>
+
+                                            <span class="product-o__name">
+
+                                                <a href="product-detail.html">Nến Thơm White Tea (140g)</a>
+                                            </span>
+                                            <div class="product-o__rating gl-rating-style">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                                <span class="product-o__review">(195)</span>
+                                            </div>
+                                            <strong class="sl-ban-ra" style="color:red">4k lượt tìm kiếm/tuần</strong>
+                                            <span class="product-o__price">
+                                                390,000₫
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--====== End - Section Content ======-->
+                </div>
+                <!--====== End - Section 5 ======-->
+                <!--====== Section 6 ======-->
+                <!-- padding bottom 60 -->
+                <div class="u-s-p-b-60">
+                    <!--====== Section Content ======-->
+                    <div class="section__content">
+                        <div class="container">
+                            <div class="row">
+                                <!-- 1 cột có chiều rộng 4/12 với màn hình lớn, 6/12 màn hình trung bình, margin bottom 30 -->
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <!-- service: điều chỉnh thuộc tính hộp, chiều cao 100%-->
+                                    <div class="service u-h-100">
+                                        <!-- điều chỉnh thuộc tính icon, chứa biểu tượng xe tải-->
+                                        <div class="service__icon"><i class="fas fa-truck"></i></div>
+
+                                        <div class="service__info-wrap">
+                                            <!-- điều chỉnh thuộc tính dòng text 1-->
+                                            <span class="service__info-text-1">Miễn phí vận chuyển</span>
+                                            <!-- điều chỉnh thuộc tính dòng text 2-->
+                                            <span class="service__info-text-2">Miễn phí vận chuyển cho đơn hàng từ 1.000.000đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- TƯƠNG TỰ NHƯ TRÊN (DÒNG 1313)-->
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="service u-h-100">
+                                        <div class="service__icon"><i class="fas fa-redo"></i></div>
+                                        <div class="service__info-wrap">
+
+                                            <span class="service__info-text-1">Tự tin mua sắm</span>
+
+                                            <span class="service__info-text-2">Cam kết bảo vệ khách hàng tuyệt đối và hoàn trả 100%.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- TƯƠNG TỰ NHƯ TRÊN (DÒNG 1313)-->
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="service u-h-100">
+                                        <div class="service__icon"><i class="fas fa-headphones-alt"></i></div>
+                                        <div class="service__info-wrap">
+
+                                            <span class="service__info-text-1">Hỗ trợ khách hàng 24/7</span>
+
+                                            <span class="service__info-text-2">Đội ngũ nhân viên hỗ trợ tận tâm và nhiệt tình!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--====== End - Section Content ======-->
+                </div>
+                <!--====== End - Section 6 ======-->
+                <!--====== Section 7 ======-->
+                <div class="u-s-p-b-90 u-s-m-b-30">
+                    <!--====== Section Intro ======-->
+                    <!-- Chứa nội dung của phần giới thiệu -->
+                    <div class="section__intro u-s-m-b-46">
+                        <!-- Giữ nội dung và cảnh quan hóa trên một trang web, tạo ra một lớp lưới giúp kiểm soát sự xếp chồng của các phần tử trên trang -->
+                        <div class="container">
+                            <!-- Đại diện cho một hàng trong hệ thống lưới -->
+                            <div class="row">
+                                <!-- Tạo ra một cột với độ rộng tương đương với toàn bộ chiều rộng của container trên các thiết bị có độ rộng lớn -->
+                                <div class="col-lg-12">
+                                    <!-- Chứa văn bản và các phần tử khác trong phần giới thiệu -->
+                                    <div class="section__text-wrap">
+                                        <!-- Chứa tiêu đề lớn của phần giới thiệu -->
+                                        <h1 class="section__heading u-c-secondary u-s-m-b-12">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h1>
+                                        <span class="section__span u-c-silver">KHÁCH HÀNG CỦA CHÚNG TÔI NÓI GÌ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--====== End - Section Intro ======-->
+                    <!--====== Section Content ======-->
+                    <div class="section__content">
+                        <!-- Giữ nội dung và cảnh quan hóa trên một trang web, tạo ra một lớp lưới giúp kiểm soát sự xếp chồng của các phần tử trên trang -->
+                        <div class="container">
+
+                            <!--====== Testimonial Slider ======-->
+                            <!-- Slider sử dụng thư viện Owl Carousel để hiển thị nội dung -->
+                            <div class="owl-carousel" id="testimonial-slider">
+                                <!-- Chứa thông tin về đánh giá từ một khách hàng -->
+                                <div class="testimonial">
+                                    <!-- Chứa hình ảnh của người đánh giá -->
+                                    <div class="testimonial__img-wrap">
+                                        <img class="testimonial__img" src="images/about/test-1.jpg" alt="">
+                                    </div>
+                                    <!-- Chứa nội dung của đánh giá -->
+                                    <div class="testimonial__content-wrap">
+                                        <!-- Chứa biểu tượng kép sử dụng Font Awesome -->
+                                        <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>
+                                        <!-- Hiển thị đoạn trích đánh giá -->
+                                        <blockquote class="testimonial__block-quote">
+                                            <p>"Nhung mui huong that tuyet voi va de chiu, toi rat thich!"</p>
+                                        </blockquote>
+                                        <!-- Chứa tên của người đánh giá -->
+                                        <span class="testimonial__author">Taylor Swift</span>
+                                    </div>
+                                </div>
+                                <!-- Tương tự với khách hàng khác (DÒNG 1390)-->
+                                <div class="testimonial">
+                                    <div class="testimonial__img-wrap">
+                                        <img class="testimonial__img" src="images/about/test-2.jpg" alt="">
+                                    </div>
+                                    <div class="testimonial__content-wrap">
+                                        <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>
+                                        <blockquote class="testimonial__block-quote">
+                                            <p>"Tôi đã dùng sản phẩm ở đây hơn 2 năm, chất lượng sản phẩm rất tuyệt vời."</p>
+                                        </blockquote>
+                                        <span class="testimonial__author">Trấn Thành</span>
+                                    </div>
+                                </div>
+                                <!-- Tương tự với khách hàng khác (DÒNG 1390)-->
+                                <div class="testimonial">
+                                    <div class="testimonial__img-wrap">
+                                        <img class="testimonial__img" src="images/about/test-3.jpg" alt="">
+                                    </div>
+                                    <div class="testimonial__content-wrap">
+                                        <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>
+                                        <blockquote class="testimonial__block-quote">
+                                            <p>"Tôi thích nhất là tinh dầu táo, trời ơi nó keoooo, dịu gì đâu lun á, must try!!!"</p>
+                                        </blockquote>
+                                        <span class="testimonial__author">Mỹ Tâm</span>
+                                    </div>
+                                </div>
+                                <!-- Tương tự với khách hàng khác (DÒNG 1390)-->
+                                <div class="testimonial">
+                                    <div class="testimonial__img-wrap">
+                                        <img class="testimonial__img" src="images/about/test-4.jpeg" alt="">
+                                    </div>
+                                    <div class="testimonial__content-wrap">
+                                        <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>
+                                        <blockquote class="testimonial__block-quote">
+                                            <p>"Tinh dau Calla Lily that su tuyet voi! Toi yeu san pham nay!"</p>
+                                        </blockquote>
+                                        <span class="testimonial__author">Jungkook</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--====== End - Testimonial Slider ======-->
+                    </div>
+                    <!--====== End - Section Content ======-->
+                </div>
+                <!--====== End - Section 7 ======-->
+                <!--====== Section 8 ======-->
+                <!-- padding bottom 60-->
+                <div class="u-s-p-b-60">
+                    <!--====== Section Intro ======-->
+                    <!-- margin bottom 46-->
+                    <div class="section__intro u-s-m-b-46">
+                        <div class="container">
+                            <div class="row">
+                                <!-- 1 cột có chiều rộng toàn bộ màn hình, đối với màn hình kích thước lớn-->
+                                <div class="col-lg-12">
+                                    <!-- căn text -->
+                                    <div class="section__text-wrap">
+                                        <!-- Điều chỉnh thuộc tính text  -->
+                                        <h1 class="section__heading u-s-m-b-12">BÀI VIẾT MỚI NHẤT</h1>
+                                        <span class="section__span u-c-silver">BẮT ĐẦU NGÀY MỚI CỦA BẠN CÙNG NHỮNG THÔNG TIN MỚI TỪ SCENTIA!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--====== End - Section Intro ======-->
+                    <!--====== Section Content ======-->
+                    <div class="section__content">
+                        <div class="container">
+                            <div class="row">
+                                <!-- 1 cột chiếm 4/12 với màn hình lớn, 6/12 màn hình trung bình, margin bottom 30 -->
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="bp-mini bp-mini--img u-h-100">
+                                        <div class="bp-mini__thumbnail">
+
+                                            <!--====== Image Code ======-->
+
+                                            <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog-detail.html">
+
+                                                <img class="aspect__img" src="https://file.hstatic.net/200000455999/file/nen_su_dung_bao_nhieu_giot_cho_moi_lan_xong_tinh_dau__2__464634fdf02d45f290a1a8c33cbc41a4_grande.png" alt="">
+                                            </a>
+                                            <!--====== End - Image Code ======-->
+                                        </div>
+                                        <!-- Tương tự blog dưới (dòng 1538)-->
+                                        <div class="bp-mini__content">
+                                            <div class="bp-mini__stat">
+
+                                                <span class="bp-mini__stat-wrap">
+
+                                                    <span class="bp-mini__publish-date">
+
+                                                        <a>
+
+                                                            <span>15/11/2023</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+
+                                                <span class="bp-mini__stat-wrap">
+                                                    <span class="bp-mini__preposition">Đăng bởi</span>
+                                                    <span class="bp-mini__author">
+                                                        <a href="#">Như Uyên</a>
+                                                    </span>
+                                                </span>
+                                                <span class="bp-mini__stat">
+                                                    <span class="bp-mini__comment">
+                                                        <a href="blog-detail.html">
+                                                            <i class="far fa-comments u-s-m-r-4"></i>
+                                                            <span>8</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span class="bp-mini__h1">
+                                                <a href="blog-detail.html">Liều thuốc tiên cho sức khỏe</a>
+                                            </span>
+                                            <p class="bp-mini__p">Tinh dầu thiên nhiên luôn được biết đến là liều thuốc tiên...</p>
+                                            <div class="blog-t-w">
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">Tinh dầu</a>
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">Thiên nhiên</a>
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">Thuốc tiên</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="bp-mini bp-mini--img u-h-100">
+                                        <div class="bp-mini__thumbnail">
+                                            <!--====== Image Code ======-->
+                                            <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog-detail.html">
+                                                <img class="aspect__img" src="images/blog/post-12.png" alt="">
+                                            </a>
+                                            <!--====== End - Image Code ======-->
+                                        </div>
+                                        <!-- Chứa toàn bộ nội dung của phần mini blog post -->
+                                        <div class="bp-mini__content">
+                                            <!-- Chứa các thông tin thống kê nhỏ về bài đăng -->
+                                            <div class="bp-mini__stat">
+                                                <!-- Nhóm các phần tử thống kê lại với nhau -->
+                                                <span class="bp-mini__stat-wrap">
+                                                    <!-- Chứa ngày xuất bản -->
+                                                    <span class="bp-mini__publish-date">
+                                                        <a>
+                                                            <span>14/11/2023</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+                                                <!-- Nhóm các phần tử thống kê lại với nhau -->
+                                                <span class="bp-mini__stat-wrap">
+                                                    <!-- Chứa văn bản "By" để định dạng khác, làm nổi bật tác giả -->
+                                                    <span class="bp-mini__preposition">Đăng bởi</span>
+                                                    <!-- Chứa tên tác giả -->
+                                                    <span class="bp-mini__author">
+                                                        <a href="#">Phương Thảo</a>
+                                                    </span>
+                                                </span>
+                                                <!-- Nhóm các phần tử thống kê lại với nhau -->
+                                                <span class="bp-mini__stat">
+                                                    <!-- Chứa thông tin về số lượng bình luận -->
+                                                    <span class="bp-mini__comment">
+                                                        <!-- Liên kết với trang thông tin bài đăng -->
+                                                        <a href="blog-detail.html">
+                                                            <!-- Biểu tượng của Font Awesome đại diện cho biểu tượng bình luận -->
+                                                            <i class="far fa-comments u-s-m-r-4"></i>
+                                                            <!-- Số lượng bình luận cụ thể -->
+                                                            <span>8</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <!-- Chứa tiêu đề chính của bài đăng -->
+                                            <span class="bp-mini__h1">
+                                                <!-- Tiêu đề của bài đăng liên kết đến trang chi tiết bài đăng -->
+                                                <a href="blog-detail.html">Nhức chân khi trời lạnh và cách khắc phục hiệu quả</a>
+                                            </span>
+                                            <!-- Giới thiệu ngắn về nội dung của bài đăng -->
+                                            <p class="bp-mini__p">Khi thời tiết chuyển mùa, nhiều người bắt đầu cảm nhận sự...</p>
+                                            <!-- Chứa các liên kết đại diện cho các tag của bài đăng -->
+                                            <div class="blog-t-w">
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">blog_túi chườm</a>
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">Nhức chân khi trời lạnh</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tương tự blog trên -->
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="bp-mini bp-mini--img u-h-100">
+                                        <div class="bp-mini__thumbnail">
+
+                                            <!--====== Image Code ======-->
+                                            <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog-detail.html">
+                                                <img class="aspect__img" src="images/blog/post-5.png" alt="">
+                                            </a>
+                                            <!--====== End - Image Code ======-->
+
+                                        </div>
+                                        <div class="bp-mini__content">
+                                            <div class="bp-mini__stat">
+                                                <span class="bp-mini__stat-wrap">
+                                                    <span class="bp-mini__publish-date">
+                                                        <a>
+                                                            <span>09/11/2023</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+                                                <span class="bp-mini__stat-wrap">
+                                                    <span class="bp-mini__preposition">Đăng bởi</span>
+                                                    <span class="bp-mini__author">
+                                                        <a href="#">Huệ Trâm</a>
+                                                    </span>
+                                                </span>
+                                                <span class="bp-mini__stat">
+                                                    <span class="bp-mini__comment">
+                                                        <a href="blog-detail.html">
+                                                            <i class="far fa-comments u-s-m-r-4"></i>
+                                                            <span>8</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <span class="bp-mini__h1">
+                                                <a href="blog-detail.html">Ngủ máy lạnh bị đau họng và các cách khắc phục</a>
+                                            </span>
+                                            <p class="bp-mini__p">Vào những ngày nhiệt độ không khí tăng cao, thì ngủ máy lạnh là...</p>
+                                            <div class="blog-t-w">
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">ngủ máy lạnh bị đau họng</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--====== End - Section Content ======-->
+                </div>
+                <!--====== End - Section 8 ======-->
+            </div>
+        </div>
+        <!--====== End - App Content ======-->
+        <!--====== Main Footer ======-->
+        <footer>
+            <div class="outer-footer">
+                <div class="container">
+                    <!-- Một dòng chứa các cột của lưới-->
+                    <div class="row">
+                        <!-- cột 1: Chứa thông tin liên hệ và các biểu tượng mạng xã hội.-->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="outer-footer__content u-s-m-b-40">
+
+                                <span class="outer-footer__content-title">Liên hệ với chúng tôi</span>
+                                <!-- Biểu tượng ngôi nhà-->
+                                <div class="outer-footer__text-wrap">
+                                    <i class="fas fa-home"></i>
+
+                                    <span>279 Nguyễn Tri Phương, p.12, q.10, TP.HCM</span>
+                                </div>
+                                <!-- Biểu tượng điện thoại-->
+                                <div class="outer-footer__text-wrap">
+                                    <i class="fas fa-phone-volume"></i>
+
+                                    <span>(+84) 555-0114</span>
+                                </div>
+                                <!-- Biểu tượng mail-->
+                                <div class="outer-footer__text-wrap">
+                                    <i class="far fa-envelope"></i>
+
+                                    <span>Proxy@gmail.com</span>
+                                </div>
+                                <!-- Biểu tượng social-->
+                                <div class="outer-footer__social">
+                                    <ul>
+                                        <li>
+
+                                            <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-youtube--color-hover" href="#"><i class="fab fa-youtube"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Cột 2: Chứa các liên kết thông tin như Giỏ hàng, Tài khoản, Nhà sản xuất, Tài chính, và Cửa hàng.-->
+                        <div class="col-lg-4 col-md-6">
+                            <!-- Một dòng chứa các cột của lưới-->
+                            <div class="row">
+                                <!--Cột 1: chứa thông tin về tải khoản-->
+                                <!-- Một cột với kích thước là 6 trên 12 cột trong lưới khi hiển thị trên màn hình lớn (lg) và 6 trên 12 cột khi hiển thị trên màn hình vừa (md).-->
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="outer-footer__content u-s-m-b-40">
+
+                                        <!-- Tiêu đề-->
+                                        <span class="outer-footer__content-title">Tài khoản</span>
+                                        <!-- Một container chứa danh sách các liên kết.-->
+                                        <div class="outer-footer__list-wrap">
+                                            <!-- Danh sách-->
+                                            <ul>
+                                                <li>
+
+                                                    <!-- Liên kết đến cart.html-->
+                                                    <a href="dashboard.html">Tài khoản</a>
+                                                </li>
+                                                <li>
+
+                                                    <!-- Liên kết đến cart.html-->
+                                                    <a href="cart.html">Giỏ hàng</a>
+                                                </li>
+                                                <li>
+
+                                                    <!--Liên kết đến wishlist.html-->
+                                                    <a href="wishlist.html">Whislist</a>
+                                                </li>
+                                                <li>
+
+                                                    <!--Liên kết đến Lịch sử-->
+                                                    <a href="shop-grid-left.html">Lịch sử</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Cột 2: chứa thông tin về cửa hàng-->
+                                <!-- Một cột với kích thước là 6 trên 12 cột trong lưới khi hiển thị trên màn hình lớn (lg) và 6 trên 12 cột khi hiển thị trên màn hình vừa (md).-->
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="outer-footer__content u-s-m-b-40">
+                                        <div class="outer-footer__list-wrap">
+
+                                            <span class="outer-footer__content-title">Về Scentia</span>
+                                            <ul>
+                                                <li>
+
+                                                    <!--Liên kết đến about.html-->
+                                                    <a href="about.html">Về chúng tôi</a>
+                                                </li>
+                                                <li>
+
+                                                    <!--Liên kết đến about.html-->
+                                                    <a href="contact.html">Liên hệ</a>
+                                                </li>
+                                                <li>
+
+                                                    <!--Liên kết đến index.html-->
+                                                    <a href="index.html">Trang chủ</a>
+                                                </li>
+                                                <li>
+
+                                                    <!-- Liên kết đến dash-my-order.html-->
+                                                    <a href="dash-my-order.html">Giao hàng</a>
+                                                </li>
+                                                <li>
+
+                                                    <!-- Liên kết đến shop-grid-left.html-->
+                                                    <a href="shop-grid-left.html">Cửa hàng</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cột 3: Chứa một biểu mẫu đăng ký nhận bản tin và các lựa chọn giới tính, cùng với một phần thông tin bản tin.-->
+                        <div class="col-lg-4 col-md-12">
+                            <div class="outer-footer__content">
+
+                                <span class="outer-footer__content-title">Đăng kí với Scentia!</span>
+                                <!-- Biểu mẫu nhận thông tin-->
+                                <form class="newsletter">
+                                    <div class="u-s-m-b-15">
+                                        <!-- Có hai radio button cho giới tính-->
+                                        <div class="radio-box newsletter__radio">
+
+                                            <!-- nam-->
+                                            <!-- Một input radio với id là "male" và name là "gender".
+                                            Cả hai radio button đều có cùng name, điều này đồng nghĩa rằng chỉ có một radio button có thể được chọn trong cùng một nhóm.-->
+                                            <input type="radio" id="male" name="gender">
+                                            <!-- Một container chứa trạng thái của radio button.-->
+                                            <div class="radio-box__state radio-box__state--primary">
+
+                                                <!-- Một nhãn (label) được liên kết với input radio bằng cách sử dụng thuộc tính for với giá trị là "male".
+                                                Nhãn này có chữ "Nam" và có thể được nhấp để chọn radio button-->
+                                                <label class="radio-box__label" for="male">Nam</label>
+                                            </div>
+                                        </div>
+                                        <!-- Có hai radio button cho giới tính-->
+                                        <div class="radio-box newsletter__radio">
+
+                                            <!-- nữ-->
+                                            <!-- Một input radio với id là "female" và name là "gender".
+                                            Cả hai radio button đều có cùng name, điều này đồng nghĩa rằng chỉ có một radio button có thể được chọn trong cùng một nhóm.-->
+                                            <input type="radio" id="female" name="gender">
+                                            <!-- Một container chứa trạng thái của radio button.-->
+                                            <div class="radio-box__state radio-box__state--primary">
+
+                                                <!-- Một nhãn (label) được liên kết với input radio bằng cách sử dụng thuộc tính for với giá trị là "male".
+                                                Nhãn này có chữ "Nữ" và có thể được nhấp để chọn radio button-->
+                                                <label class="radio-box__label" for="female">Nữ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Ô nhập email-->
+                                    <div class="newsletter__group">
+
+                                        <!-- Một thẻ label liên kết với input có id là "newsletter", nhằm cải thiện khả năng tương tác của người dùng và cung cấp mô tả cho ô nhập liệu.-->
+                                        <label for="newsletter"></label>
+
+                                        <!-- Một ô nhập liệu có kiểu là "text", id là "newsletter", và chứa một văn bản gợi ý khi ô trống là "Nhập email của bạn".-->
+                                        <input class="input-text input-text--only-white" type="text" id="newsletter" placeholder="Nhập email của bạn">
+
+                                        <!-- nút submit dữ liệu trong form khi được nhấn.-->
+                                        <button class="btn btn--e-brand newsletter__btn" type="submit">Đăng kí</button>
+                                    </div>
+
+                                    <!--mô tả-->
+                                    <span class="newsletter__text">Đăng kí với Scentia để nhận được những thông tin về cửa hàng (bao gồm các chương trình ưu đãi, sản phẩm mới và mã giảm giá) sớm nhất!</span>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- chứa thông tin bản quyền và biểu tượng thanh toán.-->
+            <div class="lower-footer">
+                <div class="container">
+                    <!-- Một dòng chứa các cột của lưới-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Thông tin bản quyền-->
+                            <div class="lower-footer__content">
+                                <div class="lower-footer__copyright">
+
+                                    <span>Copyright © 2023</span>
+
+                                    <a href="index.html">Scentia</a>
+
+                                    <span>All Right Reserved</span>
+                                </div>
+                                <!-- Biểu tượng thanh toán-->
+                                <div class="lower-footer__payment">
+                                    <ul>
+                                        <li><i class="fab fa-cc-stripe"></i></li>
+                                        <li><i class="fab fa-cc-paypal"></i></li>
+                                        <li><i class="fab fa-cc-mastercard"></i></li>
+                                        <li><i class="fab fa-cc-visa"></i></li>
+                                        <li><i class="fab fa-cc-discover"></i></li>
+                                        <li><i class="fab fa-cc-amex"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--====== Modal Section ======-->
+    <!--====== Phần Modal ======-->
+    <!--====== Nút xem nhanh ======-->
+    <div class="modal fade" id="quick-look">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal--shadow">
+                <!-- Nút đóng modal -->
+                <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
+                <!-- Nội dung của modal -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <!-- Breadcrumb hiển thị vị trí của sản phẩm -->
+                            <div class="pd-breadcrumb u-s-m-b-30">
+                                <ul class="pd-breadcrumb__list">
+                                    <!-- ... (Danh sách các mục trong breadcrumb) ... -->
+                                    <li class="has-separator">
+
+                                        <a href="index.hml">Trang chủ</a>
+                                    </li>
+                                    <li class="has-separator">
+
+                                        <a href="shop-grid-left.html">Tinh dầu</a>
+                                    </li>
+                                    <li class="has-separator">
+
+                                        <a href="shop-grid-left.html">Tinh dầu thiên nhiên</a>
+                                    </li>
+                                    <li class="is-marked">
+
+                                        <a href="shop-grid-left.html">Tinh dầu Cam Bạc hà</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--====== End - Product Breadcrumb ======-->
+                            <!--Chi tiết sản phẩm và ảnh sản phẩm -->
+                            <div class="pd u-s-m-b-30">
+                                <div class="pd-wrap">
+                                    <!-- Ảnh sản phẩm -->
+                                    <div id="js-product-detail-modal">
+                                        <div>
+
+                                            <img class="u-img-fluid" src="https://product.hstatic.net/200000455999/product/orange___mint_15ml_new_66f65958cfb649f09705abe05e2c2aa4_grande.jpg" alt="">
+                                        </div>
+                                        <div>
+
+                                            <img class="u-img-fluid" src="./Ảnh chụp màn hình 2023-11-14 120749.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Hình nhỏ của sản phẩm -->
+                                <div class="u-s-m-t-15">
+                                    <div id="js-product-detail-modal-thumbnail">
+                                        <div>
+
+                                            <img class="u-img-fluid" src="https://product.hstatic.net/200000455999/product/orange___mint_15ml_new_66f65958cfb649f09705abe05e2c2aa4_grande.jpg" alt="">
+                                        </div>
+                                        <div>
+
+                                            <img class="u-img-fluid" src="./Ảnh chụp màn hình 2023-11-14 120749.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--====== Kết thúc phần Modal chi tiết sp ======-->
+                        </div>
+                        <div class="col-lg-7">
+
+                            <!-- Chi tiết sản phẩm bên phải của modal -->
+                            <div class="pd-detail">
+                                <div>
+                                    <!-- Tên sản phẩm -->
+                                    <span class="pd-detail__name">Tinh dầu Cam Bạc hà</span>
+                                </div>
+                                <div>
+                                    <div class="pd-detail__inline">
+                                        <!-- Giá và giảm giá (nếu có) -->
+                                        <span class="pd-detail__price">330.000đ/15ml</span>
+
+                                        <span class="pd-detail__discount">(20% OFF)</span><del class="pd-detail__del">400.000đ</del>
+                                    </div>
+                                </div>
+                                <div class="u-s-m-b-15">
+                                    <div class="pd-detail__rating gl-rating-style">
+                                        <!-- Đánh giá sao -->
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                        <!-- Số đánh giá và liên kết đến trang chi tiết sản phẩm -->
+                                        <span class="pd-detail__review u-s-m-l-4">
+
+                                            <a href="product-detail.html">23 Đánh giá</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Còn hàng hay hết hàng --> <!--Các thiết lập tương tự như thiết lập chi  tiết sản phẩm-->
+                                <div class="u-s-m-b-15">
+                                    <div class="pd-detail__inline">
+
+                                        <span class="pd-detail__stock">Còn hàng</span>
+                                    </div>
+                                </div>
+                                <div class="u-s-m-b-15">
+
+                                    <span class="pd-detail__preview-desc">
+                                        Tinh dầu Cam Bạc hà được biết đến như một liệu pháp hương thơm tuyệt vời hỗ trợ giảm mệt mỏi, lo âu cực hiệu quả, đồng thời tái tạo năng lượng mới. Đối với không gian tinh dầu Cam Bạc hà giúp thanh lọc bầu không khí, giữ không gian luôn tươi mát, sạch sẽ góp phần giúp xua đuổi côn trùng và muỗi.
+                                    </span>
+                                </div>
+                                <div class="u-s-m-b-15">
+                                    <div class="pd-detail__inline">
+
+                                        <span class="pd-detail__click-wrap">
+                                            <i class="far fa-heart u-s-m-r-6"></i>
+
+                                            <a href="signin.html">Thêm vào Yêu thích</a>
+
+                                            <span class="pd-detail__click-count">(222)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="u-s-m-b-15">
+                                    <div class="pd-detail__inline">
+
+                                        <span class="pd-detail__click-wrap">
+                                            <i class="far fa-envelope u-s-m-r-6"></i>
+
+                                            <a href="signin.html">Liên hệ ngay khi giá giảm</a>
+
+                                            <span class="pd-detail__click-count">(20)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="u-s-m-b-15">
+                                    <ul class="pd-social-list">
+                                        <li>
+
+                                            <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-wa--color-hover" href="#"><i class="fab fa-whatsapp"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="u-s-m-b-15">
+                                    <form class="pd-detail__form">
+                                        <div class="pd-detail-inline-2">
+                                            <div class="u-s-m-b-15">
+
+                                                <!--====== Input Counter ======-->
+                                                <div class="input-counter">
+
+                                                    <span class="input-counter__minus fas fa-minus"></span>
+
+                                                    <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
+
+                                                    <span class="input-counter__plus fas fa-plus"></span>
+                                                </div>
+                                                <!--====== End - Input Counter ======-->
+                                            </div>
+                                            <div class="u-s-m-b-15">
+
+                                                <button class="btn btn--e-brand-b-2" type="submit">THÊM VÀO GIỎ</button>
+                                            </div>
+                                            <div class="u-s-m-b-15">
+                                                <button class="btnn muangay" type="submit">MUA NGAY</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="u-s-m-b-15">
+
+                                    <span class="pd-detail__label u-s-m-b-8">Chính sách sản phẩm:</span>
+                                    <ul class="pd-detail__policy-list">
+                                        <li>
+                                            <i class="fas fa-check-circle u-s-m-r-8"></i>
+
+                                            <span> Bảo vệ người tiêu dùng tuyệt đối</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle u-s-m-r-8"></i>
+
+                                            <span>Hoàn trả 100% nếu sản phẩm không giống như mô tả.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--====== Kết thúc phần mô tả bên phải sản phẩm ======-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== Kết thúc Modal xem nhanh ======-->
+    <!--====== Modal Thêm vào giỏ hàng ======-->
+    <div class="modal fade" id="add-to-cart">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-radius modal-shadow">
+                <!-- Nút đóng modal -->
+                <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
+                <!-- Nội dung của modal -->
+                <div class="modal-body">
+                    <!-- Phần hiển thị thông báo thêm sản phẩm thành công -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="success u-s-m-b-30">
+                                <div class="success__text-wrap">
+                                    <i class="fas fa-check"></i>
+
+                                    <span>Thêm sản phẩm thành công!</span>
+                                </div>
+                                <!-- Ảnh sản phẩm đã thêm -->
+                                <div class="success__img-wrap">
+
+                                    <img class="u-img-fluid" src="https://product.hstatic.net/200000455999/product/orange___mint_15ml_new_66f65958cfb649f09705abe05e2c2aa4_grande.jpg" alt="">
+                                </div>
+                                <!-- Thông tin chi tiết sản phẩm đã thêm -->
+                                <div class="success__info-wrap">
+
+                                    <span class="success__name">Tinh dầu Cam Bạc hà</span>
+
+                                    <span class="success__quantity">Số lượng: 1</span>
+
+                                    <span class="success__price">330.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Phần chức năng sau khi thêm vào giỏ hàng -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="s-option">
+                                <!-- Hiển thị số lượng sản phẩm trong giỏ hàng -->
+                                <span class="s-option__text">1 sản phẩm trong giỏ hàng của bạn</span>
+                                <!-- Các nút chức năng -->
+                                <div class="s-option__link-box">
+                                    <a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">TIẾP TỤC MUA SẮM</a>
+
+                                    <a class="s-option__link btn--e-white-brand-shadow" href="cart.html">XEM GIỎ HÀNG</a>
+
+                                    <a class="s-option__link btn--e-brand-shadow" href="checkout.html">THANH TOÁN NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Add to Cart Modal ======-->
+    <!--====== Newsletter Subscribe Modal ======-->
+    <div class="modal fade new-l" id="newsletter-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal--shadow">
+
+                <button class="btn new-l__dismiss fas fa-times" type="button" data-dismiss="modal"></button>
+                <div class="modal-body">
+                    <div class="row u-s-m-x-0">
+                        <div class="col-lg-6 new-l__col-1 u-s-p-x-0">
+
+                            <a class="new-l__img-wrap u-d-block" href="shop-grid-left.html">
+
+                                <img class="u-img-fluid u-d-block" src="https://file.hstatic.net/200000455999/file/huong-thom-thang-9-tonka-oud_4ba53596046545958c7b89c7f712aee0_grande.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-6 new-l__col-2">
+                            <div class="new-l__section u-s-m-t-30">
+                                <div class="u-s-m-b-8 new-l--center">
+                                    <h3 class="new-l__h3">Bản tin</h3>
+                                </div>
+                                <div class="u-s-m-b-30 new-l--center">
+                                    <p class="new-l__p1">Đăng ký email để nhận thông tin nóng hổi về hàng mới, chương trình giảm giá đặc biệt và hơn thế nữa.</p>
+                                </div>
+                                <form class="new-l__form">
+                                    <div class="u-s-m-b-15">
+
+                                        <input class="news-l__input" type="text" placeholder="Địa chỉ  Email">
+                                    </div>
+                                    <div class="u-s-m-b-15">
+
+                                        <button class="btn btn--e-brand-b-2" type="submit">Đăng kí ngay!</button>
+                                    </div>
+                                </form>
+                                <div class="u-s-m-b-15 new-l--center">
+                                    <p class="new-l__p2">Bằng cách đăng ký, bạn đồng ý nhận các ưu đãi của Scentia,<br />chương trình khuyến mãi và các thông điệp thương mại khác. Bạn có thể bỏ đăng kí bất cứ lúc nào.</p>
+                                </div>
+                                <div class="u-s-m-b-15 new-l--center">
+
+                                    <a class="new-l__link" data-dismiss="modal">Không, cảm ơn!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Newsletter Subscribe Modal ======-->
+    <!--====== End - Modal Section ======-->
+    </div>
+    <!--====== End - Main App ======-->
+    <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+    <script>
+        window.ga = function () {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+    <!--====== Vendor Js ======-->
+    <script src="js/vendor.js"></script>
+
+    <!--====== jQuery Shopnav plugin ======-->
+    <script src="js/jquery.shopnav.js"></script>
+
+    <!--====== App ======-->
+    <script src="js/app.js"></script>
+
+    <!--====== Noscript ======-->
+    <noscript>
+        <div class="app-setting">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="app-setting__wrap">
+                            <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
+                            <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a JavaScript-capable browser.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </noscript>
+</body>
+</html>

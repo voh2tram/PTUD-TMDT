@@ -1,0 +1,1108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Thêm mã giảm giá</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="..\images\logo\Logo.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets\css\vendor.min.css">
+    <link rel="stylesheet" href="assets\vendor\icon-set\style.css">
+    <link rel="stylesheet" href="..\node_modules\chart.js\dist\Chart.min.css">
+    <link rel="stylesheet" href="..\node_modules\fullcalendar\main.min.css">
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="assets\css\theme.min.css?v=1.0">
+</head>
+<body class="bg-white">
+    <!-- Search Form -->
+    <!-- Tạo ô tìm kiếm cho màn hình bé hơn medium -->
+    <div id="searchDropdown" class="hs-unfold-content dropdown-unfold search-fullwidth d-md-none">
+        <!-- tạo form nhập chiếm toàn bộ chiều rộng của ô tìm kiếm -->
+        <form class="input-group input-group-merge input-group-borderless">
+            <!-- tạo vùng chứa trước ô nhập liệu -->
+            <div class="input-group-prepend">
+                <!-- tạo icon tìm kiếm -->
+                <div class="input-group-text">
+                    <i class="tio-search"></i>
+                </div>
+            </div>
+            <!-- ô nhập liệu -->
+            <input class="form-control rounded-0" type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm...">
+            <!-- tạo vùng sau ô nhập liệu -->
+            <div class="input-group-append">
+                <!-- tạo liên kết thực hiện đóng ô tìm kiếm bằng chữ Đóng-->
+                <div class="input-group-text">
+                    <div class="hs-unfold">
+                        <a class="js-hs-unfold-invoker" href="javascript:;" data-hs-unfold-options='{
+                 "target": "#searchDropdown",
+                 "type": "css-animation",
+                 "animationIn": "fadeIn",
+                 "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                 "closeBreakpoint": "md"
+               }'>
+                            <span>Đóng</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- End Search Form -->
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand-lg navbar-bordered flex-lg-column px-0">
+        <div class="navbar-white w-100">
+            <div class="container-fluid">
+                <div class="navbar-nav-wrap">
+                    <div class="navbar-brand-wrapper">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="ecommerce.html">
+                            <img class="navbar-brand-logo" src="images\logo\Logo.png" alt="Logo">
+                        </a>
+                        <!-- End Logo -->
+                    </div>
+                    <div class="navbar-nav-wrap-content-left">
+                        <!-- Search Form -->
+                        <!-- Tạo ô tìm kiếm cho màn hình medium trở lên-->
+                        <div class="d-none d-lg-block">
+                            <form class="position-relative">
+                                <!-- Input Group -->
+                                <!-- tạo vùng chứa chiếm toàn bộ chiều rộng của form nhập -->
+                                <div class="input-group input-group-merge input-group-borderless input-group-hover-light navbar-input-group">
+                                    <!-- tạo vùng chứa trước ô nhập liệu -->
+                                    <div class="input-group-prepend">
+                                        <!-- tạo icon tìm kiếm -->
+                                        <div class="input-group-text">
+                                            <i class="tio-search"></i>
+                                        </div>
+                                    </div>
+                                    <!-- ô nhập liệu với các chức năng: xóa nội dung tìm kiếm, hiển thị kết quả tìm kiếm -->
+                                    <input type="search" class="js-form-search form-control" placeholder="Tìm kiếm..." aria-label="Search in front" data-hs-form-search-options='{
+                                                                                                                                        "clearIcon": "#clearSearchResultsIcon",
+                                                                                                                                        "dropMenuElement": "#searchDropdownMenu",
+                                                                                                                                        "dropMenuOffset": 20,
+                                                                                                                                        "toggleIconOnFocus": true,
+                                                                                                                                        "activeClass": "focus"
+                                                                                                                                    }'>
+                                    <!-- tạo vùng sau ô nhập liệu -->
+                                    <a class="input-group-append" href="javascript:;">
+                                        <!-- Icon xóa kết quả tìm kiếm, ẩn khi trang web được tải lần đầu (khi nhập là block)-->
+                                        <span class="input-group-text">
+                                            <i id="clearSearchResultsIcon" class="tio-clear" style="display: none;"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- End Input Group -->
+                                <!-- Card Search Content -->
+                                <div id="searchDropdownMenu" class="hs-form-search-menu-content card dropdown-menu dropdown-card overflow-hidden">
+                                    <!-- Body -->
+                                    <!-- Tạo vùng chứa kết quả tìm kiếm gần đây -->
+                                    <div class="card-body-height py-3">
+                                        <!-- Tiêu đề -->
+                                        <small class="dropdown-header mb-n2">Tìm kiếm gần đây</small>
+                                        <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                        <div class="dropdown-item bg-transparent text-wrap my-2">
+                                            <!-- 1 mục tìm kiếm gần đây, có icon search ở cuối -->
+                                            <div class="h4 mr-1">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Doanh thu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mã giảm giá <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sản phẩm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sáp thơm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Tinh dầu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mấy giờ tan làm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Khi nào đến Tết <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Body -->
+                                    <!-- Footer -->
+                                    <a class="card-footer text-center" href="#">
+                                        Xem toàn bộ kết quả
+                                        <i class="tio-chevron-right"></i>
+                                    </a>
+                                    <!-- End Footer -->
+                                </div>
+                                <!-- End Card Search Content -->
+                            </form>
+                        </div>
+                        <!-- End Search Form -->
+                    </div>
+
+                    <!-- Secondary Content -->
+                    <div class="navbar-nav-wrap-content-right">
+                        <!-- Navbar -->
+                        <ul class="navbar-nav align-items-center flex-row">
+                            <li class="nav-item d-lg-none">
+                                <!-- Search Trigger -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon search có hiệu ứng dropdown màn hình < medium -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon .btn-ghost-dark rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#searchDropdown",
+                       "type": "css-animation",
+                       "animationIn": "fadeIn",
+                       "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                       "closeBreakpoint": "md"
+                     }'>
+                                        <i class="tio-search"></i>
+                                    </a>
+                                </div>
+                                <!-- End Search Trigger -->
+                            </li>
+
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <!-- Notification -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon thông báo có hiệu ứng dropdown -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-light rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#notificationNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <i class="tio-notifications-on-outlined"></i>
+                                        <span class="btn-status btn-sm-status btn-status-danger"></span>
+                                    </a>
+
+                                    <div id="notificationNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu" style="width: 25rem;">
+                                        <!-- Header -->
+                                        <div class="card-header">
+                                            <span class="card-title h4">Thông báo</span>
+
+                                            <!-- Unfold -->
+                                            <div class="hs-unfold">
+                                                <!-- tạo nút icon more có hiệu ứng dropdown -->
+                                                <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                             "target": "#notificationSettingsOneDropdown",
+                             "type": "css-animation"
+                           }'>
+                                                    <i class="tio-more-vertical"></i>
+                                                </a>
+                                                <!-- nội dung dropdown, bao gồm icon và văn bản tương ứng -->
+                                                <div id="notificationSettingsOneDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-all-done dropdown-item-icon"></i> Đánh dấu là đã xem
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-toggle-off dropdown-item-icon"></i> Tắt thông báo
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- End Unfold -->
+                                        </div>
+                                        <!-- End Header -->
+                                        <!-- Body -->
+                                        <div class="card-body-height">
+                                            <!-- Tab Content -->
+                                            <div class="tab-content" id="notificationTabContent">
+                                                <div class="tab-pane fade show active" id="notificationNavOne" role="tabpanel">
+                                                    <ul class="list-group list-group-flush navbar-card-list-group">
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <!-- Tạo cột đầu có chiều rộng tự động dựa trên độ dài nội dung -->
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <!-- Tạo checkbox đã xem hay chưa, checked thì gán đã xem và đổi nền và ngược lại -->
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck1" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck1"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Tạo cột 2 -->
+                                                                <div class="col ml-n3">
+                                                                    <!-- Tiêu đề -->
+                                                                    <span class="card-title h5">Tinh dầu Amber Noir</span>
+                                                                    <!-- Nội dung -->
+                                                                    <p class="card-text font-size-sm">đã hết hàng</p>
+                                                                </div>
+                                                                <!-- Tạo cột 3 auto -->
+                                                                <small class="col-auto text-muted text-cap">2 phút trước</small>
+                                                            </div>
+                                                            <!-- Tạo liên kết chiếm toàn bộ diện tích của mục danh sách -->
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck2" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck2"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-soft-dark avatar-circle">
+                                                                            <img class="avatar-img" src="https://i.pinimg.com/236x/e1/6c/70/e16c704fc0b655e553dd7a1a8a00475d.jpg" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Phương Thảo</span>
+                                                                    <p class="card-text font-size-sm">đã đánh giá sản phẩm Nến thơm Lemon & Lavender (230g)</p>
+                                                                    <blockquote class="blockquote blockquote-sm">
+                                                                        Thơm nứt mũi lun cả nhà ơi, chốt đơn chốt đơn
+                                                                    </blockquote>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">2 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck5">
+                                                                            <label class="custom-control-label" for="notificationCheck5"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-circle">
+                                                                            <img class="avatar-img" src="https://bizweb.dktcdn.net/100/438/408/files/meme-meo-cute-yody-vn-1.jpg?v=1690276113335" alt="Image Description">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Như Uyên</span>
+                                                                    <p class="card-text font-size-sm">đã đăng sản phẩm mới</p>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">10 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- End Tab Content -->
+                                        </div>
+                                        <!-- End Body -->
+                                        <!-- Card Footer -->
+                                        <a class="card-footer text-center" href="#">
+                                            Xem tất cả thông báo
+                                            <i class="tio-chevron-right"></i>
+                                        </a>
+                                        <!-- End Card Footer -->
+                                    </div>
+                                </div>
+                                <!-- End Notification -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Account -->
+                                <div class="hs-unfold">
+                                    <!-- Tạo hình avatar có chức năng dropdown -->
+                                    <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#accountNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                            <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                        </div>
+                                    </a>
+                                    <!-- Nội dung dropdown -->
+                                    <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                                        <div class="dropdown-item-text">
+                                            <div class="media align-items-center">
+                                                <!-- avatar nhỏ -->
+                                                <div class="avatar avatar-sm avatar-circle mr-2">
+                                                    <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                                </div>
+                                                <!-- Thông tin account admin -->
+                                                <div class="media-body">
+                                                    <span class="card-title h5">Nguyễn Mạnh Tuấn</span>
+                                                    <span class="card-text">tuannm@ueh.edu.vn</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- đường phân cách -->
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Profile &amp; account">Thông tin tài khoản</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Sign out">Đăng xuất</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Account -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Toggle -->
+                                <!-- Nút menu màn hình < medium -->
+                                <button type="button" class="navbar-toggler btn btn-ghost-light rounded-circle" aria-expanded="false" aria-controls="navbarNavMenu" data-toggle="collapse" data-target="#navbarNavMenu">
+                                    <i class="tio-menu-hamburger"></i>
+                                </button>
+                                <!-- End Toggle -->
+                            </li>
+                        </ul>
+                        <!-- End Navbar -->
+                    </div>
+                    <!-- End Secondary Content -->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <nav class="js-mega-menu flex-grow-1">
+                <!-- Navbar -->
+                <div class="navbar-nav-wrap-navbar collapse navbar-collapse" id="navbarNavMenu">
+                    <div class="navbar-body">
+                        <ul class="navbar-nav flex-grow-1">
+                            <!-- Overview -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> TỔNG QUAN
+                                </a>
+                            </li>
+                            <!-- End Overview -->
+                            <!-- Product -->
+                            <li class="hs-has-sub-menu">
+                                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> SẢN PHẨM
+                                </a>
+                                <!-- Dropdown -->
+                                <ul id="navLinkPagesDropdownEcommerceProducts" class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-products.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ SẢN PHẨM
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-product.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM SẢN PHẨM
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Product -->
+                            <!-- CATEGORY -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-categories.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> DANH MỤC SẢN PHẨM
+                                </a>
+                            </li>
+                            <!-- End CATEGORY -->
+                            <!-- Discount -->
+                            <li class="hs-has-sub-menu">
+                                <a class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> MÃ GIẢM GIÁ
+                                </a>
+                                <!-- Dropdown -->
+                                <ul class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-discounts.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-discount.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Discount -->
+                            <!-- Order -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-orders.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> ĐƠN HÀNG
+                                </a>
+                            </li>
+                            <!-- End Order -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Navbar -->
+            </nav>
+        </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <!-- Navbar Vertical -->
+    <!-- End Navbar Vertical -->
+
+    <main id="content" role="main" class="main">
+        <!-- Content -->
+        <div class="content container-fluid">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col-sm mb-2 mb-sm-0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb breadcrumb-no-gutter">
+                                <li class="breadcrumb-item"><a class="breadcrumb-link" href="ecommerce-products.html">Products</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Add product</li>
+                            </ol>
+                        </nav>
+
+                        <h1 class="page-header-title">Add product</h1>
+                    </div>
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Page Header -->
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Card -->
+                    <div class="card mb-3 mb-lg-5">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Product information</h4>
+                        </div>
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="productNameLabel" class="input-label">Name <i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Products are the goods or services you sell."></i></label>
+
+                                <input type="text" class="form-control" name="productName" id="productNameLabel" placeholder="Shirt, t-shirts, etc." aria-label="Shirt, t-shirts, etc.">
+                            </div>
+                            <!-- End Form Group -->
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- Form Group -->
+                                    <div class="form-group">
+                                        <label for="SKULabel" class="input-label">SKU</label>
+
+                                        <input type="text" class="form-control" name="SKU" id="SKULabel" placeholder="eg. 348121032" aria-label="eg. 348121032">
+                                    </div>
+                                    <!-- End Form Group -->
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <!-- Form Group -->
+                                    <div class="form-group">
+                                        <label for="weightLabel" class="input-label">Weight</label>
+
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" class="form-control" name="weightName" id="weightLabel" placeholder="0.0" aria-label="0.0">
+                                            <div class="input-group-append">
+                                                <!-- Select -->
+                                                <div id="weightSelect" class="select2-custom select2-custom-right">
+                                                    <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" data-hs-select2-options='{
+                                      "dropdownParent": "#weightSelect",
+                                      "dropdownAutoWidth": true,
+                                      "width": true
+                                    }'>
+                                                        <option value="lb">lb</option>
+                                                        <option value="oz">oz</option>
+                                                        <option value="kg" selected="">kg</option>
+                                                        <option value="g">g</option>
+                                                    </select>
+                                                </div>
+                                                <!-- End Select -->
+                                            </div>
+                                        </div>
+
+                                        <small class="form-text">Used to calculate shipping rates at checkout and label prices during fulfillment.</small>
+                                    </div>
+                                    <!-- End Form Group -->
+                                </div>
+                            </div>
+                            <!-- End Row -->
+
+                            <label class="input-label">Description <span class="input-label-secondary">(Optional)</span></label>
+
+                            <!-- Quill -->
+                            <div class="quill-custom">
+                                <div class="js-quill" style="min-height: 15rem;" data-hs-quill-options='{
+                          "placeholder": "Type your description..."
+                         }'>
+                                </div>
+                            </div>
+                            <!-- End Quill -->
+                        </div>
+                        <!-- Body -->
+                    </div>
+                    <!-- End Card -->
+                    <!-- Card -->
+                    <div class="card mb-3 mb-lg-5">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Media</h4>
+
+                            <!-- Unfold -->
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker btn btn-sm btn-ghost-secondary" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#mediaDropdown",
+                       "type": "css-animation"
+                     }'>
+                                    Add media from URL <i class="tio-chevron-down"></i>
+                                </a>
+
+                                <div id="mediaDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                    <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#addImageFromURLModal">
+                                        <i class="tio-link dropdown-item-icon"></i> Add image from URL
+                                    </a>
+                                    <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#embedVideoModal">
+                                        <i class="tio-youtube-outlined dropdown-item-icon"></i> Embed video
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- End Unfold -->
+                        </div>
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Dropzone -->
+                            <div id="attachFilesNewProjectLabel" class="js-dropzone dropzone-custom custom-file-boxed">
+                                <div class="dz-message custom-file-boxed-label">
+                                    <img class="avatar avatar-xl avatar-4by3 mb-3" src="assets\svg\illustrations\browse.svg" alt="Image Description">
+                                    <h5 class="mb-1">Choose files to upload</h5>
+                                    <p class="mb-2">or</p>
+                                    <span class="btn btn-sm btn-primary">Browse files</span>
+                                </div>
+                            </div>
+                            <!-- End Dropzone -->
+                        </div>
+                        <!-- Body -->
+                    </div>
+                    <!-- End Card -->
+                    <!-- Card -->
+                    <div class="card">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Variants</h4>
+                        </div>
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <h6 class="text-cap">Options</h6>
+
+                            <div class="js-add-field" data-hs-add-field-options='{
+                      "template": "#addAnotherOptionFieldTemplate",
+                      "container": "#addAnotherOptionFieldContainer",
+                      "defaultCreated": 0
+                    }'>
+                                <!-- Form Group -->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="input-group-prepend">
+                                                <!-- Select -->
+                                                <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" data-hs-select2-options='{
+                                    "minimumResultsForSearch": "Infinity"
+                                  }'>
+                                                    <option value="Size">Size</option>
+                                                    <option value="Color">Color</option>
+                                                    <option value="Material">Material</option>
+                                                    <option value="Style">Style</option>
+                                                    <option value="Title">Title</option>
+                                                </select>
+                                                <!-- End Select -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-8">
+                                            <!-- Select2 -->
+                                            <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" multiple="" data-hs-select2-options='{
+                                  "minimumResultsForSearch": "Infinity",
+                                  "placeholder": "Separate options with enter",
+                                  "tags": true
+                                }'>
+                                                <option label="empty"></option>
+                                            </select>
+                                            <!-- End Select2 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Form Group -->
+                                <!-- Container For Input Field -->
+                                <div id="addAnotherOptionFieldContainer"></div>
+
+                                <a href="javascript:;" class="js-create-field btn btn-sm btn-no-focus btn-ghost-primary">
+                                    <i class="tio-add"></i> Add another option
+                                </a>
+                            </div>
+
+                            <!-- Add Another Option Input Field -->
+                            <div id="addAnotherOptionFieldTemplate" style="display: none;">
+                                <!-- Form Group -->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="input-group-prepend">
+                                                <!-- Select -->
+                                                <select class="js-select2-custom-dynamic custom-select" size="1" style="opacity: 0;" data-hs-select2-options='{
+                                    "minimumResultsForSearch": "Infinity"
+                                  }'>
+                                                    <option value="Size">Size</option>
+                                                    <option value="Color">Color</option>
+                                                    <option value="Material">Material</option>
+                                                    <option value="Style">Style</option>
+                                                    <option value="Title">Title</option>
+                                                </select>
+                                                <!-- End Select -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-8">
+                                            <!-- Select2 -->
+                                            <select class="js-select2-custom-dynamic custom-select" size="1" style="opacity: 0;" multiple="" data-hs-select2-options='{
+                                  "minimumResultsForSearch": "Infinity",
+                                  "placeholder": "Separate options with enter",
+                                  "tags": true
+                                }'>
+                                                <option label="empty"></option>
+                                            </select>
+                                            <!-- End Select2 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Form Group -->
+                            </div>
+                            <!-- End Add Another Option Input Field -->
+                        </div>
+                        <!-- Body -->
+                    </div>
+                    <!-- End Card -->
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Card -->
+                    <div class="card mb-3 mb-lg-5">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Pricing</h4>
+                        </div>
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="priceNameLabel" class="input-label">Price</label>
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="priceName" id="priceNameLabel" placeholder="0.00" aria-label="0.00">
+
+                                    <div class="input-group-append">
+                                        <!-- Select -->
+                                        <div id="priceSelect" class="select2-custom select2-custom-right">
+                                            <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" data-hs-select2-options='{
+                                    "dropdownParent": "#priceSelect",
+                                    "dropdownAutoWidth": true,
+                                    "width": true
+                                  }'>
+                                                <option value="USD" selected="">USD</option>
+                                                <option value="AED">AED</option>
+                                                <option value="AFN">AFN</option>
+                                                <option value="ALL">ALL</option>
+                                                <option value="AMD">AMD</option>
+                                                <option value="ANG">ANG</option>
+                                                <option value="AOA">AOA</option>
+                                                <option value="ARS">ARS</option>
+                                                <option value="AUD">AUD</option>
+                                                <option value="AWG">AWG</option>
+                                                <option value="AZN">AZN</option>
+                                                <option value="BAM">BAM</option>
+                                                <option value="BBD">BBD</option>
+                                                <option value="BDT">BDT</option>
+                                                <option value="BGN">BGN</option>
+                                                <option value="BIF">BIF</option>
+                                                <option value="BMD">BMD</option>
+                                                <option value="BND">BND</option>
+                                                <option value="BOB">BOB</option>
+                                                <option value="BRL">BRL</option>
+                                                <option value="BSD">BSD</option>
+                                                <option value="BWP">BWP</option>
+                                                <option value="BZD">BZD</option>
+                                                <option value="CAD">CAD</option>
+                                                <option value="CDF">CDF</option>
+                                                <option value="CHF">CHF</option>
+                                                <option value="CLP">CLP</option>
+                                                <option value="CNY">CNY</option>
+                                                <option value="COP">COP</option>
+                                                <option value="CRC">CRC</option>
+                                                <option value="CVE">CVE</option>
+                                                <option value="CZK">CZK</option>
+                                                <option value="DJF">DJF</option>
+                                                <option value="DKK">DKK</option>
+                                                <option value="DOP">DOP</option>
+                                                <option value="DZD">DZD</option>
+                                                <option value="EGP">EGP</option>
+                                                <option value="ETB">ETB</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="FJD">FJD</option>
+                                                <option value="FKP">FKP</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="GEL">GEL</option>
+                                                <option value="GIP">GIP</option>
+                                                <option value="GMD">GMD</option>
+                                                <option value="GNF">GNF</option>
+                                                <option value="GTQ">GTQ</option>
+                                                <option value="GYD">GYD</option>
+                                                <option value="HKD">HKD</option>
+                                                <option value="HNL">HNL</option>
+                                                <option value="HRK">HRK</option>
+                                                <option value="HTG">HTG</option>
+                                                <option value="HUF">HUF</option>
+                                                <option value="IDR">IDR</option>
+                                                <option value="ILS">ILS</option>
+                                                <option value="INR">INR</option>
+                                                <option value="ISK">ISK</option>
+                                                <option value="JMD">JMD</option>
+                                                <option value="JPY">JPY</option>
+                                                <option value="KES">KES</option>
+                                                <option value="KGS">KGS</option>
+                                                <option value="KHR">KHR</option>
+                                                <option value="KMF">KMF</option>
+                                                <option value="KRW">KRW</option>
+                                                <option value="KYD">KYD</option>
+                                                <option value="KZT">KZT</option>
+                                                <option value="LAK">LAK</option>
+                                                <option value="LBP">LBP</option>
+                                                <option value="LKR">LKR</option>
+                                                <option value="LRD">LRD</option>
+                                                <option value="LSL">LSL</option>
+                                                <option value="MAD">MAD</option>
+                                                <option value="MDL">MDL</option>
+                                                <option value="MGA">MGA</option>
+                                                <option value="MKD">MKD</option>
+                                                <option value="MMK">MMK</option>
+                                                <option value="MNT">MNT</option>
+                                                <option value="MOP">MOP</option>
+                                                <option value="MRO">MRO</option>
+                                                <option value="MUR">MUR</option>
+                                                <option value="MVR">MVR</option>
+                                                <option value="MWK">MWK</option>
+                                                <option value="MXN">MXN</option>
+                                                <option value="MYR">MYR</option>
+                                                <option value="MZN">MZN</option>
+                                                <option value="NAD">NAD</option>
+                                                <option value="NGN">NGN</option>
+                                                <option value="NIO">NIO</option>
+                                                <option value="NOK">NOK</option>
+                                                <option value="NPR">NPR</option>
+                                                <option value="NZD">NZD</option>
+                                                <option value="PAB">PAB</option>
+                                                <option value="PEN">PEN</option>
+                                                <option value="PGK">PGK</option>
+                                                <option value="PHP">PHP</option>
+                                                <option value="PKR">PKR</option>
+                                                <option value="PLN">PLN</option>
+                                                <option value="PYG">PYG</option>
+                                                <option value="QAR">QAR</option>
+                                                <option value="RON">RON</option>
+                                                <option value="RSD">RSD</option>
+                                                <option value="RUB">RUB</option>
+                                                <option value="RWF">RWF</option>
+                                                <option value="SAR">SAR</option>
+                                                <option value="SBD">SBD</option>
+                                                <option value="SCR">SCR</option>
+                                                <option value="SEK">SEK</option>
+                                                <option value="SGD">SGD</option>
+                                                <option value="SHP">SHP</option>
+                                                <option value="SLL">SLL</option>
+                                                <option value="SOS">SOS</option>
+                                                <option value="SRD">SRD</option>
+                                                <option value="STD">STD</option>
+                                                <option value="SZL">SZL</option>
+                                                <option value="THB">THB</option>
+                                                <option value="TJS">TJS</option>
+                                                <option value="TOP">TOP</option>
+                                                <option value="TRY">TRY</option>
+                                                <option value="TTD">TTD</option>
+                                                <option value="TWD">TWD</option>
+                                                <option value="TZS">TZS</option>
+                                                <option value="UAH">UAH</option>
+                                                <option value="UGX">UGX</option>
+                                                <option value="UYU">UYU</option>
+                                                <option value="UZS">UZS</option>
+                                                <option value="VND">VND</option>
+                                                <option value="VUV">VUV</option>
+                                                <option value="WST">WST</option>
+                                                <option value="XAF">XAF</option>
+                                                <option value="XCD">XCD</option>
+                                                <option value="XOF">XOF</option>
+                                                <option value="XPF">XPF</option>
+                                                <option value="YER">YER</option>
+                                                <option value="ZAR">ZAR</option>
+                                                <option value="ZMW">ZMW</option>
+                                            </select>
+                                        </div>
+                                        <!-- End Select -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+
+                            <div class="mb-2">
+                                <a class="d-inline-block" href="javascript:;" data-toggle="modal" data-target="#productsAdvancedFeaturesModal">
+                                    <i class="tio-star tio-lg text-warning mr-1"></i> Set "Compare to" price
+                                </a>
+                            </div>
+
+                            <a class="d-inline-block" href="javascript:;" data-toggle="modal" data-target="#productsAdvancedFeaturesModal">
+                                <i class="tio-star tio-lg text-warning mr-1"></i> Bulk discount pricing
+                            </a>
+
+                            <hr class="my-4">
+
+                            <!-- Toggle Switch -->
+                            <label class="row toggle-switch" for="availabilitySwitch1">
+                                <span class="col-8 col-sm-9 toggle-switch-content">
+                                    <span class="text-dark">Availability</span>
+                                </span>
+                                <span class="col-4 col-sm-3">
+                                    <input type="checkbox" class="toggle-switch-input" id="availabilitySwitch1">
+                                    <span class="toggle-switch-label ml-auto">
+                                        <span class="toggle-switch-indicator"></span>
+                                    </span>
+                                </span>
+                            </label>
+                            <!-- End Toggle Switch -->
+                        </div>
+                        <!-- Body -->
+                    </div>
+                    <!-- End Card -->
+                    <!-- Card -->
+                    <div class="card">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Organization</h4>
+                        </div>
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="vendorLabel" class="input-label">Vendor</label>
+
+                                <input type="text" class="form-control" name="vendor" id="vendorLabel" placeholder="eg. Nike" aria-label="eg. Nike">
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="categoryLabel" class="input-label">Category</label>
+
+                                <!-- Select -->
+                                <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" id="categoryLabel" data-hs-select2-options='{
+                            "minimumResultsForSearch": "Infinity",
+                            "placeholder": "Select category"
+                          }'>
+                                    <option label="empty"></option>
+                                    <option value="Clothing">Clothing</option>
+                                    <option value="Shoes">Shoes</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                                <!-- End Select -->
+                            </div>
+                            <!-- Form Group -->
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="collectionsLabel" class="input-label">Collections</label>
+
+                                <!-- Select -->
+                                <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" id="collectionsLabel" data-hs-select2-options='{
+                            "minimumResultsForSearch": "Infinity",
+                            "placeholder": "Select collections"
+                          }'>
+                                    <option label="empty"></option>
+                                    <option value="Winter">Winter</option>
+                                    <option value="Spring">Spring</option>
+                                    <option value="Summer">Summer</option>
+                                    <option value="Autumn">Autumn</option>
+                                </select>
+                                <!-- End Select -->
+
+                                <span class="form-text">Add this product to a collection so it’s easy to find in your store.</span>
+                            </div>
+                            <!-- Form Group -->
+
+                            <label for="tagsLabel" class="input-label">Tags</label>
+
+                            <input type="text" class="js-tagify tagify-form-control form-control" name="tagsName" id="tagsLabel" placeholder="Enter tags here" aria-label="Enter tags here">
+                        </div>
+                        <!-- End Body -->
+                    </div>
+                    <!-- End Card -->
+                </div>
+            </div>
+            <!-- End Row -->
+
+            <div class="position-fixed bottom-0 content-centered-x w-100 z-index-99 mb-3" style="max-width: 40rem;">
+                <!-- Card -->
+                <div class="card card-sm bg-dark border-dark mx-2">
+                    <div class="card-body">
+                        <div class="row justify-content-center justify-content-sm-between">
+                            <div class="col">
+                                <button type="button" class="btn btn-ghost-danger">Delete</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-ghost-light mr-2">Discard</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                    </div>
+                </div>
+                <!-- End Card -->
+            </div>
+        </div>
+        <!-- End Content -->
+        <!-- Footer -->
+        <div class="card-footer">
+            <div class="row justify-content-between align-items-center">
+                <!-- Cột 1 -->
+                <div class="col">
+                    <p class="font-size-sm mb-0">&copy; <span class="d-none d-sm-inline-block">SCENTIA</span></p>
+                </div>
+                <!-- Cột 2 auto -->
+                <div class="col-auto">
+                    <!-- Căn ngang phía bên phải 2 mục dưới -->
+                    <div class="d-flex justify-content-end">
+                        <!-- List Dot -->
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">FAQ</a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">License</a>
+                            </li>
+                        </ul>
+                        <!-- End List Dot -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- JS Implementing Plugins -->
+    <!-- Dẫn tệp JS -->
+    <script src="assets\js\vendor.min.js"></script>
+    <script src="assets\vendor\chart.js\dist\Chart.min.js"></script>
+    <script src="assets\vendor\chart.js.extensions\chartjs-extensions.js"></script>
+    <script src="assets\vendor\chartjs-plugin-datalabels\dist\chartjs-plugin-datalabels.min.js"></script>
+    <script src="..\assets\vendor\jvectormap\jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="..\assets\vendor\jvectormap\tests\assets/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="..\node_modules\fullcalendar\main.min.js"></script>
+
+    <!-- JS Front -->
+    <!-- Dẫn tệp JS -->
+    <script src="assets\js\theme.min.js"></script>
+    <script src="..\assets\js\hs.jvector-map.js"></script>
+    <script src="..\assets\js\hs.chartjs.js"></script>
+    <script src="..\assets\js/hs.fullcalendar.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+            // INITIALIZATION OF FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+            // INITIALIZATION OF CHARTJS
+            // =======================================================
+            Chart.plugins.unregister(ChartDataLabels);
+
+            $('.js-chart').each(function () {
+                $.HSCore.components.HSChartJS.init($(this));
+            });
+            var updatingChart = $.HSCore.components.HSChartJS.init($('#updatingData'));
+            // INITIALIZATION OF DATERANGEPICKER
+            // =======================================================
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'M/DD hh:mm A'
+                }
+            });
+            var start = moment();
+            var end = moment();
+
+            function cb(start, end) {
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+            }
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+            cb(start, end);
+        });
+    </script>
+
+    <!-- IE Support -->
+    <script>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+</body>
+</html>
