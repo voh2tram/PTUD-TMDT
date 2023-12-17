@@ -512,10 +512,14 @@
                                                     if (email === 'admin@example.com' && password === 'adminpassword') {
                                                         // Nếu đúng, chuyển hướng đến trang admin
                                                         window.location.href = 'ecommerce.html';
-                                                    } else {
-                                                        // Nếu không đúng, chuyển hướng đến trang chủ
+                                                    } else if (email === 'user@example.com' && password === 'userpassword') {
+                                                        // Nếu đúng, chuyển hướng đến trang index
                                                         window.location.href = 'index.html';
+                                                    } else {
+                                                        // Nếu không đúng, tải lại trang đăng nhập
+                                                        window.location.href = 'signin.html';
                                                     }
+
                                                 });
                                             });
                                         </script>
