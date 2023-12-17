@@ -1,0 +1,1480 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Tổng quan</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href=".\images\logo\Logo.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets\css\vendor.min.css">
+    <link rel="stylesheet" href="assets\vendor\icon-set\style.css">
+    <link rel="stylesheet" href="..\node_modules\chart.js\dist\Chart.min.css">
+    <link rel="stylesheet" href="..\node_modules\fullcalendar\main.min.css">
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="assets\css\theme.min.css?v=1.0">
+</head>
+<body class="bg-white">
+    <!-- Search Form -->
+    <!-- Tạo ô tìm kiếm cho màn hình bé hơn medium -->
+    <div id="searchDropdown" class="hs-unfold-content dropdown-unfold search-fullwidth d-md-none">
+        <!-- tạo form nhập chiếm toàn bộ chiều rộng của ô tìm kiếm -->
+        <form class="input-group input-group-merge input-group-borderless">
+            <!-- tạo vùng chứa trước ô nhập liệu -->
+            <div class="input-group-prepend">
+                <!-- tạo icon tìm kiếm -->
+                <div class="input-group-text">
+                    <i class="tio-search"></i>
+                </div>
+            </div>
+            <!-- ô nhập liệu -->
+            <input class="form-control rounded-0" type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm...">
+            <!-- tạo vùng sau ô nhập liệu -->
+            <div class="input-group-append">
+                <!-- tạo liên kết thực hiện đóng ô tìm kiếm bằng chữ Đóng-->
+                <div class="input-group-text">
+                    <div class="hs-unfold">
+                        <a class="js-hs-unfold-invoker" href="javascript:;" data-hs-unfold-options='{
+                 "target": "#searchDropdown",
+                 "type": "css-animation",
+                 "animationIn": "fadeIn",
+                 "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                 "closeBreakpoint": "md"
+               }'>
+                            <span>Đóng</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- End Search Form -->
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand-lg navbar-bordered flex-lg-column px-0">
+        <div class="navbar-white w-100">
+            <div class="container-fluid">
+                <div class="navbar-nav-wrap">
+                    <div class="navbar-brand-wrapper">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="ecommerce.html">
+                            <img class="navbar-brand-logo" src="images\logo\Logo.png" alt="Logo">
+                        </a>
+                        <!-- End Logo -->
+                    </div>
+                    <div class="navbar-nav-wrap-content-left">
+                        <!-- Search Form -->
+                        <!-- Tạo ô tìm kiếm cho màn hình medium trở lên-->
+                        <div class="d-none d-lg-block">
+                            <form class="position-relative">
+                                <!-- Input Group -->
+                                <!-- tạo vùng chứa chiếm toàn bộ chiều rộng của form nhập -->
+                                <div class="input-group input-group-merge input-group-borderless input-group-hover-light navbar-input-group">
+                                    <!-- tạo vùng chứa trước ô nhập liệu -->
+                                    <div class="input-group-prepend">
+                                        <!-- tạo icon tìm kiếm -->
+                                        <div class="input-group-text">
+                                            <i class="tio-search"></i>
+                                        </div>
+                                    </div>
+                                    <!-- ô nhập liệu với các chức năng: xóa nội dung tìm kiếm, hiển thị kết quả tìm kiếm -->
+                                    <input type="search" class="js-form-search form-control" placeholder="Tìm kiếm..." aria-label="Search in front" data-hs-form-search-options='{
+                                                                                                                                        "clearIcon": "#clearSearchResultsIcon",
+                                                                                                                                        "dropMenuElement": "#searchDropdownMenu",
+                                                                                                                                        "dropMenuOffset": 20,
+                                                                                                                                        "toggleIconOnFocus": true,
+                                                                                                                                        "activeClass": "focus"
+                                                                                                                                    }'>
+                                    <!-- tạo vùng sau ô nhập liệu -->
+                                    <a class="input-group-append" href="javascript:;">
+                                        <!-- Icon xóa kết quả tìm kiếm, ẩn khi trang web được tải lần đầu (khi nhập là block)-->
+                                        <span class="input-group-text">
+                                            <i id="clearSearchResultsIcon" class="tio-clear" style="display: none;"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- End Input Group -->
+                                <!-- Card Search Content -->
+                                <div id="searchDropdownMenu" class="hs-form-search-menu-content card dropdown-menu dropdown-card overflow-hidden">
+                                    <!-- Body -->
+                                    <!-- Tạo vùng chứa kết quả tìm kiếm gần đây -->
+                                    <div class="card-body-height py-3">
+                                        <!-- Tiêu đề -->
+                                        <small class="dropdown-header mb-n2">Tìm kiếm gần đây</small>
+                                        <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                        <div class="dropdown-item bg-transparent text-wrap my-2">
+                                            <!-- 1 mục tìm kiếm gần đây, có icon search ở cuối -->
+                                            <div class="h4 mr-1">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Doanh thu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mã giảm giá <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sản phẩm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sáp thơm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Tinh dầu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mấy giờ tan làm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Khi nào đến Tết <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Body -->
+                                    <!-- Footer -->
+                                    <a class="card-footer text-center" href="#">
+                                        Xem toàn bộ kết quả
+                                        <i class="tio-chevron-right"></i>
+                                    </a>
+                                    <!-- End Footer -->
+                                </div>
+                                <!-- End Card Search Content -->
+                            </form>
+                        </div>
+                        <!-- End Search Form -->
+                    </div>
+
+                    <!-- Secondary Content -->
+                    <div class="navbar-nav-wrap-content-right">
+                        <!-- Navbar -->
+                        <ul class="navbar-nav align-items-center flex-row">
+                            <li class="nav-item d-lg-none">
+                                <!-- Search Trigger -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon search có hiệu ứng dropdown màn hình < medium -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon .btn-ghost-dark rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#searchDropdown",
+                       "type": "css-animation",
+                       "animationIn": "fadeIn",
+                       "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                       "closeBreakpoint": "md"
+                     }'>
+                                        <i class="tio-search"></i>
+                                    </a>
+                                </div>
+                                <!-- End Search Trigger -->
+                            </li>
+
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <!-- Notification -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon thông báo có hiệu ứng dropdown -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-light rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#notificationNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <i class="tio-notifications-on-outlined"></i>
+                                        <span class="btn-status btn-sm-status btn-status-danger"></span>
+                                    </a>
+
+                                    <div id="notificationNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu" style="width: 25rem;">
+                                        <!-- Header -->
+                                        <div class="card-header">
+                                            <span class="card-title h4">Thông báo</span>
+
+                                            <!-- Unfold -->
+                                            <div class="hs-unfold">
+                                                <!-- tạo nút icon more có hiệu ứng dropdown -->
+                                                <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                             "target": "#notificationSettingsOneDropdown",
+                             "type": "css-animation"
+                           }'>
+                                                    <i class="tio-more-vertical"></i>
+                                                </a>
+                                                <!-- nội dung dropdown, bao gồm icon và văn bản tương ứng -->
+                                                <div id="notificationSettingsOneDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-all-done dropdown-item-icon"></i> Đánh dấu là đã xem
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-toggle-off dropdown-item-icon"></i> Tắt thông báo
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- End Unfold -->
+                                        </div>
+                                        <!-- End Header -->
+                                        <!-- Body -->
+                                        <div class="card-body-height">
+                                            <!-- Tab Content -->
+                                            <div class="tab-content" id="notificationTabContent">
+                                                <div class="tab-pane fade show active" id="notificationNavOne" role="tabpanel">
+                                                    <ul class="list-group list-group-flush navbar-card-list-group">
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <!-- Tạo cột đầu có chiều rộng tự động dựa trên độ dài nội dung -->
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <!-- Tạo checkbox đã xem hay chưa, checked thì gán đã xem và đổi nền và ngược lại -->
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck1" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck1"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Tạo cột 2 -->
+                                                                <div class="col ml-n3">
+                                                                    <!-- Tiêu đề -->
+                                                                    <span class="card-title h5">Tinh dầu Amber Noir</span>
+                                                                    <!-- Nội dung -->
+                                                                    <p class="card-text font-size-sm">đã hết hàng</p>
+                                                                </div>
+                                                                <!-- Tạo cột 3 auto -->
+                                                                <small class="col-auto text-muted text-cap">2 phút trước</small>
+                                                            </div>
+                                                            <!-- Tạo liên kết chiếm toàn bộ diện tích của mục danh sách -->
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck2" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck2"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-soft-dark avatar-circle">
+                                                                            <img class="avatar-img" src="https://i.pinimg.com/236x/e1/6c/70/e16c704fc0b655e553dd7a1a8a00475d.jpg" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Phương Thảo</span>
+                                                                    <p class="card-text font-size-sm">đã đánh giá sản phẩm Nến thơm Lemon & Lavender (230g)</p>
+                                                                    <blockquote class="blockquote blockquote-sm">
+                                                                        Thơm nứt mũi lun cả nhà ơi, chốt đơn chốt đơn
+                                                                    </blockquote>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">2 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck5">
+                                                                            <label class="custom-control-label" for="notificationCheck5"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-circle">
+                                                                            <img class="avatar-img" src="https://bizweb.dktcdn.net/100/438/408/files/meme-meo-cute-yody-vn-1.jpg?v=1690276113335" alt="Image Description">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Như Uyên</span>
+                                                                    <p class="card-text font-size-sm">đã đăng sản phẩm mới</p>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">10 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- End Tab Content -->
+                                        </div>
+                                        <!-- End Body -->
+                                        <!-- Card Footer -->
+                                        <a class="card-footer text-center" href="#">
+                                            Xem tất cả thông báo
+                                            <i class="tio-chevron-right"></i>
+                                        </a>
+                                        <!-- End Card Footer -->
+                                    </div>
+                                </div>
+                                <!-- End Notification -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Account -->
+                                <div class="hs-unfold">
+                                    <!-- Tạo hình avatar có chức năng dropdown -->
+                                    <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#accountNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                            <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                        </div>
+                                    </a>
+                                    <!-- Nội dung dropdown -->
+                                    <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                                        <div class="dropdown-item-text">
+                                            <div class="media align-items-center">
+                                                <!-- avatar nhỏ -->
+                                                <div class="avatar avatar-sm avatar-circle mr-2">
+                                                    <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                                </div>
+                                                <!-- Thông tin account admin -->
+                                                <div class="media-body">
+                                                    <span class="card-title h5">Nguyễn Mạnh Tuấn</span>
+                                                    <span class="card-text">tuannm@ueh.edu.vn</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- đường phân cách -->
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Profile &amp; account">Thông tin tài khoản</span>
+                                        </a>
+                                        <a class="dropdown-item" href="index.html">
+                                            <span class="text-truncate pr-2" title="Sign out">Đăng xuất</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Account -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Toggle -->
+                                <!-- Nút menu màn hình < medium -->
+                                <button type="button" class="navbar-toggler btn btn-ghost-light rounded-circle" aria-expanded="false" aria-controls="navbarNavMenu" data-toggle="collapse" data-target="#navbarNavMenu">
+                                    <i class="tio-menu-hamburger"></i>
+                                </button>
+                                <!-- End Toggle -->
+                            </li>
+                        </ul>
+                        <!-- End Navbar -->
+                    </div>
+                    <!-- End Secondary Content -->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <nav class="js-mega-menu flex-grow-1">
+                <!-- Navbar -->
+                <div class="navbar-nav-wrap-navbar collapse navbar-collapse" id="navbarNavMenu">
+                    <div class="navbar-body">
+                        <ul class="navbar-nav flex-grow-1">
+                            <!-- Overview -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> TỔNG QUAN
+                                </a>
+                            </li>
+                            <!-- End Overview -->
+                            <!-- Product -->
+                            <li class="hs-has-sub-menu">
+                                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> SẢN PHẨM
+                                </a>
+                                <!-- Dropdown -->
+                                <ul id="navLinkPagesDropdownEcommerceProducts" class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-products.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ SẢN PHẨM
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-product.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM SẢN PHẨM
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Product -->
+                            <!-- CATEGORY -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-categories.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> DANH MỤC SẢN PHẨM
+                                </a>
+                            </li>
+                            <!-- End CATEGORY -->
+                            <!-- Discount -->
+                            <li class="hs-has-sub-menu">
+                                <a class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> MÃ GIẢM GIÁ
+                                </a>
+                                <!-- Dropdown -->
+                                <ul class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-discounts.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-discount.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Discount -->
+                            <!-- Order -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-orders.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> ĐƠN HÀNG
+                                </a>
+                            </li>
+                            <!-- End Order -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Navbar -->
+            </nav>
+        </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="main">
+        <!-- Content -->
+        <div class="content container-fluid">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col-sm mb-2 mb-sm-0">
+                        <h1 class="page-header-title">Xin chào Anh/Chị,</h1>
+                        <p class="page-header-text">Anh/Chị đã đăng nhập vào khu vực quản trị của Scentia!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Page Header -->
+            <!-- Card -->
+            <div class="card card-body mb-3 mb-lg-5">
+                <!-- tạo khoảng cách giữa các cột trên kích thước màn hình lớn  -->
+                <div class="row gx-lg-4">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="media">
+                            <div class="media-body">
+                                <!--nội dung -->
+                                <h6 class="card-subtitle">Tổng đơn hàng</h6>
+                                <span class="card-title h3">480</span>
+                                <div class="d-flex align-items-center">
+                                    <!--icon thể hiện xu hướng tăng giảm-->
+                                    <span class="badge badge-soft-success ml-2">
+                                        <i class="tio-trending-up"></i> 25.9%
+                                    </span>
+                                </div>
+                            </div>
+                            <!--icon bên cạnh-->
+                            <span class="icon icon-sm icon-soft-secondary icon-circle ml-3">
+                                <i class="tio-website"></i>
+                            </span>
+                        </div>
+                        <!--  đường phân chia cho màn hình < lg -->
+                        <div class="d-lg-none">
+                            <hr>
+                        </div>
+                    </div>
+                    <!--  tương tự -->
+                    <!--  lg với sm xài chung đường chia bên trái -->
+                    <div class="col-sm-6 col-lg-3 column-divider-sm">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="card-subtitle">Tổng sản phẩm bán ra</h6>
+                                <span class="card-title h3">1,500</span>
+                                <div class="d-flex align-items-center">
+                                    <span class="badge badge-soft-success ml-2">
+                                        <i class="tio-trending-up"></i> 4%
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="icon icon-sm icon-soft-secondary icon-circle ml-3">
+                                <i class="tio-website"></i>
+                            </span>
+                        </div>
+                        <!--  đường phân chia cho màn hình < lg -->
+                        <div class="d-lg-none">
+                            <hr>
+                        </div>
+                    </div>
+                    <!--  tương tự -->
+                    <!--  sm không có do là ô đầu tiên hàng 2 -->
+                    <div class="col-sm-6 col-lg-3 column-divider-lg">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="card-subtitle">Tổng sản phẩm hoàn về</h6>
+                                <span class="card-title h3">120</span>
+                                <div class="d-flex align-items-center">
+                                    <span class="badge badge-soft-dark ml-2">
+                                        <i class="tio-trending-down"></i> 25.9%
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="icon icon-sm icon-soft-secondary icon-circle ml-3">
+                                <i class="tio-label-off"></i>
+                            </span>
+                        </div>
+                        <!--  đường phân chia cho màn hình < sm -->
+                        <div class="d-sm-none">
+                            <hr>
+                        </div>
+                    </div>
+                    <!--  lg với sm xài chung đường chia bên trái -->
+                    <div class="col-sm-6 col-lg-3 column-divider-sm">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="card-subtitle">Khuyến mãi</h6>
+                                <span class="card-title h3">21,600,000₫</span>
+                                <div class="d-flex align-items-center">
+                                    <span class="d-block font-size-sm">180 mã giảm giá</span>
+                                </div>
+                            </div>
+                            <span class="icon icon-sm icon-soft-secondary icon-circle ml-3">
+                                <i class="tio-users-switch"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- End Card -->
+                        <!-- Card -->
+                        <div class="card mb-3 mb-lg-5">
+                            <!-- Header -->
+                            <div class="card-header">
+                                <div class="row align-items-center flex-grow-1">
+                                    <div class="col-sm mb-2 mb-sm-0">
+                                        <h4 class="card-header-title">Biểu đồ doanh thu <i class="text-body ml-1" data-toggle="tooltip" data-placement="top"></i></h4>
+                                    </div>
+                                    <div class="col-sm-auto">
+                                        <!-- Daterangepicker -->
+                                        <button id="js-daterangepicker-predefined" class="btn btn-sm btn-white dropdown-toggle mb-2 mb-sm-0">
+                                            <i class="tio-date-range"></i>
+                                            <span class="js-daterangepicker-predefined-preview ml-1"></span>
+                                        </button>
+                                        <!-- End Daterangepicker -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                            <!-- End Header -->
+                            <!-- Body -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- biểu đồ chiều rộng 9/12 từ màn hình md -->
+                                    <div class="col-md-9 mb-5 mb-md-0">
+                                        <!-- Bar Chart -->
+                                        <div class="chartjs-custom mb-4">
+                                            <!-- add số vô biểu đồ -->
+                                            <canvas class="js-chart" style="height: 18rem;" data-hs-chartjs-options='{
+                            "type": "bar",
+                            "data": {
+                              "labels": ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM"],
+                              "datasets": [{
+                                "data": [4, 6, 6, 7, 2, 7, 6, 1, 2, 5, 4],
+                                "backgroundColor": "#377dff",
+                                "hoverBackgroundColor": "#377dff",
+                                "borderColor": "#377dff"
+                              },
+                              {
+                                "data": [1.6, 2.4, 2.8, 0.8, 2.8, 2.4, 0.4, 0.8, 2, 1.6, 2.4],
+                                "backgroundColor": "#e7eaf3",
+                                "borderColor": "#e7eaf3"
+                              }]
+                            },
+                            "options": {
+                              "scales": {
+                                "yAxes": [{
+                                  "gridLines": {
+                                    "color": "#e7eaf3",
+                                    "drawBorder": false,
+                                    "zeroLineColor": "#e7eaf3"
+                                  },
+                                  "ticks": {
+                                    "beginAtZero": true,
+                                    "stepSize": 100,
+                                    "fontSize": 12,
+                                    "fontColor": "#97a4af",
+                                    "fontFamily": "Open Sans, sans-serif",
+                                    "padding": 10
+                                  }
+                                }],
+                                "xAxes": [{
+                                  "gridLines": {
+                                    "display": false,
+                                    "drawBorder": false
+                                  },
+                                  "ticks": {
+                                    "fontSize": 12,
+                                    "fontColor": "#97a4af",
+                                    "fontFamily": "Open Sans, sans-serif",
+                                    "padding": 5
+                                  },
+                                  "categoryPercentage": 0.5,
+                                  "maxBarThickness": "10"
+                                }]
+                              },
+                              "cornerRadius": 2,
+                              "tooltips": {
+                                "hasIndicator": true,
+                                "mode": "index",
+                                "intersect": false
+                              },
+                              "hover": {
+                                "mode": "nearest",
+                                "intersect": true
+                              }
+                            }
+                          }'></canvas>
+                                        </div>
+                                        <!-- End Bar Chart -->
+                                        <!-- Legend Indicators -->
+                                        <!-- 2 cột mô tả ở giữa -->
+                                        <div class="row justify-content-center">
+                                            <div class="col-auto">
+                                                <span class="legend-indicator"></span> Doanh thu (triệu đồng)
+                                            </div>
+                                            <div class="col-auto">
+                                                <span class="legend-indicator bg-primary"></span> Đơn hàng (đơn)
+                                            </div>
+                                        </div>
+                                        <!-- End Legend Indicators -->
+                                    </div>
+                                    <!-- chiếm 3/12 từ màn hình md-->
+                                    <div class="col-md-3 column-divider-md">
+                                        <div class="row">
+                                            <!-- sm: xếp hàng ngang, md: xếp hàng dọc -->
+                                            <div class="col-sm-6 col-md-12">
+                                                <!-- Stats -->
+                                                <div class="d-flex justify-content-center flex-column" style="min-height: 10.5rem;">
+                                                    <h6 class="card-subtitle">Doanh thu</h6>
+                                                    <span class="d-block display-4 text-dark mb-1 mr-3">20,000,000₫</span>
+                                                    <span class="d-block text-success">
+                                                        <i class="tio-trending-up mr-1"></i> 411,438₫ (25.9%)
+                                                    </span>
+                                                </div>
+                                                <!-- End Stats -->
+                                                <div class="d-sm-none">
+                                                    <hr class="my-0">
+                                                </div>
+                                                <div class="d-none d-md-block">
+                                                    <hr class="my-0">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-12">
+                                                <!-- Stats -->
+                                                <div class="d-flex justify-content-center flex-column" style="min-height: 10.5rem;">
+                                                    <h6 class="card-subtitle">Đơn hàng</h6>
+                                                    <span class="d-block display-4 text-dark mb-1 mr-3">50 đơn</span>
+                                                    <span class="d-block text-success">
+                                                        <i class="tio-trending-up mr-1"></i> +10 đơn (25.9%)
+                                                    </span>
+                                                </div>
+                                                <!-- End Stats -->
+                                            </div>
+                                        </div>
+                                        <!-- End Row -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                            <!-- End Body -->
+                        </div>
+                        <!-- End Card -->
+                        <div class="row">
+                            <!--tạo 3 card thêm sản phẩm, danh mục với mã giảm giá-->
+                            <div class="col-lg-4 mb-3 mb-lg-5">
+                                <!-- Card -->
+                                <a class="card card-hover-shadow mb-4" href="ecommerce-add-product.html">
+                                    <div class="card-body">
+                                        <div class="media align-items-center">
+                                            <img class="avatar avatar-xl mr-4" src="https://product.hstatic.net/200000455999/product/amber_noir_20ml_c1a8022e41a64ac9a8205906708281ff_grande.png" alt="Image Description">
+
+                                            <div class="media-body">
+                                                <h3 class="text-hover-primary mb-1">Sản phẩm</h3>
+                                                <span class="text-body">Tạo sản phẩm mới</span>
+                                            </div>
+
+                                            <div class="ml-2 text-right">
+                                                <i class="tio-chevron-right tio-lg text-body text-hover-primary"></i>
+                                            </div>
+                                        </div>
+                                        <!-- End Row -->
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                                <!-- Card -->
+                                <a class="card card-hover-shadow mb-4" href="ecommerce-categories.html">
+                                    <div class="card-body">
+                                        <div class="media align-items-center">
+                                            <img class="avatar avatar-xl mr-4" src="https://product.hstatic.net/200000455999/product/beach_walk_1_666a4e70baa247c0aa4eee5cade22d15_grande.jpg" alt="Image Description">
+
+                                            <div class="media-body">
+                                                <h3 class="text-hover-primary mb-1">Danh mục sản phẩm</h3>
+                                                <span class="text-body">Tạo danh mục sản phẩm mới</span>
+                                            </div>
+                                            <div class="ml-2 text-right">
+                                                <i class="tio-chevron-right tio-lg text-body text-hover-primary"></i>
+                                            </div>
+                                        </div>
+                                        <!-- End Row -->
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                                <!-- Card -->
+                                <a class="card card-hover-shadow" href="ecommerce-add-discount.html">
+                                    <div class="card-body">
+                                        <div class="media align-items-center">
+                                            <img class="avatar avatar-xl mr-4" src="https://png.pngtree.com/png-vector/20230523/ourlarge/pngtree-special-coupons-with-promo-codes-offers-vector-png-image_7105869.png" alt="Image Description">
+
+                                            <div class="media-body">
+                                                <h3 class="text-hover-primary mb-1">Mã giảm giá</h3>
+                                                <span class="text-body">Tạo mã giảm giá mới</span>
+                                            </div>
+
+                                            <div class="ml-2 text-right">
+                                                <i class="tio-chevron-right tio-lg text-body text-hover-primary"></i>
+                                            </div>
+                                        </div>
+                                        <!-- End Row -->
+                                    </div>
+                                </a>
+                                <!-- End Card -->
+                            </div>
+                            <!-- bảng các sản phẩm bán chạy nhất-->
+                            <div class="col-lg-8 mb-3 mb-lg-5">
+                                <!-- Card -->
+                                <div class="card h-100">
+                                    <!-- Header -->
+                                    <div class="card-header">
+                                        <h4 class="card-header-title">Các sản phẩm bán chạy nhất</h4>
+                                        <a class="btn btn-sm btn-ghost-secondary" href="#">Xem tất cả</a>
+                                    </div>
+                                    <!-- End Header -->
+                                    <!-- Body -->
+                                    <div class="card-body-height">
+                                        <!-- Table -->
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
+                                                <!-- tiêu đề của bảng -->
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th scope="col">Sản phẩm</th>
+                                                        <th scope="col">Tỷ lệ thay đổi</th>
+                                                        <th scope="col">Giá</th>
+                                                        <th scope="col">Lượt bán</th>
+                                                        <th scope="col">Doanh thu</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Media -->
+                                                            <a class="media align-items-center" href="ecommerce-product-details.html">
+                                                                <img class="avatar mr-3" src="https://product.hstatic.net/200000455999/product/amber_noir_20ml_c1a8022e41a64ac9a8205906708281ff_grande.png" alt="Image Description">
+
+                                                                <div class="media-body">
+                                                                    <h5 class="text-hover-primary mb-0">Tinh Dầu Amber Noir</h5>
+                                                                </div>
+                                                            </a>
+                                                            <!-- End Media -->
+                                                        </td>
+                                                        <td><i class="tio-trending-down text-danger mr-1"></i> 72%</td>
+                                                        <td>390,000₫</td>
+                                                        <td>428</td>
+                                                        <td>
+                                                            <h4 class="mb-0">166,920,000₫</h4>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Media -->
+                                                            <a class="media align-items-center" href="ecommerce-product-details.html">
+                                                                <img class="avatar mr-3" src="https://product.hstatic.net/200000455999/product/bahama_breeze_20ml_0d2bc71b94b34c69a96c25ccb92c47cb_grande.png" alt="Image Description">
+
+                                                                <div class="media-body">
+                                                                    <h5 class="text-hover-primary mb-0">Tinh Dầu Bahama Breeze</h5>
+                                                                </div>
+                                                            </a>
+                                                            <!-- End Media -->
+                                                        </td>
+                                                        <td><i class="tio-trending-up text-success mr-1"></i> 69%</td>
+                                                        <td>390,000₫</td>
+                                                        <td>357</td>
+                                                        <td>
+                                                            <h4 class="mb-0">139,230,000₫</h4>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Media -->
+                                                            <a class="media align-items-center" href="ecommerce-product-details.html">
+                                                                <img class="avatar mr-3" src="https://product.hstatic.net/200000455999/product/himalaya_bamboo_20ml_2f5ad04170024430b7f9d1cbffa4745c_grande.png" alt="Image Description">
+
+                                                                <div class="media-body">
+                                                                    <h5 class="text-hover-primary mb-0">Tinh Dầu Bamboo</h5>
+                                                                </div>
+                                                            </a>
+                                                            <!-- End Media -->
+                                                        </td>
+                                                        <td><i class="tio-trending-down text-danger mr-1"></i> 65%</td>
+                                                        <td>390,000₫</td>
+                                                        <td>285</td>
+                                                        <td>
+                                                            <h4 class="mb-0">111,150,000₫</h4>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Media -->
+                                                            <a class="media align-items-center" href="ecommerce-product-details.html">
+                                                                <img class="avatar mr-3" src="https://product.hstatic.net/200000455999/product/beach_walk_50ml_a04df985cadf4a4cab6d73a1325d7a66_1024x1024.png" alt="Image Description">
+
+                                                                <div class="media-body">
+                                                                    <h5 class="text-hover-primary mb-0">Tinh Dầu Beach Walk</h5>
+                                                                </div>
+                                                            </a>
+                                                            <!-- End Media -->
+                                                        </td>
+                                                        <td><i class="tio-trending-down text-danger mr-1"></i> 53%</td>
+                                                        <td>390,000₫</td>
+                                                        <td>214</td>
+                                                        <td>
+                                                            <h4 class="mb-0">83,460,000₫</h4>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Media -->
+                                                            <a class="media align-items-center" href="ecommerce-product-details.html">
+                                                                <img class="avatar mr-3" src="https://product.hstatic.net/200000455999/product/nen_thom_himalaya_sea_salt___orchid_400g__1__770c7f5d9ccf44b7a4b80be6da67c380_grande.png" alt="Image Description">
+
+                                                                <div class="media-body">
+                                                                    <h5 class="text-hover-primary mb-0">Nến Thơm Sea Salt & Orchid (2 bấc)</h5>
+                                                                </div>
+                                                            </a>
+                                                            <!-- End Media -->
+                                                        </td>
+                                                        <td><i class="tio-trending-up text-success mr-1"></i> 50%</td>
+                                                        <td>690,000₫</td>
+                                                        <td>142</td>
+                                                        <td>
+                                                            <h4 class="mb-0">97,980,000₫</h4>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Media -->
+                                                            <a class="media align-items-center" href="ecommerce-product-details.html">
+                                                                <img class="avatar mr-3" src="https://product.hstatic.net/200000455999/product/beach_walk_1_666a4e70baa247c0aa4eee5cade22d15_grande.jpg" alt="Image Description">
+
+                                                                <div class="media-body">
+                                                                    <h5 class="text-hover-primary mb-0">Combo Tinh Dầu Tán Hương - Beach Walk</h5>
+                                                                </div>
+                                                            </a>
+                                                            <!-- End Media -->
+                                                        </td>
+                                                        <td><i class="tio-trending-up text-success mr-1"></i> 50%</td>
+                                                        <td>1,190,000₫</td>
+                                                        <td>71</td>
+                                                        <td>
+                                                            <h4 class="mb-0">84,490,000₫</h4>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- End Table -->
+                                    </div>
+                                    <!-- End Body -->
+                                </div>
+                                <!-- End Card -->
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                        <!-- Card -->
+                        <div class="card overflow-hidden mb-3 mb-lg-5">
+                            <!-- Header -->
+                            <div class="card-header">
+                                <div class="row align-items-sm-center flex-grow-1">
+                                    <div class="col-sm mb-2 mb-sm-0">
+                                        <h4 class="card-header-title">Thị trường hàng đầu</h4>
+                                    </div>
+                                    <div class="col-sm-auto">
+                                        <a class="btn btn-sm btn-ghost-secondary" href="#">Xem tất cả</a>
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                            <!-- End Header -->
+                            <!-- Body -->
+                            <!-- phần này tương tự 4 ô ở đầu trang -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6 col-lg">
+                                        <!-- Stats -->
+                                        <div class="media align-items-center">
+                                            <i class="tio-user-big-outlined tio-xl mr-3"></i>
+
+                                            <div class="media-body">
+                                                <span class="d-block font-size-sm">Tài khoản</span>
+                                                <div class="d-flex align-items-center">
+                                                    <h3 class="mb-0">720</h3>
+                                                    <span class="badge badge-soft-success ml-2">
+                                                        <i class="tio-trending-up"></i> 25.9%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Stats -->
+
+                                        <div class="d-lg-none">
+                                            <hr>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg column-divider-sm">
+                                        <!-- Stats -->
+                                        <div class="media align-items-center">
+                                            <i class="tio-time-20-s tio-xl mr-3"></i>
+
+                                            <div class="media-body">
+                                                <span class="d-block font-size-sm">Thời lượng phiên trung bình</span>
+                                                <div class="d-flex align-items-center">
+                                                    <h3 class="mb-0">1 phút 3 giây</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Stats -->
+
+                                        <div class="d-lg-none">
+                                            <hr>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg column-divider-lg">
+                                        <!-- Stats -->
+                                        <div class="media align-items-center">
+                                            <i class="tio-pages-outlined tio-xl mr-3"></i>
+
+                                            <div class="media-body">
+                                                <span class="d-block font-size-sm">Trang xem trên mỗi phiên</span>
+                                                <div class="d-flex align-items-center">
+                                                    <h3 class="mb-0">1.78</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Stats -->
+
+                                        <div class="d-sm-none">
+                                            <hr>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg column-divider-sm">
+                                        <!-- Stats -->
+                                        <div class="media align-items-center">
+                                            <i class="tio-chart-donut-2 tio-xl mr-3"></i>
+
+                                            <div class="media-body">
+                                                <span class="d-block font-size-sm">Tỉ lệ thoát</span>
+                                                <div class="d-flex align-items-center">
+                                                    <h3 class="mb-0">62.9%</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Stats -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                            <!-- End Body -->
+                            <!-- tạo đường phân cách với bảng ở dưới -->
+                            <hr class="my-0">
+                            <!-- Body -->
+                            <div class="card-body">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-12 col-sm-12">
+                                        <!-- Table -->
+                                        <div class="table-responsive">
+                                            <table class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="border-top-0">Thành phố</th>
+                                                        <th class="border-top-0">Lượt truy cập</th>
+                                                        <th class="border-top-0">Lượt mua hàng</th>
+                                                        <th class="border-top-0">Tỷ lệ thay đổi</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="media align-items-center">
+                                                                <div class="media-body">
+                                                                    TP. Hồ Chí Minh
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>8,000</td>
+                                                        <td>64,000,000₫</td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                73.2% <i class="tio-trending-up text-success ml-1"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <div class="media align-items-center">
+                                                                <div class="media-body">
+                                                                    Hà Nội
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>6,400</td>
+                                                        <td>51,000,000₫</td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                45.8% <i class="tio-trending-down text-danger ml-1"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <div class="media align-items-center">
+                                                                <div class="media-body">
+                                                                    Đà Nẵng
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>4,800</td>
+                                                        <td>38,000,000₫</td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                24.4% <i class="tio-trending-up text-success ml-1"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <div class="media align-items-center">
+                                                                <div class="media-body">
+                                                                    Hải Phòng
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>3,200</td>
+                                                        <td>25,600,000₫</td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                12.8% <i class="tio-trending-up text-success ml-1"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <div class="media align-items-center">
+                                                                <div class="media-body">
+                                                                    Cần Thơ
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>1,600</td>
+                                                        <td>12,800,000₫</td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                67.9% <i class="tio-trending-down text-danger ml-1"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- End Table -->
+                                    </div>
+                                </div>
+                                <!-- End Row -->
+                            </div>
+                            <!-- End Body -->
+                        </div>
+                        <!-- End Card -->
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <!-- Body -->
+                                    <div class="card-body">
+                                        <h4>Tổng doanh thu <i class="text-body ml-1" data-toggle="tooltip" data-placement="top"></i></h4>
+                                        <!-- chia 2 cột bàng nhau-->
+                                        <div class="row align-items-sm-center mb-5">
+                                            <div class="col-sm">
+                                                <span class="display-4 text-dark mr-2">20,000,000</span>
+                                            </div>
+
+                                            <div class="col-sm-auto">
+                                                <span class="h3 text-success">
+                                                    <i class="tio-trending-up"></i> 25.9%
+                                                </span>
+                                                <span class="d-block">&mdash; 50 đơn đặt hàng <span class="badge badge-soft-dark badge-pill ml-1">+411,438₫ hôm nay</span></span>
+                                            </div>
+                                        </div>
+                                        <!-- End Row -->
+                                        <!-- Bar Chart -->
+                                        <div class="chartjs-custom mb-4" style="height: 18rem;">
+                                            <!-- thêm data vào biều đồ đường -->
+                                            <canvas class="js-chart" data-hs-chartjs-options='{
+                            "type": "line",
+                            "data": {
+                               "labels": ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM"],
+                               "datasets": [{
+                                "data": [160, 160, 192, 281, 160, 281, 160, 200, 228, 176],
+                                "backgroundColor": "transparent",
+                                "borderColor": "#377dff",
+                                "borderWidth": 2,
+                                "pointRadius": 0,
+                                "hoverBorderColor": "#377dff",
+                                "pointBackgroundColor": "#377dff",
+                                "pointBorderColor": "#fff",
+                                "pointHoverRadius": 0
+                              },
+                              {
+                                "data": [99, 152, 253, 135, 178, 192, 132, 165, 132, 149],
+                                "backgroundColor": "transparent",
+                                "borderColor": "#e7eaf3",
+                                "borderWidth": 2,
+                                "pointRadius": 0,
+                                "hoverBorderColor": "#e7eaf3",
+                                "pointBackgroundColor": "#e7eaf3",
+                                "pointBorderColor": "#fff",
+                                "pointHoverRadius": 0
+                              }]
+                            },
+                            "options": {
+                               "scales": {
+                                  "yAxes": [{
+                                    "gridLines": {
+                                      "color": "#e7eaf3",
+                                      "drawBorder": false,
+                                      "zeroLineColor": "#e7eaf3"
+                                    },
+                                    "ticks": {
+                                      "beginAtZero": true,
+                                      "stepSize": 100,
+                                      "fontSize": 12,
+                                      "fontColor": "#97a4af",
+                                      "fontFamily": "Open Sans, sans-serif",
+                                      "padding": 10,
+                                      "postfix": "k đồng"
+                                    }
+                                  }],
+                                  "xAxes": [{
+                                    "gridLines": {
+                                      "display": false,
+                                      "drawBorder": false
+                                    },
+                                    "ticks": {
+                                      "fontSize": 12,
+                                      "fontColor": "#97a4af",
+                                      "fontFamily": "Open Sans, sans-serif",
+                                      "padding": 5
+                                    }
+                                  }]
+                              },
+                              "tooltips": {
+                                "prefix": "$",
+                                "postfix": "k",
+                                "hasIndicator": true,
+                                "mode": "index",
+                                "intersect": false,
+                                "lineMode": true,
+                                "lineWithLineColor": "rgba(19, 33, 68, 0.075)"
+                              },
+                              "hover": {
+                                "mode": "nearest",
+                                "intersect": true
+                              }
+                            }
+                          }'>
+                                            </canvas>
+                                        </div>
+                                        <!-- End Bar Chart -->
+                                        <!-- Legend Indicators -->
+                                        <div class="row justify-content-center">
+                                            <div class="col-auto">
+                                                <span class="legend-indicator"></span> Hôm qua
+                                            </div>
+                                            <div class="col-auto">
+                                                <span class="legend-indicator bg-primary"></span> Hôm nay
+                                            </div>
+                                        </div>
+                                        <!-- End Legend Indicators -->
+                                    </div>
+                                    <!-- End Body -->
+                                </div>
+                                <!-- tương tự biều đồ trước, có thêm đường phân chia ở giữa 2 biều đồ-->
+                                <div class="col-lg-6 column-divider-lg">
+                                    <!-- Body -->
+                                    <div class="card-body">
+                                        <h4>Lượt truy cập</h4>
+
+                                        <div class="row align-items-sm-center mb-5">
+                                            <div class="col-sm">
+                                                <span class="display-4 text-dark mr-2">24,000</span>
+                                            </div>
+
+                                            <div class="col-sm-auto">
+                                                <span class="h3 text-danger">
+                                                    <i class="tio-trending-down"></i> 16%
+                                                </span>
+                                                <span class="d-block">&mdash; 12,857 lượt truy cập độc nhất <span class="badge badge-soft-dark badge-pill ml-1">-2,057 hôm nay</span></span>
+                                            </div>
+                                        </div>
+                                        <!-- End Row -->
+                                        <!-- Bar Chart -->
+                                        <div class="chartjs-custom mb-4" style="height: 18rem;">
+                                            <canvas class="js-chart" data-hs-chartjs-options='{
+                            "type": "line",
+                            "data": {
+                               "labels": ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM"],
+                               "datasets": [{
+                                "data": [2, 2, 3, 2, 3, 4, 2, 3, 2, 2],
+                                "backgroundColor": "transparent",
+                                "borderColor": "#377dff",
+                                "borderWidth": 2,
+                                "pointRadius": 0,
+                                "hoverBorderColor": "#377dff",
+                                "pointBackgroundColor": "#377dff",
+                                "pointBorderColor": "#fff",
+                                "pointHoverRadius": 0
+                              },
+                              {
+                                "data": [1, 2, 2, 2, 3, 3, 2, 2, 2, 2],
+                                "backgroundColor": "transparent",
+                                "borderColor": "#e7eaf3",
+                                "borderWidth": 2,
+                                "pointRadius": 0,
+                                "hoverBorderColor": "#e7eaf3",
+                                "pointBackgroundColor": "#e7eaf3",
+                                "pointBorderColor": "#fff",
+                                "pointHoverRadius": 0
+                              }]
+                            },
+                            "options": {
+                               "scales": {
+                                  "yAxes": [{
+                                    "gridLines": {
+                                      "color": "#e7eaf3",
+                                      "drawBorder": false,
+                                      "zeroLineColor": "#e7eaf3"
+                                    },
+                                    "ticks": {
+                                      "beginAtZero": true,
+                                      "stepSize": 10,
+                                      "fontSize": 12,
+                                      "fontColor": "#97a4af",
+                                      "fontFamily": "Open Sans, sans-serif",
+                                      "padding": 10,
+                                      "postfix": "k"
+                                    }
+                                  }],
+                                  "xAxes": [{
+                                    "gridLines": {
+                                      "display": false,
+                                      "drawBorder": false
+                                    },
+                                    "ticks": {
+                                      "fontSize": 12,
+                                      "fontColor": "#97a4af",
+                                      "fontFamily": "Open Sans, sans-serif",
+                                      "padding": 5
+                                    }
+                                  }]
+                              },
+                              "tooltips": {
+                                "postfix": "k",
+                                "hasIndicator": true,
+                                "mode": "index",
+                                "intersect": false,
+                                "lineMode": true,
+                                "lineWithLineColor": "rgba(19, 33, 68, 0.075)"
+                              },
+                              "hover": {
+                                "mode": "nearest",
+                                "intersect": true
+                              }
+                            }
+                          }'>
+                                            </canvas>
+                                        </div>
+                                        <!-- End Bar Chart -->
+                                        <!-- Legend Indicators -->
+                                        <div class="row justify-content-center">
+                                            <div class="col-auto">
+                                                <span class="legend-indicator"></span> Hôm qua
+                                            </div>
+                                            <div class="col-auto">
+                                                <span class="legend-indicator bg-primary"></span> Hôm nay
+                                            </div>
+                                        </div>
+                                        <!-- End Legend Indicators -->
+                                    </div>
+                                    <!-- End Body -->
+                                </div>
+                            </div>
+                            <!-- End Row -->
+                        </div>
+                        <!-- End Card -->
+                    </div>
+        <!-- End Content -->
+        <!-- Footer -->
+        <div class="card-footer">
+            <div class="row justify-content-between align-items-center">
+                <!-- Cột 1 -->
+                <div class="col">
+                    <p class="font-size-sm mb-0">&copy; <span class="d-none d-sm-inline-block">SCENTIA</span></p>
+                </div>
+                <!-- Cột 2 auto -->
+                <div class="col-auto">
+                    <!-- Căn ngang phía bên phải 2 mục dưới -->
+                    <div class="d-flex justify-content-end">
+                        <!-- List Dot -->
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">FAQ</a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">License</a>
+                            </li>
+                        </ul>
+                        <!-- End List Dot -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- JS Implementing Plugins -->
+    <!-- Dẫn tệp JS -->
+    <script src="assets\js\vendor.min.js"></script>
+    <script src="assets\vendor\chart.js\dist\Chart.min.js"></script>
+    <script src="assets\vendor\chart.js.extensions\chartjs-extensions.js"></script>
+    <script src="assets\vendor\chartjs-plugin-datalabels\dist\chartjs-plugin-datalabels.min.js"></script>
+    <script src="..\assets\vendor\jvectormap\jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="..\assets\vendor\jvectormap\tests\assets/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="..\node_modules\fullcalendar\main.min.js"></script>
+
+    <!-- JS Front -->
+    <!-- Dẫn tệp JS -->
+    <script src="assets\js\theme.min.js"></script>
+    <script src="..\assets\js\hs.jvector-map.js"></script>
+    <script src="..\assets\js\hs.chartjs.js"></script>
+    <script src="..\assets\js/hs.fullcalendar.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+            // INITIALIZATION OF FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+            // INITIALIZATION OF CHARTJS
+            // =======================================================
+            Chart.plugins.unregister(ChartDataLabels);
+
+            $('.js-chart').each(function () {
+                $.HSCore.components.HSChartJS.init($(this));
+            });
+            var updatingChart = $.HSCore.components.HSChartJS.init($('#updatingData'));
+            // INITIALIZATION OF DATERANGEPICKER
+            // =======================================================
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'M/DD hh:mm A'
+                }
+            });
+            var start = moment();
+            var end = moment();
+
+            function cb(start, end) {
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+            }
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Hôm nay': [moment(), moment()],
+                    'Hôm qua': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    '7 ngày trước': [moment().subtract(6, 'days'), moment()],
+                    '30 ngày trước': [moment().subtract(29, 'days'), moment()],
+                    'Thsáng này': [moment().startOf('month'), moment().endOf('month')],
+                    'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+            cb(start, end);
+        });
+    </script>
+
+    <!-- IE Support -->
+    <script>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+</body>
+</html>

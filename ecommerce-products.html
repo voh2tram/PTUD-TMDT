@@ -1,0 +1,2318 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Tất cả sản phẩm</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href=".\images\logo\Logo.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets\css\vendor.min.css">
+    <link rel="stylesheet" href="assets\vendor\icon-set\style.css">
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="assets\css\theme.min.css?v=1.0">
+</head>
+<body class="bg-white">
+    <!-- Search Form -->
+    <!-- Tạo ô tìm kiếm cho màn hình bé hơn medium -->
+    <div id="searchDropdown" class="hs-unfold-content dropdown-unfold search-fullwidth d-md-none">
+        <!-- tạo form nhập chiếm toàn bộ chiều rộng của ô tìm kiếm -->
+        <form class="input-group input-group-merge input-group-borderless">
+            <!-- tạo vùng chứa trước ô nhập liệu -->
+            <div class="input-group-prepend">
+                <!-- tạo icon tìm kiếm -->
+                <div class="input-group-text">
+                    <i class="tio-search"></i>
+                </div>
+            </div>
+            <!-- ô nhập liệu -->
+            <input class="form-control rounded-0" type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm...">
+            <!-- tạo vùng sau ô nhập liệu -->
+            <div class="input-group-append">
+                <!-- tạo liên kết thực hiện đóng ô tìm kiếm bằng chữ Đóng-->
+                <div class="input-group-text">
+                    <div class="hs-unfold">
+                        <a class="js-hs-unfold-invoker" href="javascript:;" data-hs-unfold-options='{
+                 "target": "#searchDropdown",
+                 "type": "css-animation",
+                 "animationIn": "fadeIn",
+                 "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                 "closeBreakpoint": "md"
+               }'>
+                            <span>Đóng</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- End Search Form -->
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand-lg navbar-bordered flex-lg-column px-0">
+        <div class="navbar-white w-100">
+            <div class="container-fluid">
+                <div class="navbar-nav-wrap">
+                    <div class="navbar-brand-wrapper">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="ecommerce.html">
+                            <img class="navbar-brand-logo" src="images\logo\Logo.png" alt="Logo">
+                        </a>
+                        <!-- End Logo -->
+                    </div>
+                    <div class="navbar-nav-wrap-content-left">
+                        <!-- Search Form -->
+                        <!-- Tạo ô tìm kiếm cho màn hình medium trở lên-->
+                        <div class="d-none d-lg-block">
+                            <form class="position-relative">
+                                <!-- Input Group -->
+                                <!-- tạo vùng chứa chiếm toàn bộ chiều rộng của form nhập -->
+                                <div class="input-group input-group-merge input-group-borderless input-group-hover-light navbar-input-group">
+                                    <!-- tạo vùng chứa trước ô nhập liệu -->
+                                    <div class="input-group-prepend">
+                                        <!-- tạo icon tìm kiếm -->
+                                        <div class="input-group-text">
+                                            <i class="tio-search"></i>
+                                        </div>
+                                    </div>
+                                    <!-- ô nhập liệu với các chức năng: xóa nội dung tìm kiếm, hiển thị kết quả tìm kiếm -->
+                                    <input type="search" class="js-form-search form-control" placeholder="Tìm kiếm..." aria-label="Search in front" data-hs-form-search-options='{
+                                                                                                                                        "clearIcon": "#clearSearchResultsIcon",
+                                                                                                                                        "dropMenuElement": "#searchDropdownMenu",
+                                                                                                                                        "dropMenuOffset": 20,
+                                                                                                                                        "toggleIconOnFocus": true,
+                                                                                                                                        "activeClass": "focus"
+                                                                                                                                    }'>
+                                    <!-- tạo vùng sau ô nhập liệu -->
+                                    <a class="input-group-append" href="javascript:;">
+                                        <!-- Icon xóa kết quả tìm kiếm, ẩn khi trang web được tải lần đầu (khi nhập là block)-->
+                                        <span class="input-group-text">
+                                            <i id="clearSearchResultsIcon" class="tio-clear" style="display: none;"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- End Input Group -->
+                                <!-- Card Search Content -->
+                                <div id="searchDropdownMenu" class="hs-form-search-menu-content card dropdown-menu dropdown-card overflow-hidden">
+                                    <!-- Body -->
+                                    <!-- Tạo vùng chứa kết quả tìm kiếm gần đây -->
+                                    <div class="card-body-height py-3">
+                                        <!-- Tiêu đề -->
+                                        <small class="dropdown-header mb-n2">Tìm kiếm gần đây</small>
+                                        <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                        <div class="dropdown-item bg-transparent text-wrap my-2">
+                                            <!-- 1 mục tìm kiếm gần đây, có icon search ở cuối -->
+                                            <div class="h4 mr-1">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Doanh thu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mã giảm giá <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sản phẩm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sáp thơm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Tinh dầu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mấy giờ tan làm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Khi nào đến Tết <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Body -->
+                                    <!-- Footer -->
+                                    <a class="card-footer text-center" href="#">
+                                        Xem toàn bộ kết quả
+                                        <i class="tio-chevron-right"></i>
+                                    </a>
+                                    <!-- End Footer -->
+                                </div>
+                                <!-- End Card Search Content -->
+                            </form>
+                        </div>
+                        <!-- End Search Form -->
+                    </div>
+
+                    <!-- Secondary Content -->
+                    <div class="navbar-nav-wrap-content-right">
+                        <!-- Navbar -->
+                        <ul class="navbar-nav align-items-center flex-row">
+                            <li class="nav-item d-lg-none">
+                                <!-- Search Trigger -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon search có hiệu ứng dropdown màn hình < medium -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon .btn-ghost-dark rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#searchDropdown",
+                       "type": "css-animation",
+                       "animationIn": "fadeIn",
+                       "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                       "closeBreakpoint": "md"
+                     }'>
+                                        <i class="tio-search"></i>
+                                    </a>
+                                </div>
+                                <!-- End Search Trigger -->
+                            </li>
+
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <!-- Notification -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon thông báo có hiệu ứng dropdown -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-light rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#notificationNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <i class="tio-notifications-on-outlined"></i>
+                                        <span class="btn-status btn-sm-status btn-status-danger"></span>
+                                    </a>
+
+                                    <div id="notificationNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu" style="width: 25rem;">
+                                        <!-- Header -->
+                                        <div class="card-header">
+                                            <span class="card-title h4">Thông báo</span>
+
+                                            <!-- Unfold -->
+                                            <div class="hs-unfold">
+                                                <!-- tạo nút icon more có hiệu ứng dropdown -->
+                                                <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                             "target": "#notificationSettingsOneDropdown",
+                             "type": "css-animation"
+                           }'>
+                                                    <i class="tio-more-vertical"></i>
+                                                </a>
+                                                <!-- nội dung dropdown, bao gồm icon và văn bản tương ứng -->
+                                                <div id="notificationSettingsOneDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-all-done dropdown-item-icon"></i> Đánh dấu là đã xem
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-toggle-off dropdown-item-icon"></i> Tắt thông báo
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- End Unfold -->
+                                        </div>
+                                        <!-- End Header -->
+                                        <!-- Body -->
+                                        <div class="card-body-height">
+                                            <!-- Tab Content -->
+                                            <div class="tab-content" id="notificationTabContent">
+                                                <div class="tab-pane fade show active" id="notificationNavOne" role="tabpanel">
+                                                    <ul class="list-group list-group-flush navbar-card-list-group">
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <!-- Tạo cột đầu có chiều rộng tự động dựa trên độ dài nội dung -->
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <!-- Tạo checkbox đã xem hay chưa, checked thì gán đã xem và đổi nền và ngược lại -->
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck1" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck1"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Tạo cột 2 -->
+                                                                <div class="col ml-n3">
+                                                                    <!-- Tiêu đề -->
+                                                                    <span class="card-title h5">Tinh dầu Amber Noir</span>
+                                                                    <!-- Nội dung -->
+                                                                    <p class="card-text font-size-sm">đã hết hàng</p>
+                                                                </div>
+                                                                <!-- Tạo cột 3 auto -->
+                                                                <small class="col-auto text-muted text-cap">2 phút trước</small>
+                                                            </div>
+                                                            <!-- Tạo liên kết chiếm toàn bộ diện tích của mục danh sách -->
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck2" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck2"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-soft-dark avatar-circle">
+                                                                            <img class="avatar-img" src="https://i.pinimg.com/236x/e1/6c/70/e16c704fc0b655e553dd7a1a8a00475d.jpg" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Phương Thảo</span>
+                                                                    <p class="card-text font-size-sm">đã đánh giá sản phẩm Nến thơm Lemon & Lavender (230g)</p>
+                                                                    <blockquote class="blockquote blockquote-sm">
+                                                                        Thơm nứt mũi lun cả nhà ơi, chốt đơn chốt đơn
+                                                                    </blockquote>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">2 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck5">
+                                                                            <label class="custom-control-label" for="notificationCheck5"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-circle">
+                                                                            <img class="avatar-img" src="https://bizweb.dktcdn.net/100/438/408/files/meme-meo-cute-yody-vn-1.jpg?v=1690276113335" alt="Image Description">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Như Uyên</span>
+                                                                    <p class="card-text font-size-sm">đã đăng sản phẩm mới</p>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">10 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- End Tab Content -->
+                                        </div>
+                                        <!-- End Body -->
+                                        <!-- Card Footer -->
+                                        <a class="card-footer text-center" href="#">
+                                            Xem tất cả thông báo
+                                            <i class="tio-chevron-right"></i>
+                                        </a>
+                                        <!-- End Card Footer -->
+                                    </div>
+                                </div>
+                                <!-- End Notification -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Account -->
+                                <div class="hs-unfold">
+                                    <!-- Tạo hình avatar có chức năng dropdown -->
+                                    <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#accountNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                            <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                        </div>
+                                    </a>
+                                    <!-- Nội dung dropdown -->
+                                    <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                                        <div class="dropdown-item-text">
+                                            <div class="media align-items-center">
+                                                <!-- avatar nhỏ -->
+                                                <div class="avatar avatar-sm avatar-circle mr-2">
+                                                    <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                                </div>
+                                                <!-- Thông tin account admin -->
+                                                <div class="media-body">
+                                                    <span class="card-title h5">Nguyễn Mạnh Tuấn</span>
+                                                    <span class="card-text">tuannm@ueh.edu.vn</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- đường phân cách -->
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Profile &amp; account">Thông tin tài khoản</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Sign out">Đăng xuất</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Account -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Toggle -->
+                                <!-- Nút menu màn hình < medium -->
+                                <button type="button" class="navbar-toggler btn btn-ghost-light rounded-circle" aria-expanded="false" aria-controls="navbarNavMenu" data-toggle="collapse" data-target="#navbarNavMenu">
+                                    <i class="tio-menu-hamburger"></i>
+                                </button>
+                                <!-- End Toggle -->
+                            </li>
+                        </ul>
+                        <!-- End Navbar -->
+                    </div>
+                    <!-- End Secondary Content -->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <nav class="js-mega-menu flex-grow-1">
+                <!-- Navbar -->
+                <div class="navbar-nav-wrap-navbar collapse navbar-collapse" id="navbarNavMenu">
+                    <div class="navbar-body">
+                        <ul class="navbar-nav flex-grow-1">
+                            <!-- Overview -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> TỔNG QUAN
+                                </a>
+                            </li>
+                            <!-- End Overview -->
+                            <!-- Product -->
+                            <li class="hs-has-sub-menu">
+                                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> SẢN PHẨM
+                                </a>
+                                <!-- Dropdown -->
+                                <ul id="navLinkPagesDropdownEcommerceProducts" class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-products.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ SẢN PHẨM
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-product.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM SẢN PHẨM
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Product -->
+                            <!-- CATEGORY -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-categories.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> DANH MỤC SẢN PHẨM
+                                </a>
+                            </li>
+                            <!-- End CATEGORY -->
+                            <!-- Discount -->
+                            <li class="hs-has-sub-menu">
+                                <a class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> MÃ GIẢM GIÁ
+                                </a>
+                                <!-- Dropdown -->
+                                <ul class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-discounts.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-discount.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Discount -->
+                            <!-- Order -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-orders.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> ĐƠN HÀNG
+                                </a>
+                            </li>
+                            <!-- End Order -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Navbar -->
+            </nav>
+        </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+
+    
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="main">
+        <!-- Content -->
+        <div class="content container-fluid">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row align-items-center mb-3">
+                    <!-- bên trái page header -->
+                    <div class="col-sm mb-2 mb-sm-0">
+                        <h1 class="page-header-title">Tất cả sản phẩm<span class="badge badge-soft-dark ml-2">281</span></h1>
+                        <div class="mt-2">
+                            <!--tạo pop up xuất khi nhấn vào liên kết -->
+                            <a class="text-body mr-3" href="javascript:;" data-toggle="modal" data-target="#exportProductsModal">
+                                <i class="tio-download-to mr-1"></i> Xuất ra
+                            </a>
+                            <!--tạo pop up nhập khi nhấn vào liên kết -->
+                            <a class="text-body" href="javascript:;" data-toggle="modal" data-target="#importProductsModal">
+                                <i class="tio-publish mr-1"></i> Nhập vào
+                            </a>
+                        </div>
+                    </div>
+                    <!-- bên phải page header là nút thêm sản phẩm dẫn qua trang thêm sản phẩm -->
+                    <div class="col-sm-auto">
+                        <a class="btn btn-primary-green" href="ecommerce-add-product.html">Thêm sản phẩm</a>
+                    </div>
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Page Header -->
+            <div class="row justify-content-end mb-3">
+                <div class="col-lg">
+                    <!-- Datatable Info -->
+                    <!--Thông tin bảng dữ liệu ban đầu được ẩn đi-->
+                    <div id="datatableCounterInfo" style="display: none;">
+                        <div class="d-sm-flex justify-content-lg-end align-items-sm-center">
+                            <span class="d-block d-sm-inline-block font-size-sm mr-3 mb-2 mb-sm-0">
+                                Đã chọn
+                                <!--Đếm số lượng sản phẩm đã chọn-->
+                                <span id="datatableCounter">0</span>
+                            </span>
+                            <!--nút xóa sản phẩm-->
+                            <a class="btn btn-sm btn-outline-danger mb-2 mb-sm-0 mr-2" href="javascript:;">
+                                <i class="tio-delete-outlined"></i> Xóa
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Datatable Info -->
+                </div>
+            </div>
+            <!-- End Row -->
+            <!-- Card -->
+            <div class="card">
+                <!-- Header -->
+                <div class="card-header">
+                    <div class="row justify-content-between align-items-center flex-grow-1">
+                        <!--ô tìm kiếm nằm 1/3 bên trái card-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <form>
+                                <!-- Search -->
+                                <div class="input-group input-group-merge input-group-flush">
+                                    <!--trước ô tìm kiếm là icon search-->
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="tio-search"></i>
+                                        </div>
+                                    </div>
+                                    <!--gán mã js để thực hiện search-->
+                                    <input id="datatableSearch" type="search" class="form-control" placeholder="Tìm sản phẩm">
+                                </div>
+                                <!-- End Search -->
+                            </form>
+                        </div>
+                        <!--các nút bên phải-->
+                        <div class="col-auto">
+                            <!-- Unfold -->
+                            <div class="hs-unfold mr-2">
+                                <!-- nút unfold datatableFilterSidebar -->
+                                <a class="js-hs-unfold-invoker btn btn-green" href="javascript:;" data-hs-unfold-options='{
+                  "target": "#datatableFilterSidebar",
+                  "type": "css-animation",
+                  "animationIn": "fadeInRight",
+                  "animationOut": "fadeOutRight",
+                  "hasOverlay": true,
+                  "smartPositionOff": true
+                 }'>
+                                    <i class="tio-filter-list mr-1"></i> Bộ lọc
+                                </a>
+                            </div>
+                            <!-- End Unfold -->
+                            <!-- Unfold -->
+                            <div class="hs-unfold">
+                                <!-- nút unfold showHideDropdown -->
+                                <a class="js-hs-unfold-invoker btn btn-green" href="javascript:;" data-hs-unfold-options='{
+                   "target": "#showHideDropdown",
+                   "type": "css-animation"
+                 }'>
+                                    <i class="tio-table mr-1"></i> Cột <span class="badge badge-soft-dark rounded-circle ml-1">6</span>
+                                </a>
+                                <!-- bảng dropdown khi nhấn nút cột -->
+                                <div id="showHideDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right dropdown-card" style="width: 15rem;">
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="mr-2">Sản phẩm</span>
+                                                <!-- Checkbox Switch -->
+                                                <!-- tạo checkbox -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_SanPham">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_SanPham" checked="">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                            <!--tương tự-->
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="mr-2">Danh mục</span>
+
+                                                <!-- Checkbox Switch -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_DanhMuc">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_DanhMuc" checked="">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                            <!--tương tự-->
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="mr-2">Kho</span>
+
+                                                <!-- Checkbox Switch -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_Kho">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_Kho" checked="">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                            <!--tương tự-->
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="mr-2">Mã sản phẩm</span>
+
+                                                <!-- Checkbox Switch -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_MaSanPham">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_MaSanPham" checked="">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                            <!--tương tự-->
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="mr-2">Giá</span>
+
+                                                <!-- Checkbox Switch -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_Gia">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_Gia" checked="">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                            <!--tương tự-->
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="mr-2">Số lượng</span>
+
+                                                <!-- Checkbox Switch -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_SoLuong">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_SoLuong">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                            <!--tương tự-->
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="mr-2">Biến thể</span>
+                                                <!-- Checkbox Switch -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_BienThe">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_BienThe" checked="">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                            <!--tương tự-->
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="mr-2">Ngày</span>
+                                                <!-- Checkbox Switch -->
+                                                <label class="toggle-switch toggle-switch-sm" for="toggleColumn_Ngay">
+                                                    <input type="checkbox" class="toggle-switch-input" id="toggleColumn_Ngay" checked="">
+                                                    <span class="toggle-switch-label">
+                                                        <span class="toggle-switch-indicator"></span>
+                                                    </span>
+                                                </label>
+                                                <!-- End Checkbox Switch -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Unfold -->
+                        </div>
+                    </div>
+                    <!-- End Row -->
+                </div>
+                <!-- End Header -->
+                <!-- Table -->
+                <div class="table-responsive datatable-custom">
+                    <!--tạo bảng và thuộc tính của bảng-->
+                    <table id="datatable" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
+                 "columnDefs": [{
+                    "targets": [0, 3, 9],
+                    "width": "5%",
+                    "orderable": false
+                  }],
+                 "order": [],
+                 "info": {
+                   "totalQty": "#datatableWithPaginationInfoTotalQty"
+                 },
+                 "search": "#datatableSearch",
+                 "entries": "#datatableEntries",
+                 "pageLength": 12,
+                 "isResponsive": false,
+                 "isShowPaging": false,
+                 "pagination": "datatablePagination"
+               }'>
+                        <!--tiêu đề bảng-->
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input id="datatableCheckAll" type="checkbox" class="custom-control-input">
+                                        <label class="custom-control-label" for="datatableCheckAll"></label>
+                                    </div>
+                                </th>
+                                <th class="table-column-pl-0">Sản phẩm</th>
+                                <th>Danh mục</th>
+                                <th>Kho</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Biến thể</th>
+                                <th>Ngày</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <!--nội dung trong bảng tương ứng với tiêu đề-->
+                        <tbody>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck1">
+                                        <label class="custom-control-label" for="productsCheck1"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/pepermint_15ml_new_54488bd5607e47ddbbe7977eabb59a20_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Tinh Dầu Peppermint</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Tinh dầu</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox1">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox1" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>2384741241</td>
+                                <td>
+                                    240,000₫ - 490,000₫
+                                </td>
+                                <td>60</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white-green" href="javascript:;" data-hs-unfold-options='{
+                         "target": "#productsEditDropdown1",
+                         "type": "css-animation",
+                         "smartPositionOffEl": "#datatable"
+                       }'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck2">
+                                        <label class="custom-control-label" for="productsCheck2"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemon___levender_w_c054eb9e1cb142feb236215ea0713b43_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Nến Thơm Lemon & Lavender (230g)</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Nến thơm</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox2">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox2" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>4124123847</td>
+                                <td>
+                                    450,000₫
+                                </td>
+                                <td>125</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck3">
+                                        <label class="custom-control-label" for="productsCheck3"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/beach_walk_1_666a4e70baa247c0aa4eee5cade22d15_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Combo Tinh Dầu Tán Hương - Beach Walk</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Combo tán hương</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox3">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox3" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>8472341241</td>
+                                <td>
+                                    1,190,000₫
+                                </td>
+                                <td>42</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck4">
+                                        <label class="custom-control-label" for="productsCheck4"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemongrass_823c8555e08543ac9077559dd1a63772_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Tinh Dầu Lemongrass</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Tinh dầu</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox4">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox4">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>2412384741</td>
+                                <td>240,000₫</td>
+                                <td>76</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck5">
+                                        <label class="custom-control-label" for="productsCheck5"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemon___levender_w_c054eb9e1cb142feb236215ea0713b43_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">
+                                                Nến Thơm Lemon & Lavender (230g)
+                                            </h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Nến thơm</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox5">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox5">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>8234741241</td>
+                                <td>
+                                    450,000₫
+                                </td>
+                                <td>99</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck6">
+                                        <label class="custom-control-label" for="productsCheck6"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/caribbean_teakwood_11c02fb7dfaf4776849f80eeae0c83f7_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Combo Tinh Dầu Tán Hương - Caribbean Teakwood</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Combo tán hương</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox6">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox6" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>9984741241</td>
+                                <td>
+                                    1,190,000₫
+                                </td>
+                                <td>50</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck7">
+                                        <label class="custom-control-label" for="productsCheck7"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemongrass___citrionella_15ml_new_9b658a6cc61f45e9b18831f6f6b011f0_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Tinh Dầu Lemongrass & Citronella</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Tinh dầu</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox7">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox7">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>7184741241</td>
+                                <td>240,000₫</td>
+                                <td>422</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck8">
+                                        <label class="custom-control-label" for="productsCheck8"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemongrass___orange_46302d40461848bb9ecbcab5601abc81_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Nến Thơm Lemongrass & Orange (230g)</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Nến thơm</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox8">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox8" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>1084741241</td>
+                                <td>450,000₫</td>
+                                <td>1000</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck9">
+                                        <label class="custom-control-label" for="productsCheck9"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/midsummer_s_night_69c3845ed4cb4361940765d9cb963456_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Combo Tinh Dầu Tán Hương - Midsummer's Night</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Combo tán hương</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox9">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox9" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>4831441241</td>
+                                <td>
+                                    1,190,000₫
+                                </td>
+                                <td>15</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck10">
+                                        <label class="custom-control-label" for="productsCheck10"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/fresh_15ml_new_3e8cf42b6eb2417a82d5071075a57766_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Tinh Dầu Fresh</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Tinh dầu</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox10">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox10" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>1223847441</td>
+                                <td>330,000₫</td>
+                                <td>456</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck11">
+                                        <label class="custom-control-label" for="productsCheck11"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemongrass___ginger_w_ca8b65ffea29449f8be874c84d90288a_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Nến Thơm Lemongrass & Ginger (230g)</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Nến thơm</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox11">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox11">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>1242384741</td>
+                                <td>
+                                    450,000₫
+                                </td>
+                                <td>83</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck12">
+                                        <label class="custom-control-label" for="productsCheck12"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/palo_santo_a5a67b1798844d53925d616a54a2dadb_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Combo Tinh Dầu Tán Hương - Palo Santo</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Combo tán hương</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox12">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox12">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>8311741241</td>
+                                <td>1,190,000₫</td>
+                                <td>522</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck13">
+                                        <label class="custom-control-label" for="productsCheck13"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lotus___ginger_20ml_new_7ace699e0c76444887022fe73ab72c6d_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Tinh Dầu Lotus & Ginger</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Tinh dầu</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox13">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox13">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>2459741241</td>
+                                <td>330,000₫</td>
+                                <td>450</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck14">
+                                        <label class="custom-control-label" for="productsCheck14"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/fresh_w_2ce11037cfa14916a05d3169c34156d5_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Nến Thơm Fresh (230g)</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Nến thơm</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox14">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox14" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>2384994241</td>
+                                <td>
+                                    450,000₫
+                                </td>
+                                <td>32</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck15">
+                                        <label class="custom-control-label" for="productsCheck15"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/pink_sands_4714f23c8f2e4de1825e837d6c6a67a9_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Combo Tinh Dầu Tán Hương - Pink Sands</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Combo tán hương</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox15">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox15">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>1344761241</td>
+                                <td>
+                                    1,190,000₫
+                                </td>
+                                <td>121</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck16">
+                                        <label class="custom-control-label" for="productsCheck16"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemon___lavender_15ml_new_e263daa4569b44eebe1b39afb1af3b4e_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Tinh Dầu Lemon & Lavender</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Tinh dầu</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox16">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox16" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>9904741241</td>
+                                <td>330,000₫</td>
+                                <td>357</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck17">
+                                        <label class="custom-control-label" for="productsCheck17"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/orange_tea_w_a207eff10f1044d18eab5dff2ecd631a_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Nến Thơm Orange Tea (230g)</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Nến thơm</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox17">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox17" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>8812384741</td>
+                                <td>
+                                    450,000₫
+                                </td>
+                                <td>50</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck18">
+                                        <label class="custom-control-label" for="productsCheck18"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/sea_salt___orchid_6587fb00bbb045b3bf9b80a18d7a7d91_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Combo Tinh Dầu Tán Hương - Sea Salt & Orchid</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Combo tán hương</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox18">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox18" checked="">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>7134741241</td>
+                                <td>1,190,000₫</td>
+                                <td>750</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck19">
+                                        <label class="custom-control-label" for="productsCheck19"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/green_tea_mint_15ml_78bc00c367664b8998ca43f82293a19e_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Tinh Dầu Green Tea Mint</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Tinh dầu</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox19">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox19">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>2224741241</td>
+                                <td>330,000₫</td>
+                                <td>750</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:41</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-column-pr-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="productsCheck20">
+                                        <label class="custom-control-label" for="productsCheck20"></label>
+                                    </div>
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a class="media align-items-center" href="ecommerce-product-details.html">
+                                        <img class="avatar avatar-lg mr-3" src="https://product.hstatic.net/200000455999/product/lemongrass___green_tea_w_d346486c169b426bb3ec10cbc3e03463_grande.jpg" alt="Image Description">
+                                        <div class="media-body">
+                                            <h5 class="text-hover-primary mb-0">Nến Thơm Lemongrass & Green Tea (230g)</h5>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>Nến thơm</td>
+                                <td>
+                                    <label class="toggle-switch toggle-switch-sm" for="stocksCheckbox20">
+                                        <input type="checkbox" class="toggle-switch-input" id="stocksCheckbox20">
+                                        <span class="toggle-switch-label">
+                                            <span class="toggle-switch-indicator"></span>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td>2614741241</td>
+                                <td>450,000₫</td>
+                                <td>982</td>
+                                <td>1</td>
+                                <td>Đã xuất bản<br />10/12/2023 2:43</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Unfold -->
+                                        <div class="hs-unfold btn-group">
+                                            <a style="width:140px" class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+  "target": "#productsEditDropdown1",
+  "type": "css-animation",
+  "smartPositionOffEl": "#datatable"
+}'>
+                                                <span>
+                                                    <i class="tio-edit"></i> Hành động
+                                                    <span class="dropdown-toggle dropdown-toggle-empty"></span>
+                                                </span>
+                                            </a>
+
+                                            <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                                <a class="dropdown-item" href="ecommerce-product-details.html">
+                                                    <i class="tio-archive dropdown-item-icon"></i> Sửa
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Unfold -->
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- End Table -->
+                <!-- Footer -->
+                <div class="card-footer">
+                    <!-- Pagination -->
+                    <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+                        <!--bên trái chân bảng là tùy chọn hiển thị bao nhiêu sản phẩm trên bảng-->
+                        <div class="col-sm mb-2 mb-sm-0">
+                            <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                                <span class="mr-2">Hiển thị:</span>
+                                <!-- Select -->
+                                <select id="datatableEntries" class="js-select2-custom" data-hs-select2-options='{
+                        "minimumResultsForSearch": "Infinity",
+                        "customClass": "custom-select custom-select-sm custom-select-borderless",
+                        "dropdownAutoWidth": true,
+                        "width": true
+                      }'>
+                                    <!--mặc đinh chọn 12-->
+                                    <option value="12" selected="">12</option>
+                                    <option value="14">14</option>
+                                    <option value="16">16</option>
+                                    <option value="18">18</option>
+                                </select>
+                                <!-- End Select -->
+                                <span class="text-secondary mr-2">trên</span>
+                                <!-- Pagination Quantity -->
+                                <!--đếm tổng sản phẩm trong bảng-->
+                                <span id="datatableWithPaginationInfoTotalQty"></span>
+                            </div>
+                        </div>
+                        <!-- bên phải là điều hướng phân trang-->
+                        <div class="col-sm-auto">
+                            <div class="d-flex justify-content-center justify-content-sm-end">
+                                <!-- Pagination -->
+                                <nav id="datatablePagination"></nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+                <!-- End Footer -->
+            </div>
+            <!-- End Card -->
+        </div>
+        <!-- End Content -->
+        <!-- Footer -->
+        <div class="card-footer">
+            <div class="row justify-content-between align-items-center">
+                <!-- Cột 1 -->
+                <div class="col">
+                    <p class="font-size-sm mb-0">&copy; <span class="d-none d-sm-inline-block">SCENTIA</span></p>
+                </div>
+                <!-- Cột 2 auto -->
+                <div class="col-auto">
+                    <!-- Căn ngang phía bên phải 2 mục dưới -->
+                    <div class="d-flex justify-content-end">
+                        <!-- List Dot -->
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">FAQ</a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">License</a>
+                            </li>
+                        </ul>
+                        <!-- End List Dot -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- ========== SECONDARY CONTENTS ========== -->
+    <!-- Export Products Modal -->
+    <div class="modal fade" id="exportProductsModal" tabindex="-1" role="dialog" aria-labelledby="exportProductsModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <h4 id="exportProductsModalTitle" class="modal-title">Xuất sản phẩm</h4>
+
+                    <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
+                        <i class="tio-clear tio-lg"></i>
+                    </button>
+                </div>
+                <!-- End Header -->
+                <!-- Body -->
+                <div class="modal-body">
+                    <p>Tệp CSV này có thể cập nhật tất cả thông tin sản phẩm. Để chỉ cập nhật số lượng hàng tồn kho, hãy sử dụng <a href="#">tệp CSV dành riêng cho hàng tồn kho.</a></p>
+
+                    <!-- Form Group -->
+                    <div class="form-group">
+                        <label class="input-label">Xuất</label>
+
+                        <!-- Custom Checkbox -->
+                        <div class="custom-control custom-radio mb-2">
+                            <input type="radio" id="exportProductsRadio1" name="exportProductsRadio" class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="exportProductsRadio1">Trang hiện tại</label>
+                        </div>
+                        <div class="custom-control custom-radio mb-2">
+                            <input type="radio" id="exportProductsRadio2" name="exportProductsRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="exportProductsRadio2">Tất cả sản phẩm</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="exportProductsRadio3" name="exportProductsRadio" class="custom-control-input" disabled="">
+                            <label class="custom-control-label" for="exportProductsRadio3">Đã chọn: 20 sản phẩm</label>
+                        </div>
+                        <!-- End Custom Checkbox -->
+                    </div>
+                    <!-- End Form Group -->
+
+                    <label class="input-label">Xuất dưới dạng</label>
+
+                    <!-- Custom Checkbox -->
+                    <div class="custom-control custom-radio mb-2">
+                        <input type="radio" id="exportProductsAsRadio1" name="exportProductsAsRadio" class="custom-control-input" checked="">
+                        <label class="custom-control-label" for="exportProductsAsRadio1">CSV dành cho Excel hoặc các chương trình bảng tính khác.</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="exportProductsAsRadio2" name="exportProductsAsRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="exportProductsAsRadio2">CSV đơn giản</label>
+                    </div>
+                    <!-- End Custom Checkbox -->
+                </div>
+                <!-- End Body -->
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white mr-2" data-dismiss="modal" aria-label="Close">Hủy</button>
+                    <button type="button" class="btn btn-primary-green">Xuất sản phẩm</button>
+                </div>
+                <!-- End Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- End Export Products Modal -->
+    <!-- Import Products Modal -->
+    <div class="modal fade" id="importProductsModal" tabindex="-1" role="dialog" aria-labelledby="importProductsModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <h4 id="importProductsModalTitle" class="modal-title">Nhập sản phẩm bằng tệp CSV</h4>
+
+                    <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
+                        <i class="tio-clear tio-lg"></i>
+                    </button>
+                </div>
+                <!-- End Header -->
+                <!-- Body -->
+                <div class="modal-body">
+                    <p><a href="#">Tải xuống mẫu tệp CSV </a> để xem ví dụ về định dạng bắt buộc.</p>
+
+                    <!-- Form Group -->
+                    <div class="form-group">
+                        <!-- Dropzone -->
+                        <div id="attachFilesNewProjectLabel" class="js-dropzone dropzone-custom custom-file-boxed">
+                            <div class="dz-message custom-file-boxed-label">
+                                <img class="avatar avatar-xl avatar-4by3 mb-3" src="https://www.iconpacks.net/icons/2/free-search-icon-3076-thumb.png" alt="Image Description">
+                                <h5 class="mb-1">Chọn tệp để tải lên</h5>
+                                <p class="mb-2">hoặc</p>
+                                <span class="btn btn-sm btn-primary-green">Duyệt tệp</span>
+                            </div>
+                        </div>
+                        <!-- End Dropzone -->
+                    </div>
+                    <!-- End Form Group -->
+                    <!-- Custom Checkbox -->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="overwriteCurrentProductsCheckbox">
+                        <label class="custom-control-label" for="overwriteCurrentProductsCheckbox">Ghi đè bất kỳ sản phẩm hiện có nào có cùng mã. Các giá trị hiện có sẽ được sử dụng cho bất kỳ cột nào bị thiếu.<a href="#"> Tìm hiểu thêm</a></label>
+                    </div>
+                    <!-- End Custom Checkbox -->
+                </div>
+                <!-- End Body -->
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white mr-2" data-dismiss="modal" aria-label="Close">Hủy</button>
+                    <button type="button" class="btn btn-primary-green">Tải lên và tiếp tục</button>
+                </div>
+                <!-- End Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- End Import Products Modal -->
+    <!-- Product Filter Modal -->
+    <div id="datatableFilterSidebar" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow">
+        <div class="card card-lg sidebar-card sidebar-footer-fixed">
+            <div class="card-header">
+                <h4 class="card-header-title">Bộ lọc</h4>
+
+                <!-- Toggle Button -->
+                <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark ml-2" href="javascript:;" data-hs-unfold-options='{
+            "target": "#datatableFilterSidebar",
+            "type": "css-animation",
+            "animationIn": "fadeInRight",
+            "animationOut": "fadeOutRight",
+            "hasOverlay": true,
+            "smartPositionOff": true
+           }'>
+                    <i class="tio-clear tio-lg"></i>
+                </a>
+                <!-- End Toggle Button -->
+            </div>
+            <!-- Body -->
+            <div class="card-body sidebar-body sidebar-scrollbar">
+                <small class="text-cap mb-3">Kho</small>
+                <!-- Custom Checkbox -->
+                <div class="custom-control custom-radio mb-2">
+                    <input type="radio" id="productAvailabilityFilterRadio1" name="productAvailabilityFilterRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productAvailabilityFilterRadio1">Còn hàng</label>
+                </div>
+                <div class="custom-control custom-radio mb-2">
+                    <input type="radio" id="productAvailabilityFilterRadio2" name="productAvailabilityFilterRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productAvailabilityFilterRadio2">Hết hàng</label>
+                </div>
+                <!-- End Custom Checkbox -->
+                <a class="link mt-2" href="javascript:;">
+                    <i class="tio-clear"></i> Xóa
+                </a>
+                <hr class="my-4">
+                <small class="text-cap mb-3">Danh mục</small>
+                <!-- Custom Checkbox -->
+                <div class="custom-control custom-radio mb-2">
+                    <input type="radio" id="productTypeFilterRadio1" name="productTypeFilterRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productTypeFilterRadio1">Tinh dầu</label>
+                </div>
+                <div class="custom-control custom-radio mb-2">
+                    <input type="radio" id="productTypeFilterRadio2" name="productTypeFilterRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productTypeFilterRadio2">Nến thơm</label>
+                </div>
+                <div class="custom-control custom-radio mb-2">
+                    <input type="radio" id="productTypeFilterRadio3" name="productTypeFilterRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productTypeFilterRadio3">Combo tán hương</label>
+                </div>
+                <!-- End Custom Checkbox -->
+                <a class="link mt-2" href="javascript:;">
+                    <i class="tio-clear"></i> Xóa
+                </a>
+            </div>
+            <!-- End Body -->
+            <!-- Footer -->
+            <div class="card-footer sidebar-footer">
+                <div class="row gx-2">
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-white">Xóa tất cả bộ lọc</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-primary-green">Lưu</button>
+                    </div>
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Footer -->
+        </div>
+    </div>
+    <!-- End Product Filter Modal -->
+    <!-- ========== END SECONDARY CONTENTS ========== -->
+    <!-- JS Implementing Plugins -->
+    <!-- Dẫn tệp JS -->
+    <script src="assets\js\vendor.min.js"></script>
+    <script src="assets\vendor\chart.js\dist\Chart.min.js"></script>
+    <script src="assets\vendor\chart.js.extensions\chartjs-extensions.js"></script>
+    <script src="assets\vendor\chartjs-plugin-datalabels\dist\chartjs-plugin-datalabels.min.js"></script>
+    <script src="..\assets\vendor\jvectormap\jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="..\assets\vendor\jvectormap\tests\assets/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="..\node_modules\fullcalendar\main.min.js"></script>
+
+    <!-- JS Front -->
+    <!-- Dẫn tệp JS -->
+    <script src="assets\js\theme.min.js"></script>
+    <script src="..\assets\js\hs.jvector-map.js"></script>
+    <script src="..\assets\js\hs.chartjs.js"></script>
+    <script src="..\assets\js/hs.fullcalendar.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+            // INITIALIZATION OF FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+            var updatingChart = $.HSCore.components.HSChartJS.init($('#updatingData'));
+            // INITIALIZATION OF DATERANGEPICKER
+            // =======================================================
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'M/DD hh:mm A'
+                }
+            });
+            var start = moment();
+            var end = moment();
+
+            function cb(start, end) {
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+            }
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+            cb(start, end);
+            // INITIALIZATION OF DATATABLES
+            // =======================================================
+            var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+                select: {
+                    style: 'multi',
+                    selector: 'td:first-child input[type="checkbox"]',
+                    classMap: {
+                        checkAll: '#datatableCheckAll',
+                        counter: '#datatableCounter',
+                        counterInfo: '#datatableCounterInfo'
+                    }
+                },
+                language: {
+                    zeroRecords: '<div class="text-center p-4">' +
+                        '<p class="mb-0">No data to show</p>' +
+                        '</div>'
+                }
+            });
+
+            $('.js-datatable-filter').on('change', function () {
+                var $this = $(this),
+                    elVal = $this.val(),
+                    targetColumnIndex = $this.data('target-column-index');
+
+                datatable.column(targetColumnIndex).search(elVal).draw();
+            });
+
+            $('#datatableSearch').on('mouseup', function (e) {
+                var $input = $(this),
+                    oldValue = $input.val();
+
+                if (oldValue == "") return;
+
+                setTimeout(function () {
+                    var newValue = $input.val();
+
+                    if (newValue == "") {
+                        // Gotcha
+                        datatable.search('').draw();
+                    }
+                }, 1);
+            });
+
+            $('#toggleColumn_SanPham').change(function (e) {
+                datatable.columns(1).visible(e.target.checked)
+            })
+
+            $('#toggleColumn_DanhMuc').change(function (e) {
+                datatable.columns(2).visible(e.target.checked)
+            })
+
+            $('#toggleColumn_Kho').change(function (e) {
+                datatable.columns(3).visible(e.target.checked)
+            })
+
+            $('#toggleColumn_MaSanPham').change(function (e) {
+                datatable.columns(4).visible(e.target.checked)
+            })
+
+            $('#toggleColumn_Gia').change(function (e) {
+                datatable.columns(5).visible(e.target.checked)
+            })
+
+            datatable.columns(6).visible(false)
+
+            $('#toggleColumn_SoLuong').change(function (e) {
+                datatable.columns(6).visible(e.target.checked)
+            })
+
+            $('#toggleColumn_BienThe').change(function (e) {
+                datatable.columns(7).visible(e.target.checked)
+            })
+            $('#toggleColumn_Ngay').change(function (e) {
+                datatable.columns(8).visible(e.target.checked)
+            })
+            // INITIALIZATION OF SELECT2
+            // =======================================================
+            $('.js-select2-custom').each(function () {
+                var select2 = $.HSCore.components.HSSelect2.init($(this));
+            });
+            // INITIALIZATION OF TAGIFY
+            // =======================================================
+            $('.js-tagify').each(function () {
+                var tagify = $.HSCore.components.HSTagify.init($(this));
+            });
+        });
+    </script>
+
+    <!-- IE Support -->
+    <script>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+</body>
+</html>

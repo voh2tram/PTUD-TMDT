@@ -1,0 +1,1165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Tất cả đơn hàng</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href=".\images\logo\Logo.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets\css\vendor.min.css">
+    <link rel="stylesheet" href="assets\vendor\icon-set\style.css">
+    <link rel="stylesheet" href="..\node_modules\chart.js\dist\Chart.min.css">
+    <link rel="stylesheet" href="..\node_modules\fullcalendar\main.min.css">
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="assets\css\theme.min.css?v=1.0">
+</head>
+<body class="bg-white">
+    <!-- Search Form -->
+    <!-- Tạo ô tìm kiếm cho màn hình bé hơn medium -->
+    <div id="searchDropdown" class="hs-unfold-content dropdown-unfold search-fullwidth d-md-none">
+        <!-- tạo form nhập chiếm toàn bộ chiều rộng của ô tìm kiếm -->
+        <form class="input-group input-group-merge input-group-borderless">
+            <!-- tạo vùng chứa trước ô nhập liệu -->
+            <div class="input-group-prepend">
+                <!-- tạo icon tìm kiếm -->
+                <div class="input-group-text">
+                    <i class="tio-search"></i>
+                </div>
+            </div>
+            <!-- ô nhập liệu -->
+            <input class="form-control rounded-0" type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm...">
+            <!-- tạo vùng sau ô nhập liệu -->
+            <div class="input-group-append">
+                <!-- tạo liên kết thực hiện đóng ô tìm kiếm bằng chữ Đóng-->
+                <div class="input-group-text">
+                    <div class="hs-unfold">
+                        <a class="js-hs-unfold-invoker" href="javascript:;" data-hs-unfold-options='{
+                 "target": "#searchDropdown",
+                 "type": "css-animation",
+                 "animationIn": "fadeIn",
+                 "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                 "closeBreakpoint": "md"
+               }'>
+                            <span>Đóng</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- End Search Form -->
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand-lg navbar-bordered flex-lg-column px-0">
+        <div class="navbar-white w-100">
+            <div class="container-fluid">
+                <div class="navbar-nav-wrap">
+                    <div class="navbar-brand-wrapper">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="ecommerce.html">
+                            <img class="navbar-brand-logo" src="images\logo\Logo.png" alt="Logo">
+                        </a>
+                        <!-- End Logo -->
+                    </div>
+                    <div class="navbar-nav-wrap-content-left">
+                        <!-- Search Form -->
+                        <!-- Tạo ô tìm kiếm cho màn hình medium trở lên-->
+                        <div class="d-none d-lg-block">
+                            <form class="position-relative">
+                                <!-- Input Group -->
+                                <!-- tạo vùng chứa chiếm toàn bộ chiều rộng của form nhập -->
+                                <div class="input-group input-group-merge input-group-borderless input-group-hover-light navbar-input-group">
+                                    <!-- tạo vùng chứa trước ô nhập liệu -->
+                                    <div class="input-group-prepend">
+                                        <!-- tạo icon tìm kiếm -->
+                                        <div class="input-group-text">
+                                            <i class="tio-search"></i>
+                                        </div>
+                                    </div>
+                                    <!-- ô nhập liệu với các chức năng: xóa nội dung tìm kiếm, hiển thị kết quả tìm kiếm -->
+                                    <input type="search" class="js-form-search form-control" placeholder="Tìm kiếm..." aria-label="Search in front" data-hs-form-search-options='{
+                                                                                                                                        "clearIcon": "#clearSearchResultsIcon",
+                                                                                                                                        "dropMenuElement": "#searchDropdownMenu",
+                                                                                                                                        "dropMenuOffset": 20,
+                                                                                                                                        "toggleIconOnFocus": true,
+                                                                                                                                        "activeClass": "focus"
+                                                                                                                                    }'>
+                                    <!-- tạo vùng sau ô nhập liệu -->
+                                    <a class="input-group-append" href="javascript:;">
+                                        <!-- Icon xóa kết quả tìm kiếm, ẩn khi trang web được tải lần đầu (khi nhập là block)-->
+                                        <span class="input-group-text">
+                                            <i id="clearSearchResultsIcon" class="tio-clear" style="display: none;"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- End Input Group -->
+                                <!-- Card Search Content -->
+                                <div id="searchDropdownMenu" class="hs-form-search-menu-content card dropdown-menu dropdown-card overflow-hidden">
+                                    <!-- Body -->
+                                    <!-- Tạo vùng chứa kết quả tìm kiếm gần đây -->
+                                    <div class="card-body-height py-3">
+                                        <!-- Tiêu đề -->
+                                        <small class="dropdown-header mb-n2">Tìm kiếm gần đây</small>
+                                        <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                        <div class="dropdown-item bg-transparent text-wrap my-2">
+                                            <!-- 1 mục tìm kiếm gần đây, có icon search ở cuối -->
+                                            <div class="h4 mr-1">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Doanh thu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mã giảm giá <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sản phẩm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sáp thơm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Tinh dầu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mấy giờ tan làm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Khi nào đến Tết <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Body -->
+                                    <!-- Footer -->
+                                    <a class="card-footer text-center" href="#">
+                                        Xem toàn bộ kết quả
+                                        <i class="tio-chevron-right"></i>
+                                    </a>
+                                    <!-- End Footer -->
+                                </div>
+                                <!-- End Card Search Content -->
+                            </form>
+                        </div>
+                        <!-- End Search Form -->
+                    </div>
+
+                    <!-- Secondary Content -->
+                    <div class="navbar-nav-wrap-content-right">
+                        <!-- Navbar -->
+                        <ul class="navbar-nav align-items-center flex-row">
+                            <li class="nav-item d-lg-none">
+                                <!-- Search Trigger -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon search có hiệu ứng dropdown màn hình < medium -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon .btn-ghost-dark rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#searchDropdown",
+                       "type": "css-animation",
+                       "animationIn": "fadeIn",
+                       "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                       "closeBreakpoint": "md"
+                     }'>
+                                        <i class="tio-search"></i>
+                                    </a>
+                                </div>
+                                <!-- End Search Trigger -->
+                            </li>
+
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <!-- Notification -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon thông báo có hiệu ứng dropdown -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-light rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#notificationNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <i class="tio-notifications-on-outlined"></i>
+                                        <span class="btn-status btn-sm-status btn-status-danger"></span>
+                                    </a>
+
+                                    <div id="notificationNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu" style="width: 25rem;">
+                                        <!-- Header -->
+                                        <div class="card-header">
+                                            <span class="card-title h4">Thông báo</span>
+
+                                            <!-- Unfold -->
+                                            <div class="hs-unfold">
+                                                <!-- tạo nút icon more có hiệu ứng dropdown -->
+                                                <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                             "target": "#notificationSettingsOneDropdown",
+                             "type": "css-animation"
+                           }'>
+                                                    <i class="tio-more-vertical"></i>
+                                                </a>
+                                                <!-- nội dung dropdown, bao gồm icon và văn bản tương ứng -->
+                                                <div id="notificationSettingsOneDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-all-done dropdown-item-icon"></i> Đánh dấu là đã xem
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-toggle-off dropdown-item-icon"></i> Tắt thông báo
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- End Unfold -->
+                                        </div>
+                                        <!-- End Header -->
+                                        <!-- Body -->
+                                        <div class="card-body-height">
+                                            <!-- Tab Content -->
+                                            <div class="tab-content" id="notificationTabContent">
+                                                <div class="tab-pane fade show active" id="notificationNavOne" role="tabpanel">
+                                                    <ul class="list-group list-group-flush navbar-card-list-group">
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <!-- Tạo cột đầu có chiều rộng tự động dựa trên độ dài nội dung -->
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <!-- Tạo checkbox đã xem hay chưa, checked thì gán đã xem và đổi nền và ngược lại -->
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck1" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck1"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Tạo cột 2 -->
+                                                                <div class="col ml-n3">
+                                                                    <!-- Tiêu đề -->
+                                                                    <span class="card-title h5">Tinh dầu Amber Noir</span>
+                                                                    <!-- Nội dung -->
+                                                                    <p class="card-text font-size-sm">đã hết hàng</p>
+                                                                </div>
+                                                                <!-- Tạo cột 3 auto -->
+                                                                <small class="col-auto text-muted text-cap">2 phút trước</small>
+                                                            </div>
+                                                            <!-- Tạo liên kết chiếm toàn bộ diện tích của mục danh sách -->
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck2" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck2"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-soft-dark avatar-circle">
+                                                                            <img class="avatar-img" src="https://i.pinimg.com/236x/e1/6c/70/e16c704fc0b655e553dd7a1a8a00475d.jpg" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Phương Thảo</span>
+                                                                    <p class="card-text font-size-sm">đã đánh giá sản phẩm Nến thơm Lemon & Lavender (230g)</p>
+                                                                    <blockquote class="blockquote blockquote-sm">
+                                                                        Thơm nứt mũi lun cả nhà ơi, chốt đơn chốt đơn
+                                                                    </blockquote>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">2 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck5">
+                                                                            <label class="custom-control-label" for="notificationCheck5"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-circle">
+                                                                            <img class="avatar-img" src="https://bizweb.dktcdn.net/100/438/408/files/meme-meo-cute-yody-vn-1.jpg?v=1690276113335" alt="Image Description">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Như Uyên</span>
+                                                                    <p class="card-text font-size-sm">đã đăng sản phẩm mới</p>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">10 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- End Item -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- End Tab Content -->
+                                        </div>
+                                        <!-- End Body -->
+                                        <!-- Card Footer -->
+                                        <a class="card-footer text-center" href="#">
+                                            Xem tất cả thông báo
+                                            <i class="tio-chevron-right"></i>
+                                        </a>
+                                        <!-- End Card Footer -->
+                                    </div>
+                                </div>
+                                <!-- End Notification -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Account -->
+                                <div class="hs-unfold">
+                                    <!-- Tạo hình avatar có chức năng dropdown -->
+                                    <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#accountNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                            <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                        </div>
+                                    </a>
+                                    <!-- Nội dung dropdown -->
+                                    <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                                        <div class="dropdown-item-text">
+                                            <div class="media align-items-center">
+                                                <!-- avatar nhỏ -->
+                                                <div class="avatar avatar-sm avatar-circle mr-2">
+                                                    <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                                </div>
+                                                <!-- Thông tin account admin -->
+                                                <div class="media-body">
+                                                    <span class="card-title h5">Nguyễn Mạnh Tuấn</span>
+                                                    <span class="card-text">tuannm@ueh.edu.vn</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- đường phân cách -->
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Profile &amp; account">Thông tin tài khoản</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Sign out">Đăng xuất</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Account -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Toggle -->
+                                <!-- Nút menu màn hình < medium -->
+                                <button type="button" class="navbar-toggler btn btn-ghost-light rounded-circle" aria-expanded="false" aria-controls="navbarNavMenu" data-toggle="collapse" data-target="#navbarNavMenu">
+                                    <i class="tio-menu-hamburger"></i>
+                                </button>
+                                <!-- End Toggle -->
+                            </li>
+                        </ul>
+                        <!-- End Navbar -->
+                    </div>
+                    <!-- End Secondary Content -->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <nav class="js-mega-menu flex-grow-1">
+                <!-- Navbar -->
+                <div class="navbar-nav-wrap-navbar collapse navbar-collapse" id="navbarNavMenu">
+                    <div class="navbar-body">
+                        <ul class="navbar-nav flex-grow-1">
+                            <!-- Overview -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> TỔNG QUAN
+                                </a>
+                            </li>
+                            <!-- End Overview -->
+                            <!-- Product -->
+                            <li class="hs-has-sub-menu">
+                                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> SẢN PHẨM
+                                </a>
+                                <!-- Dropdown -->
+                                <ul id="navLinkPagesDropdownEcommerceProducts" class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-products.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ SẢN PHẨM
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-product.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM SẢN PHẨM
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Product -->
+                            <!-- CATEGORY -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-categories.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> DANH MỤC SẢN PHẨM
+                                </a>
+                            </li>
+                            <!-- End CATEGORY -->
+                            <!-- Discount -->
+                            <li class="hs-has-sub-menu">
+                                <a class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> MÃ GIẢM GIÁ
+                                </a>
+                                <!-- Dropdown -->
+                                <ul class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-discounts.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-discount.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Dropdown -->
+                            </li>
+                            <!-- End Discount -->
+                            <!-- Order -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-orders.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> ĐƠN HÀNG
+                                </a>
+                            </li>
+                            <!-- End Order -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Navbar -->
+            </nav>
+        </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <!-- Navbar Vertical -->
+    <!-- End Navbar Vertical -->
+
+    <!-- Phần tử main với id "content" và vai trò (role) "main" và lớp "main" -->
+    <main id="content" role="main" class="main">
+        <!-- Phần tử div với lớp "content container-fluid" -->
+        <div class="content container-fluid">
+            <!-- Phần tử div với lớp "page-header d-print-none" -->
+            <div class="page-header d-print-none">
+                <!-- Phần tử div với lớp "row align-items-center" -->
+                <div class="row align-items-center">
+                    <!-- Phần tử div với lớp "col-sm mb-2 mb-sm-0" -->
+                    <div class="col-sm mb-2 mb-sm-0">
+                        <!-- Phần tử nav với thuộc tính aria-label "breadcrumb" -->
+                        <nav aria-label="breadcrumb">
+                            <!-- Phần tử ol với lớp "breadcrumb breadcrumb-no-gutter" -->
+                            <ol class="breadcrumb breadcrumb-no-gutter">
+                                <!-- Mục breadcrumb - Đường dẫn "Đơn hàng" -->
+                                <li class="breadcrumb-item"><a class="breadcrumb-link" href="ecommerce-orders.html">Đơn hàng</a></li>
+                                <!-- Mục breadcrumb - Đường dẫn "Chi tiết đơn hàng" -->
+                                <li class="breadcrumb-item active" aria-current="page">Chi tiết đơn hàng</li>
+                            </ol>
+                        </nav>
+
+                        <!-- Phần tử div với lớp "d-sm-flex align-items-sm-center" -->
+                        <div class="d-sm-flex align-items-sm-center">
+
+                        <!-- Tiêu đề trang - "Đơn hàng #32543" -->
+                        <h1 class="page-header-title">Đơn hàng #32543</h1>
+
+                        <!-- Thẻ span với lớp "badge badge-soft-success ml-sm-3" -->
+                        <span class="badge badge-soft-success ml-sm-3">
+
+                            <!-- Biểu tượng màu xanh lá cây -->
+                            <span class="legend-indicator bg-success"></span>Đã trả
+                        </span>
+
+                        <!-- Thẻ span với lớp "badge badge-soft-info ml-2 ml-sm-3" -->
+                        <span class="badge badge-soft-info ml-2 ml-sm-3">
+
+                            <!-- Biểu tượng màu xanh dương -->
+                            <span class="legend-indicator bg-info"></span>Đã hoàn thành
+                        </span>
+
+                        <!-- Thẻ span với lớp "ml-2 ml-sm-3" -->
+                        <span class="ml-2 ml-sm-3">
+
+                            <!-- Biểu tượng thời gian -->
+                            <i class="tio-date-range"></i> 15:15 10/12/2023
+                            </span>
+                        </div>
+
+                        <!-- Phần tử div với lớp "mt-2" -->
+                        <div class="mt-2">
+
+                            <!-- Liên kết (a) với lớp "text-body mr-3" và thuộc tính href "javascript:;" -->
+                            <a class="text-body mr-3" href="javascript:;" onclick="window.print(); return false;">
+
+                                <!-- Biểu tượng "In đơn hàng" -->
+                                <i class="tio-print mr-1"></i> In đơn hàng
+                            </a>
+
+                            <!-- Phần tử div với lớp "hs-unfold" -->
+                            <div class="hs-unfold">
+
+                                <!-- Liên kết (a) với lớp "js-hs-unfold-invoker text-body" và thuộc tính href "javascript:;" -->
+                                <a class="js-hs-unfold-invoker text-body" href="javascript:;" data-hs-unfold-options='{
+                                    "target": "#moreOptionsDropdown",
+                                    "type": "css-animation"
+                                    }'>
+                                    <!-- Nội dung liên kết -->
+                                    Lựa chọn khác <i class="tio-chevron-down"></i>
+                                </a>
+
+                                <!-- Phần tử div với id "moreOptionsDropdown" và lớp "hs-unfold-content dropdown-unfold dropdown-menu mt-1" -->
+                                <div id="moreOptionsDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu mt-1">
+
+                                    <!-- Liên kết (a) với lớp "dropdown-item" và thuộc tính href "#" -->
+                                    <a class="dropdown-item" href="#">
+                                        <!-- Biểu tượng "Nhân bản đơn hàng" -->
+                                        <i class="tio-copy dropdown-item-icon"></i> Nhân bản đơn hàng
+                                    </a>
+
+                                    <!-- Liên kết (a) với lớp "dropdown-item" và thuộc tính href "#" -->
+                                    <a class="dropdown-item" href="#">
+                                        <!-- Biểu tượng "Hủy đơn hàng" -->
+                                        <i class="tio-clear dropdown-item-icon"></i> Hủy đơn hàng
+                                    </a>
+
+                                    <!-- Liên kết (a) với lớp "dropdown-item" và thuộc tính href "#" -->
+                                    <a class="dropdown-item" href="#">
+                                        <!-- Biểu tượng "Chỉnh sửa đơn hàng" -->
+                                        <i class="tio-edit dropdown-item-icon"></i> Chỉnh sửa đơn hàng
+                                    </a>
+                                </div>
+                                <!-- Kết thúc Unfold -->
+                        </div>
+                    </div>
+
+                    <!-- Phần tử div với lớp "col-sm-auto" -->
+                    <div class="col-sm-auto">
+
+                        <!-- Liên kết (a) với lớp "btn btn-icon btn-sm btn-ghost-secondary rounded-circle mr-1" và thuộc tính href "#" -->
+                        <a class="btn btn-icon btn-sm btn-ghost-secondary rounded-circle mr-1" href="#" data-toggle="tooltip" data-placement="top" title="Đơn hàng trước">
+
+                            <!-- Biểu tượng "Đơn hàng trước" -->
+                            <i class="tio-arrow-backward"></i>
+                        </a>
+
+                        <!-- Liên kết (a) với lớp "btn btn-icon btn-sm btn-ghost-secondary rounded-circle" và thuộc tính href "#" -->
+                        <a class="btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="#" data-toggle="tooltip" data-placement="top" title="Đơn hàng sau">
+
+                            <!-- Biểu tượng "Đơn hàng sau" -->
+                            <i class="tio-arrow-forward"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Page Header -->
+
+            <div class="row">
+                <div class="col-lg-8 mb-3 mb-lg-0">
+                    <!-- Card -->
+                    <div class="card mb-3 mb-lg-5">
+                        <!-- Header -->
+                        <!-- Phần tử div với lớp "card-header" -->
+                        <div class="card-header">
+
+                            <!-- Phần tử h4 với lớp "card-header-title" -->
+                            <h4 class="card-header-title">
+
+                                <!-- Nội dung tiêu đề - "Chi tiết đơn hàng" -->
+                                Chi tiết đơn hàng
+
+                                <!-- Phần tử span với lớp "badge badge-soft-dark rounded-circle ml-1" -->
+                                <span class="badge badge-soft-dark rounded-circle ml-1">
+
+                                    <!-- Nội dung số liệu trong badge - "4" -->
+                                    4
+                                </span>
+                            </h4>
+
+                            <!-- Liên kết (a) với lớp "link" và thuộc tính href "javascript:;" -->
+                            <a class="link" href="javascript:;">
+
+                                <!-- Nội dung liên kết - "Chỉnh sửa" -->
+                                Chỉnh sửa
+                            </a>
+                        </div>
+
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Phần tử div với lớp "media" -->
+                            <div class="media">
+
+                                <!-- Phần tử div với lớp "avatar avatar-xl mr-3" -->
+                                <div class="avatar avatar-xl mr-3">
+
+                                    <!-- Phần tử img với lớp "img-fluid" và thuộc tính src chứa đường dẫn ảnh -->
+                                    <img class="img-fluid" src="images/product/tinh dầu/product1.png" alt="Image Description">
+                                </div>
+
+                                <!-- Phần tử div với lớp "media-body" -->
+                                <div class="media-body">
+
+                                    <!-- Phần tử div với lớp "row" -->
+                                    <div class="row">
+
+                                        <!-- Phần tử div với lớp "col-md-6 mb-3 mb-md-0" -->
+                                        <div class="col-md-6 mb-3 mb-md-0">
+
+                                            <!-- Liên kết (a) với lớp "h5 d-block" và thuộc tính href chứa đường dẫn -->
+                                            <a class="h5 d-block" href="ecommerce-product-details.html">Tinh Dầu Tre</a>
+
+                                            <!-- Phần tử div với lớp "font-size-sm text-body" -->
+                                            <div class="font-size-sm text-body">
+                                                <!-- Nội dung văn bản "Kích cỡ:" -->
+                                                <span>Kích cỡ:</span>
+
+                                                <!-- Nội dung văn bản với lớp "font-weight-bold" - "15ml" -->
+                                                <span class="font-weight-bold">15ml</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Phần tử div với lớp "col col-md-2 align-self-center" -->
+                                        <div class="col col-md-2 align-self-center">
+
+                                            <!-- Tiêu đề h5 - "330.000đ" -->
+                                            <h5>330.000đ</h5>
+                                        </div>
+
+                                        <!-- Phần tử div với lớp "col col-md-2 align-self-center" -->
+                                        <div class="col col-md-2 align-self-center">
+
+                                            <!-- Tiêu đề h5 - "2" -->
+                                            <h5>2</h5>
+                                        </div>
+
+                                        <!-- Phần tử div với lớp "col col-md-2 align-self-center text-right" -->
+                                        <div class="col col-md-2 align-self-center text-right">
+
+                                            <!-- Tiêu đề h5 - "660.000đ" -->
+                                            <h5>660.000đ</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Kết thúc Media -->
+
+                            <hr>
+                            <!--Tương tự như trên-->
+                            <!-- Media -->
+                            <div class="media">
+                                <div class="avatar avatar-xl mr-3">
+                                    <img class="img-fluid" src="images/product/sáp thơm/product5.png" alt="Image Description">
+                                </div>
+
+                                <div class="media-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3 mb-md-0">
+                                            <a class="h5 d-block" href="ecommerce-product-details.html">Nến Thơm Amber Noir</a>
+
+                                            <div class="font-size-sm text-body">
+                                                <span>Khối lượng:</span>
+                                                <span class="font-weight-bold">120gr</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-md-2 align-self-center">
+                                            <h5>550.000đ</h5>
+                                        </div>
+
+                                        <div class="col col-md-2 align-self-center">
+                                            <h5>1</h5>
+                                        </div>
+
+                                        <div class="col col-md-2 align-self-center text-right">
+                                            <h5>550.000đ</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Media -->
+
+                            <hr>
+                            <!--Tương tự như trên-->
+                            <!-- Media -->
+                            <div class="media">
+                                <div class="avatar avatar-xl mr-3">
+                                    <img class="img-fluid" src="images/product/combo tán hương/product7.jpg" alt="Image Description">
+                                </div>
+
+                                <div class="media-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3 mb-md-0">
+                                            <a class="h5 d-block" href="ecommerce-product-details.html">Combo Tán Hương Beach Walk</a>
+                                            <div class="font-size-sm text-body">
+                                                <span>Kích cỡ:</span>
+                                                <span class="font-weight-bold">1 kích cỡ</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-md-2 align-self-center">
+                                            <h5>750.000đ</h5>
+                                        </div>
+
+                                        <div class="col col-md-2 align-self-center">
+                                            <h5>1</h5>
+                                        </div>
+
+                                        <div class="col col-md-2 align-self-center text-right">
+                                            <h5>750.000đ</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Media -->
+
+                            <hr>
+
+                            <div class="row justify-content-md-end mb-3">
+                                <div class="col-md-8 col-lg-7">
+                                    <!-- Phần tử dl với lớp "row text-sm-right" -->
+                                    <dl class="row text-sm-right">
+
+                                        <!-- Phần tử dt với lớp "col-sm-6" - "Tổng tiền sản phẩm:" -->
+                                        <dt class="col-sm-6">Tổng tiền sản phẩm:</dt>
+
+                                        <!-- Phần tử dd với lớp "col-sm-6" - "1.960.000đ" -->
+                                        <dd class="col-sm-6">1.960.000đ</dd>
+
+                                        <!-- Phần tử dt với lớp "col-sm-6" - "Phí vận chuyển:" -->
+                                        <dt class="col-sm-6">Phí vận chuyển:</dt>
+
+                                        <!-- Phần tử dd với lớp "col-sm-6" - "0đ" -->
+                                        <dd class="col-sm-6">0đ</dd>
+
+                                        <!-- Phần tử dt với lớp "col-sm-6" - "Thuế:" -->
+                                        <dt class="col-sm-6">Thuế:</dt>
+
+                                        <!-- Phần tử dd với lớp "col-sm-6" - "0đ" -->
+                                        <dd class="col-sm-6">0đ</dd>
+
+                                        <!-- Phần tử dt với lớp "col-sm-6" - "Tổng cộng:" -->
+                                        <dt class="col-sm-6">Tổng cộng:</dt>
+
+                                        <!-- Phần tử dd với lớp "col-sm-6" - "1.960.000đ" -->
+                                        <dd class="col-sm-6">1.960.000đ</dd>
+
+                                        <!-- Phần tử dt với lớp "col-sm-6" - "Tổng tiền đã trả:" -->
+                                        <dt class="col-sm-6">Tổng tiền đã trả:</dt>
+
+                                        <!-- Phần tử dd với lớp "col-sm-6" - "1.960.000đ" -->
+                                        <dd class="col-sm-6">1.960.000đ</dd>
+                                    </dl>
+
+                                    <!-- End Row -->
+                                </div>
+                            </div>
+                            <!-- End Row -->
+                        </div>
+                        <!-- End Body -->
+                    </div>
+                    <!-- End Card -->
+                    <!-- Card -->
+                    <div class="card">
+                        <!-- Header -->
+                        <!-- Phần tử div với lớp "card-header" -->
+                        <div class="card-header">
+
+                            <!-- Phần tử h4 với lớp "card-header-title" -->
+                            <h4 class="card-header-title">
+
+                                <!-- Nội dung tiêu đề - "Theo dõi đơn hàng" -->
+                                Theo dõi đơn hàng
+
+                                <!-- Phần tử span với lớp "badge badge-soft-dark ml-1" -->
+                                <span class="badge badge-soft-dark ml-1">
+
+                                    <!-- Phần tử span với lớp "legend-indicator bg-dark" -->
+                                    <span class="legend-indicator bg-dark"></span>
+
+                                    <!-- Nội dung trong badge - "Đánh dấu đã hoàn thành" -->
+                                    Đánh dấu đã hoàn thành
+                                </span>
+                            </h4>
+                        </div>
+
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Step -->
+                            <ul class="step step-icon-xs">
+                                <!-- Step Item -->
+                                <!-- Phần tử li với lớp "step-item" -->
+                                <li class="step-item">
+
+                                    <!-- Phần tử div với lớp "step-content-wrapper" -->
+                                    <div class="step-content-wrapper">
+
+                                        <!-- Phần tử small với lớp "step-divider" -->
+                                        <small class="step-divider">12/12/2023</small>
+                                    </div>
+                                </li>
+
+                                <!-- End Step Item -->
+                                <!-- Step Item -->
+                                <!-- Phần tử li với lớp "step-item" -->
+                                <li class="step-item">
+
+                                    <!-- Phần tử div với lớp "step-content-wrapper" -->
+                                    <div class="step-content-wrapper">
+
+                                        <!-- Phần tử span với lớp "step-icon step-icon-soft-dark step-icon-pseudo" -->
+                                        <span class="step-icon step-icon-soft-dark step-icon-pseudo"></span>
+
+                                        <!-- Phần tử div với lớp "step-content" -->
+                                        <div class="step-content">
+
+                                            <!-- Phần tử h5 với lớp "mb-1" -->
+                                            <h5 class="mb-1">
+
+                                                <!-- Liên kết (a) với lớp "text-dark" và thuộc tính href -->
+                                                <a class="text-dark" href="#">Đã giao hàng thành công</a>
+                                            </h5>
+
+                                            <!-- Phần tử p với lớp "font-size-sm mb-0" -->
+                                            <p class="font-size-sm mb-0">4:17 AM</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- End Step Item -->
+                                <!-- Step Item -->
+                                <li class="step-item">
+                                    <div class="step-content-wrapper">
+                                
+                                        <!-- Biểu tượng của bước, là một hình vuông màu đen -->
+                                        <span class="step-icon step-icon-soft-dark step-icon-pseudo"></span>
+                                
+                                        <!-- Phần tử div chứa thông tin chi tiết của bước -->
+                                        <div class="step-content">
+                                
+                                            <!-- Phần tử h5 chứa tiêu đề liên kết (a) -->
+                                            <h5 class="mb-1">
+                                                <a class="text-dark" href="#">Đã đến kho giao</a>
+                                            </h5>
+                                
+                                            <!-- Phần tử p chứa nội dung thời gian -->
+                                            <p class="font-size-sm mb-0">2:38 AM</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Step Item -->
+                                <!--Thiết lập tương tự-->
+                                <!-- Step Item -->
+                                <li class="step-item">
+                                    <div class="step-content-wrapper">
+                                        <span class="step-icon step-icon-soft-dark step-icon-pseudo"></span>
+
+                                        <div class="step-content">
+                                            <h5 class="mb-1">
+                                                <a class="text-dark" href="#">Đang luân chuyển giao</a>
+                                            </h5>
+
+                                            <p class="font-size-sm mb-0">2:00 AM</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Step Item -->
+                                <!--Thiết lập tương tự-->
+                                <!-- Step Item -->
+                                <li class="step-item">
+                                    <div class="step-content-wrapper">
+                                        <small class="step-divider">13/12/2023</small>
+                                    </div>
+                                </li>
+                                <!-- End Step Item -->
+                                <!--Thiết lập tương tự-->
+                                <!-- Step Item -->
+                                <li class="step-item">
+                                    <div class="step-content-wrapper">
+                                        <span class="step-icon step-icon-soft-dark step-icon-pseudo"></span>
+
+                                        <div class="step-content">
+                                            <h5 class="mb-1">
+                                                <a class="text-dark" href="#">Đã dán mã vận đơn</a>
+                                            </h5>
+
+                                            <a class="link" href="#">3981241023109293</a>
+                                            <p class="font-size-sm mb-0">6:29 AM</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Step Item -->
+                                <!--Thiết lập tương tự-->
+                                <!-- Step Item -->
+                                <li class="step-item">
+                                    <div class="step-content-wrapper">
+                                        <span class="step-icon step-icon-soft-dark step-icon-pseudo"></span>
+
+                                        <div class="step-content">
+                                            <h5 class="mb-1">
+                                                <a class="text-dark" href="#">Đã bàn giao cho đơn vị vận chuyển</a>
+                                            </h5>
+
+                                            <p class="font-size-sm mb-0">6:29 AM</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Step Item -->
+                                <!--Thiết lập tương tự-->
+                                <!-- Step Item -->
+                                <li class="step-item">
+                                    <div class="step-content-wrapper">
+                                        <span class="step-icon step-icon-soft-dark step-icon-pseudo"></span>
+
+                                        <div class="step-content">
+                                            <h5 class="mb-1">
+                                                <a class="text-dark" href="#">Đơn hàng đã được đặt</a>
+                                            </h5>
+
+                                            <p class="font-size-sm mb-0">Mã đơn hàng #32543</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Step Item -->
+                            </ul>
+                            <!-- End Step -->
+
+                            <small>Thời gian theo khu vực địa phương.</small>
+                        </div>
+                        <!-- End Body -->
+                    </div>
+                    <!-- End Card -->
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Card -->
+                    <div class="card">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Khách hàng</h4>
+                        </div>
+                        <!-- End Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Phần tử a (liên kết) với lớp "media align-items-center" và thuộc tính href -->
+                            <a class="media align-items-center" href="ecommerce-customer-details.html">
+
+                                <!-- Phần tử div với lớp "avatar avatar-circle mr-3" -->
+                                <div class="avatar avatar-circle mr-3">
+
+                                    <!-- Phần tử img (ảnh) với lớp "avatar-img" và thuộc tính src -->
+                                    <img class="avatar-img" src="images/svg/brands/user.svg" alt="Image Description">
+                                </div>
+
+                                <!-- Phần tử div với lớp "media-body" -->
+                                <div class="media-body">
+
+                                    <!-- Phần tử span với lớp "text-body text-hover-primary" -->
+                                    <span class="text-body text-hover-primary">Huệ Trâm</span>
+                                </div>
+
+                                <!-- Phần tử div với lớp "media-body text-right" -->
+                                <div class="media-body text-right">
+
+                                    <!-- Phần tử i (biểu tượng) với lớp "tio-chevron-right text-body" -->
+                                    <i class="tio-chevron-right text-body"></i>
+                                </div>
+                            </a>
+
+
+                            <hr>
+
+                            <!-- Phần tử a (liên kết) với lớp "media align-items-center" và thuộc tính href -->
+                            <a class="media align-items-center" href="ecommerce-customer-details.html">
+
+                                <!-- Phần tử div với lớp "icon icon-soft-info icon-circle mr-3" -->
+                                <div class="icon icon-soft-info icon-circle mr-3">
+
+                                    <!-- Phần tử i (biểu tượng) với lớp "tio-shopping-basket-outlined" -->
+                                    <i class="tio-shopping-basket-outlined"></i>
+                                </div>
+
+                                <!-- Phần tử div với lớp "media-body" -->
+                                <div class="media-body">
+
+                                    <!-- Phần tử span với lớp "text-body text-hover-primary" -->
+                                    <span class="text-body text-hover-primary">7 đơn hàng</span>
+                                </div>
+
+                                <!-- Phần tử div với lớp "media-body text-right" -->
+                                <div class="media-body text-right">
+
+                                    <!-- Phần tử i (biểu tượng) với lớp "tio-chevron-right text-body" -->
+                                    <i class="tio-chevron-right text-body"></i>
+                                </div>
+                            </a>
+
+
+                            <hr>
+
+                            <!-- Phần tử div với lớp "d-flex justify-content-between align-items-center" -->
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <!-- Phần tử h5 chứa nội dung văn bản "Thông tin liên hệ" -->
+                                <h5>Thông tin liên hệ</h5>
+
+                                <!-- Phần tử a (liên kết) với lớp "link" và thuộc tính href -->
+                                <a class="link" href="javascript:;">Chỉnh sửa</a>
+                            </div>
+
+
+                            <!-- Phần tử ul (danh sách không có kiểu) với lớp "list-unstyled list-unstyled-py-2" -->
+                            <ul class="list-unstyled list-unstyled-py-2">
+
+                                <!-- Phần tử li (mục danh sách) -->
+                                <li>
+
+                                    <!-- Phần tử i (biểu tượng) với lớp "tio-online mr-2" -->
+                                    <i class="tio-online mr-2"></i>
+
+                                    <!-- Nội dung văn bản -->
+                                    vohhtram@gmail.com
+                                </li>
+
+                                <!-- Phần tử li (mục danh sách) -->
+                                <li>
+
+                                    <!-- Phần tử i (biểu tượng) với lớp "tio-android-phone-vs mr-2" -->
+                                    <i class="tio-android-phone-vs mr-2"></i>
+
+                                    <!-- Nội dung văn bản -->
+                                    (609) 972-22-22
+                                </li>
+                            </ul>
+
+
+                            <hr>
+
+                            <!-- Phần tử div với lớp "d-flex justify-content-between align-items-center" -->
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <!-- Phần tử h5 chứa nội dung văn bản "Địa chỉ giao hàng" -->
+                                <h5>Địa chỉ giao hàng</h5>
+
+                                <!-- Phần tử a (liên kết) với lớp "link" và thuộc tính href -->
+                                <a class="link" href="javascript:;">Chỉnh sửa</a>
+                            </div>
+
+
+                            <!-- Phần tử span với lớp "d-block" -->
+                            <span class="d-block">
+
+                                <!-- Nội dung văn bản -->
+                                196/1/19-21 Cộng Hòa<br>
+                                Phường 11<br>
+                                Quận Tân Bình, TP.HCM<br>
+                                Việt Nam
+                            </span>
+
+
+                            <hr>
+
+                            <!-- Phần tử div với lớp "d-flex justify-content-between align-items-center" -->
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <!-- Phần tử h5 chứa nội dung văn bản "Địa chỉ thanh toán" -->
+                                <h5>Địa chỉ thanh toán</h5>
+
+                                <!-- Phần tử a (liên kết) với lớp "link" và thuộc tính href -->
+                                <a class="link" href="javascript:;">Chỉnh sửa</a>
+                            </div>
+
+                            <!-- Phần tử span với lớp "d-block" -->
+                            <span class="d-block">
+
+                                <!-- Nội dung văn bản -->
+                                196/1/19-21 Cộng Hòa<br>
+                                Phường 11<br>
+                                Quận Tân Bình, TP.HCM<br>
+                                Việt Nam
+                            </span>
+
+
+                            <!-- Phần tử div với lớp "mt-3" -->
+                            <div class="mt-3">
+
+                                <!-- Phần tử h5 chứa nội dung văn bản "Thẻ ngân hàng" -->
+                                <h5 class="mb-0">Thẻ ngân hàng</h5>
+
+                                <!-- Phần tử span với lớp "d-block" -->
+                                <span class="d-block">Số thẻ: ************4291</span>
+                            </div>
+
+                        </div>
+                        <!-- End Body -->
+                    </div>
+                    <!-- End Card -->
+                </div>
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Content -->
+        <!-- Footer -->
+        <div class="card-footer">
+            <div class="row justify-content-between align-items-center">
+                <!-- Cột 1 -->
+                <div class="col">
+                    <p class="font-size-sm mb-0">&copy; <span class="d-none d-sm-inline-block">SCENTIA</span></p>
+                </div>
+                <!-- Cột 2 auto -->
+                <div class="col-auto">
+                    <!-- Căn ngang phía bên phải 2 mục dưới -->
+                    <div class="d-flex justify-content-end">
+                        <!-- List Dot -->
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">FAQ</a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">Bản quyền</a>
+                            </li>
+                        </ul>
+                        <!-- End List Dot -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+</body>
+</html>
