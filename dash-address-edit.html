@@ -503,27 +503,35 @@
                                                 <div class="gl-inline">
                                                     <div class="u-s-m-b-30">
 
-                                                        <!--====== Select Box ======-->
+                                                        <!--====== Ô chọn thành phố ======-->
 
-                                                        <label class="gl-label" for="address-country">THÀNH PHỐ *</label><select class="select-box select-box--primary-style" id="address-country">
-                                                            <option value="">Chọn thành phố</option>
-                                                            <option value="uae">Hà Nội</option>
-                                                            <option value="uk">Nha Trang</option>
-                                                            <option selected="us">Hồ Chí Minh</option>
+                                                        <label class="gl-label" for="billing-country">TỈNH/THÀNH PHỐ <span>*</span></label>
+                                                        <select style="color: #676565; font-size: 12px; font-weight: normal;" class="select-box select-box--primary-style" id="city" aria-label=".form-select-sm" data-bill>
+                                                        <option value="" selected>Chọn tỉnh thành</option>
+                                                            <!-- Thêm các tùy chọn của tỉnh/thành phố -->
                                                         </select>
-                                                        <!--====== End - Select Box ======-->
+                                                        <!--====== Kết thúc - Ô chọn thành phố ======-->
                                                     </div>
                                                     <div class="u-s-m-b-30">
 
-                                                        <!--====== Select Box ======-->
+                                                        <!--====== Ô chọn quận/huyện ======-->
 
-                                                        <label class="gl-label" for="address-state">QUẬN/HUYỆN *</label><select class="select-box select-box--primary-style" id="address-state">
-                                                            <option value="">Chọn quận/huyện</option>
-                                                            <option value="al">Quận 1</option>
-                                                            <option selected="al">Quận 10</option>
-                                                            <option value="ny">Huyện Bình Chánh</option>
+                                                        <label class="gl-label" for="billing-town-city">QUẬN/HUYỆN <span>*</span></label>
+                                                        <select style="color: #676565; font-size: 12px; font-weight: normal;" class="select-box select-box--primary-style" id="district" aria-label=".form-select-sm" data-bill>
+                                                        <option value="" selected>Chọn quận huyện</option>
+                                                        <!-- Thêm các tùy chọn của quận/huyện -->
                                                         </select>
-                                                        <!--====== End - Select Box ======-->
+                                                        <!--====== Kết thúc - Ô chọn quận/huyện ======-->
+                                                    </div>
+                                                    <div class="u-s-m-b-30">
+
+                                                        <!--====== Ô chọn quận/huyện ======-->
+
+                                                        <label class="gl-label" for="billing-state">PHƯỜNG/XÃ<span>*</span></label>
+                                                        <select style="color: #676565; font-size: 12px; font-weight: normal;" class="select-box select-box--primary-style" id="ward" aria-label=".form-select-sm" data-bill>
+                                                        <option value="" selected>Chọn phường xã</option>
+                                                        <!-- Thêm các tùy chọn của phường/xã -->
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="gl-inline">
@@ -1037,5 +1045,55 @@
             </div>
         </div>
     </noscript>
+    <!-- Đoạn mã JavaScript này thực hiện việc gửi yêu cầu HTTP để lấy dữ liệu về thành phố, quận/huyện và phường/xã từ một nguồn dữ liệu có sẵn trên GitHub. Sau đó, nó đổ dữ liệu này vào các dropdown tương ứng trên trang web. Đồng thời, đoạn mã cũng tích hợp Google Analytics và kết nối đến các tệp tin script khác nhau cần thiết cho trang web. Cuối cùng, nếu JavaScript bị tắt, thông báo noscript sẽ hiển thị, yêu cầu người dùng bật JavaScript hoặc nâng cấp trình duyệt hỗ trợ JavaScript.
+Đoạn mã này sử dụng thư viện Axios để gửi HTTP request và lấy dữ liệu từ URL đã cho -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    var citis = document.getElementById("city");
+    var districts = document.getElementById("district");
+    var wards = document.getElementById("ward");
+    var Parameter = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+        method: "GET",
+        responseType: "application/json",
+    };
+    // Gửi request và xử lý kết quả
+    var promise = axios(Parameter);
+    promise.then(function (result) {
+        // Gọi hàm renderCity và truyền dữ liệu lấy được từ server
+        renderCity(result.data);
+    });
+
+    // Hàm này nhận vào dữ liệu thành phố và vùng lấy từ server và điền vào các dropdown tương ứng
+    function renderCity(data) {
+        for (const x of data) {
+            citis.options[citis.options.length] = new Option(x.Name, x.Id);
+        }
+        // Sự kiện khi chọn thành phố
+        citis.onchange = function () {
+            district.length = 1;
+            ward.length = 1;
+            if (this.value != "") {
+                const result = data.filter(n => n.Id === this.value);
+
+                for (const k of result[0].Districts) {
+                    district.options[district.options.length] = new Option(k.Name, k.Id);
+                }
+            }
+        };
+        // Sự kiện khi chọn quận/huyện
+        district.onchange = function () {
+            ward.length = 1;
+            const dataCity = data.filter((n) => n.Id === citis.value);
+            if (this.value != "") {
+                const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                for (const w of dataWards) {
+                    wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                }
+            }
+        };
+    }
+</script>
 </body>
 </html>
