@@ -5282,792 +5282,1690 @@ input::-ms-clear {
 /*--------------------------------------------------------------
 18.0 Product-Detail-Pages
 --------------------------------------------------------------*/
-/* Thêm các quy tắc CSS cho nút đóng */
-@media (max-width: 767px) {
-  .modal .modal-content {
-      margin: 10% auto;
-      max-width: 90%;
-  }
-
-  .modal .dismiss-button {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      font-size: 1.5em;
-  }
-}
+/*BREADCRUMB ĐẦU TRANG*/
+/* Reset các kiểu mặc định cho danh sách và chữ */
 .pd-breadcrumb__list {
   list-style: none;
   padding: 0;
   margin: 0;
-  word-wrap: break-word; }
-  .pd-breadcrumb__list > li {
-    display: inline-block; }
-    .pd-breadcrumb__list > li > a {
-      color: #a0a0a0;
-      font-size: 12px;
-      transition: color 0.5s; }
-      .pd-breadcrumb__list > li > a:hover {
-        color: #333333; }
-    .pd-breadcrumb__list > li.is-marked > a {
-      color: #333333;
-      font-weight: 700; }
-    .pd-breadcrumb__list > li.has-separator:after {
-      content: '-';
-      margin: 0 6px; }
+  word-wrap: break-word;
+}
 
-.pd {
-  cursor: pointer; }
-
-.pd-wrap {
-  position: relative; }
-
-.pd-text {
-  position: absolute;
-  top: 15px;
-  padding: 8px;
-  right: 15px;
-  font-size: 12px;
-  color: #333333; }
-
-.pd-social-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  .pd-social-list > li {
-    margin-right: 16px; }
-    .pd-social-list > li:last-child {
-      margin-right: 0; }
-    .pd-social-list > li > a {
-      font-size: 1.125rem;
-      transition: color 110ms ease-in-out;
-      color: #333333; }
-
-.pd-detail__label {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  color: #333333; }
-
-.pd-detail__inline span {
-  margin-right: 0.375rem; }
-  .pd-detail__inline span:last-child {
-    margin-right: 0; }
-
-.pd-detail-inline-2 {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -ms-flex-align: center;
-      align-items: center; }
-  .pd-detail-inline-2 div {
-    margin-right: 14px; }
-    .pd-detail-inline-2 div:last-child {
-      margin-right: 0; }
-
-.pd-detail__name {
-  display: block;
-  color: #333333;
-  font-size: 30px;
-  font-weight: 700; }
-
-.pd-detail__price {
-  color: #2c742f;
-  font-size: 20px;
-  font-weight: 700; }
-
-.pd-detail__discount {
-  color: #ff4500;
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.5s; }
-
-.pd-detail__del {
-  color: #a0a0a0;
-  font-size: 12px; }
-
-.pd-detail__rating {
-  display: block; }
-  .pd-detail__rating i {
-    font-size: 12px; }
-
-.pd-detail__review > a {
-  font-size: 12px;
-  transition: color 110ms ease-in-out;
-  color: #333333; }
-  .pd-detail__review > a:hover {
-    color: #ff4500;
-    text-decoration: underline; }
-.masanpham {
-  font-size: 12px;
-  transition: color 110ms ease-in-out;
-  color: #333333; }
-.pd-detail__stock, .pd-detail__left {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 8px;
+/* Hiển thị các mục breadcrumb theo chiều ngang */
+.pd-breadcrumb__list > li {
   display: inline-block;
-  border-radius: 10px; }
+}
 
-.pd-detail__stock {
-  background-color: rgba(0, 148, 68, 0.14);
-  color: #009444; }
-
-.pd-detail__left {
-  background-color: #dbf0e5;
-  color: darkgreen; }
-
-.pd-detail__preview-desc {
-  font-size: 13px;
-  color: #7f7f7f; }
-
-.pd-detail__click-wrap > a {
-  font-size: 13px;
+/* Thiết lập kiểu chữ và màu cho liên kết breadcrumb */
+.pd-breadcrumb__list > li > a {
   color: #a0a0a0;
-  transition: color 110ms ease-in-out; }
+  font-size: 12px;
+  transition: color 0.5s;
+}
 
+/* Hiệu ứng khi di chuột qua liên kết breadcrumb */
+.pd-breadcrumb__list > li > a:hover {
+  color: #333333;
+}
+
+/* Thiết lập kiểu chữ và màu cho liên kết đã chọn trong breadcrumb */
+.pd-breadcrumb__list > li.is-marked > a {
+  color: #333333;
+  font-weight: 700;
+}
+
+/* Thêm dấu gạch ngang giữa các mục breadcrumb */
+.pd-breadcrumb__list > li.has-separator:after {
+  content: '-';
+  margin: 0 6px;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd" */
+.pd {
+  /* Đặt kiểu con trỏ khi di chuột vào phần tử */
+  cursor: pointer;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd-wrap" */
+.pd-wrap {
+  /* Thiết lập vị trí của phần tử đối với vị trí của nó */
+  position: relative;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd-text" */
+.pd-text {
+  /* Thiết lập vị trí tuyệt đối cho phần tử */
+  position: absolute;
+  /* Cách mép trên của phần tử 15 pixel từ phần tử cha gần nhất có position khác "static" */
+  top: 15px;
+  /* Khoảng trắng bên trong phần tử với 8 pixel padding */
+  padding: 8px;
+  /* Cách mép phải của phần tử 15 pixel từ phần tử cha gần nhất có position khác "static" */
+  right: 15px;
+  /* Đặt kích thước chữ của văn bản là 12 pixel */
+  font-size: 12px;
+  /* Thiết lập màu chữ của văn bản là mã màu #333333 (màu đen nhẹ) */
+  color: #333333;
+}
+
+/*NÚT MẠNG XÃ HỘI*/
+/* Chọn tất cả các phần tử có lớp là "pd-social-list" */
+.pd-social-list {
+  /* Thiết lập margin thành 0 */
+  margin: 0;
+  /* Thiết lập padding thành 0 */
+  padding: 0;
+  /* Loại bỏ việc hiển thị dấu chấm (bullet) hoặc số của danh sách */
+  list-style: none;
+  /* Hiển thị các phần tử con theo chiều ngang và tự động xuống dòng khi không đủ chỗ */
+  display: -ms-flexbox;
+  display: flex;
+  /* Cho phép tự động xuống dòng trong trường hợp không đủ chỗ */
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* Chọn phần tử con trực tiếp của ".pd-social-list" có là "li" */
+.pd-social-list > li {
+  /* Tạo khoảng cách (margin) bên phải giữa các phần tử li */
+  margin-right: 16px;
+}
+
+/* Chọn phần tử li cuối cùng của ".pd-social-list" */
+.pd-social-list > li:last-child {
+  /* Loại bỏ khoảng cách (margin) bên phải của phần tử li cuối cùng */
+  margin-right: 0;
+}
+
+/* Chọn phần tử "a" con của ".pd-social-list > li" */
+.pd-social-list > li > a {
+  /* Đặt kích thước chữ của văn bản là 1.125rem (18px) */
+  font-size: 1.125rem;
+  /* Tạo hiệu ứng chuyển động màu chữ trong thời gian 110ms với hiệu ứng ease-in-out */
+  transition: color 110ms ease-in-out;
+  /* Đặt màu chữ của phần tử "a" là #333333 (màu đen nhẹ) */
+  color: #333333;
+}
+
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail__label" */
+.pd-detail__label {
+  /* Hiển thị phần tử như một khối (block-level element) */
+  display: block;
+  /* Đặt kích thước chữ của văn bản là 14 pixel */
+  font-size: 14px;
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+  /* Đặt màu chữ của văn bản là #333333 (màu đen nhẹ) */
+  color: #333333;
+}
+
+/* Chọn tất cả các phần tử "span" nằm trong phần tử có lớp là "pd-detail__inline" */
+.pd-detail__inline span {
+  /* Tạo khoảng cách (margin) bên phải giữa các phần tử "span" */
+  margin-right: 0.375rem;
+}
+
+/* Chọn phần tử "span" cuối cùng trong tất cả các phần tử "span" nằm trong ".pd-detail__inline" */
+.pd-detail__inline span:last-child {
+  /* Loại bỏ khoảng cách (margin) bên phải của phần tử "span" cuối cùng */
+  margin-right: 0;
+}
+
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail-inline-2" */
+.pd-detail-inline-2 {
+  /* Hiển thị phần tử như một flex container (block-level flex container) */
+  display: -ms-flexbox;
+  display: flex;
+  /* Ngăn các phần tử con tự động xuống dòng khi không đủ chỗ */
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  /* Căn giữa các phần tử con theo chiều dọc */
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* Chọn tất cả các phần tử "div" nằm trong ".pd-detail-inline-2" */
+.pd-detail-inline-2 div {
+  /* Tạo khoảng cách (margin) bên phải giữa các phần tử "div" */
+  margin-right: 14px;
+}
+
+/* Chọn phần tử "div" cuối cùng trong tất cả các phần tử "div" nằm trong ".pd-detail-inline-2" */
+.pd-detail-inline-2 div:last-child {
+  /* Loại bỏ khoảng cách (margin) bên phải của phần tử "div" cuối cùng */
+  margin-right: 0;
+}
+
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail__name" */
+.pd-detail__name {
+  /* Hiển thị phần tử như một khối (block-level element) */
+  display: block;
+  /* Đặt màu chữ của văn bản là #333333 (màu đen nhẹ) */
+  color: #333333;
+  /* Đặt kích thước chữ của văn bản là 30 pixel */
+  font-size: 30px;
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+}
+
+/*giá*/
+/* Chọn tất cả các phần tử có lớp là "pd-detail__price" */
+.pd-detail__price {
+  /* Đặt màu chữ của văn bản là #2c742f (màu xanh lá cây) */
+  color: #2c742f;
+  /* Đặt kích thước chữ của văn bản là 20 pixel */
+  font-size: 20px;
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+}
+
+/*giảm giá*/
+/* Chọn tất cả các phần tử có lớp là "pd-detail__discount" */
+.pd-detail__discount {
+  /* Đặt màu chữ của văn bản là #ff4500 (màu cam đậm) */
+  color: #ff4500;
+  /* Đặt kích thước chữ của văn bản là 14 pixel */
+  font-size: 14px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semi-bold) */
+  font-weight: 600;
+  /* Tạo hiệu ứng chuyển động màu chữ trong thời gian 0.5s */
+  transition: color 0.5s;
+}
+
+/*xóa giá cũ*/
+/* Chọn tất cả các phần tử có lớp là "pd-detail__del" */
+.pd-detail__del {
+  /* Đặt màu chữ của văn bản là #a0a0a0 (màu xám nhạt) */
+  color: #a0a0a0;
+  /* Đặt kích thước chữ của văn bản là 12 pixel */
+  font-size: 12px;
+}
+
+/*xếp hạng*/
+/* Chọn tất cả các phần tử có lớp là "pd-detail__rating" */
+.pd-detail__rating {
+  /* Hiển thị phần tử như một khối (block-level element) */
+  display: block;
+}
+
+/*biểu tượng sao*/
+/* Chọn tất cả các phần tử "i" nằm trong ".pd-detail__rating" */
+.pd-detail__rating i {
+  /* Đặt kích thước chữ của biểu tượng "i" là 12 pixel */
+  font-size: 12px;
+}
+
+
+/* Chọn phần tử "a" nằm trong ".pd-detail__review" */
+.pd-detail__review > a {
+  /* Đặt kích thước chữ của văn bản là 12 pixel */
+  font-size: 12px;
+  /* Tạo hiệu ứng chuyển động màu chữ trong thời gian 110ms với hiệu ứng ease-in-out */
+  transition: color 110ms ease-in-out;
+  /* Đặt màu chữ của văn bản là #333333 (màu đen nhẹ) */
+  color: #333333;
+}
+
+/* Khi di chuột vào phần tử "a" nằm trong ".pd-detail__review" */
+.pd-detail__review > a:hover {
+  /* Đổi màu chữ thành #ff4500 (màu cam đậm) */
+  color: #ff4500;
+  /* Thêm gạch chân (underline) cho văn bản khi di chuột vào */
+  text-decoration: underline;
+}
+
+/* Chọn tất cả các phần tử có lớp là "masanpham" */
+.masanpham {
+  /* Đặt kích thước chữ của văn bản là 12 pixel */
+  font-size: 12px;
+  /* Tạo hiệu ứng chuyển động màu chữ trong thời gian 110ms với hiệu ứng ease-in-out */
+  transition: color 110ms ease-in-out;
+  /* Đặt màu chữ của văn bản là #333333 (màu đen nhẹ) */
+  color: #333333;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail__stock" hoặc "pd-detail__left" */
+.pd-detail__stock,
+.pd-detail__left {
+  /* Đặt kích thước chữ của văn bản là 12 pixel */
+  font-size: 12px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semi-bold) */
+  font-weight: 600;
+  /* Thêm khoảng trắng (padding) ở bốn phía của phần tử */
+  padding: 8px;
+  /* Hiển thị phần tử như một phần tử inline-block */
+  display: inline-block;
+  /* Bo tròn góc của phần tử thành 10 pixel */
+  border-radius: 10px;
+}
+
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail__stock" */
+.pd-detail__stock {
+  /* Đặt màu nền của phần tử thành một màu xanh lá cây có độ trong suốt */
+  background-color: rgba(0, 148, 68, 0.14);
+  /* Đặt màu chữ của văn bản là #009444 (màu xanh lá cây) */
+  color: #009444;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail__left" */
+.pd-detail__left {
+  /* Đặt màu nền của phần tử là #dbf0e5 (màu xanh nhạt) */
+  background-color: #dbf0e5;
+  /* Đặt màu chữ của văn bản là darkgreen (màu xanh đậm) */
+  color: darkgreen;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail__preview-desc" */
+.pd-detail__preview-desc {
+  /* Đặt kích thước chữ của văn bản là 13 pixel */
+  font-size: 13px;
+  /* Đặt màu chữ của văn bản là #7f7f7f (màu xám nhạt) */
+  color: #7f7f7f;
+}
+
+/* Chọn phần tử "a" nằm trong ".pd-detail__click-wrap" */
+.pd-detail__click-wrap > a {
+  /* Đặt kích thước chữ của văn bản là 13 pixel */
+  font-size: 13px;
+  /* Đặt màu chữ của văn bản là #a0a0a0 (màu xám) */
+  color: #a0a0a0;
+  /* Tạo hiệu ứng chuyển động màu chữ trong thời gian 110ms với hiệu ứng ease-in-out */
+  transition: color 110ms ease-in-out;
+}
+
+/* Khi di chuột vào phần tử "a" nằm trong ".pd-detail__click-wrap" */
 .pd-detail__click-wrap > a:hover {
-    color: #b6b6b6;
-    text-decoration: underline; }
+  /* Đổi màu chữ thành #b6b6b6 (màu xám nhạt) */
+  color: #b6b6b6;
+  /* Thêm gạch chân (underline) cho văn bản khi di chuột vào */
+  text-decoration: underline;
+}
 
+/* Chọn tất cả các phần tử có lớp là "pd-detail__click-count" */
 .pd-detail__click-count {
+  /* Đặt kích thước chữ của văn bản là 10 pixel */
   font-size: 10px;
-  color: #a0a0a0; }
+  /* Đặt màu chữ của văn bản là #a0a0a0 (màu xám) */
+  color: #a0a0a0;
+}
 
-/* chỉnh add to cart*/
+/*PHẦN ADD TO CART*/
+/* Chọn tất cả các phần tử có lớp là "pd-detail__form" */
 .pd-detail__form {
-  width: 100%; }
-  .pd-detail__form .btn {
-    border: none;
-    color: white;
-    font-weight: 200;
-    background-color: #2c742f;
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    border-color: #2c742f; 
-    transition: background-color 0.3s ease-in}
-    .pd-detail__form .btn:hover {
-      color: green;
-      background-color: #dbf0e5;}
+  /* Đặt chiều rộng của phần tử là 100% */
+  width: 100%;
+}
 
-    .pd-detail__form .btnn {
-      border:solid 1px;
-      color: green;
-      font-size: 14px;
-      font-weight: 200;
-      background-color: white;
-      padding: 1rem 2rem;
-      border-radius: 3rem;
-      border-color: #2c742f; 
-      transition: background-color 0.3s ease-in}
-      .pd-detail__form .btnn:hover{
-      color: white;
-      background-color: #2c742f;
-      }
+/* Chọn tất cả các phần tử có lớp là "pd-detail__form" có phần tử con là "btn" */
+.pd-detail__form .btn {
+  /* Loại bỏ viền (border) của nút */
+  border: none;
+  /* Đặt màu chữ của nút là trắng */
+  color: white;
+  /* Đặt độ đậm của chữ là 200 (font-weight: light) */
+  font-weight: 200;
+  /* Đặt màu nền của nút là #2c742f (màu xanh lá cây) */
+  background-color: #2c742f;
+  /* Thêm padding cho nút */
+  padding: 1rem 2rem;
+  /* Bo tròn góc của nút thành 3rem */
+  border-radius: 3rem;
+  /* Đặt màu viền (border) của nút là #2c742f */
+  border-color: #2c742f;
+  /* Tạo hiệu ứng chuyển động màu nền trong thời gian 0.3s với hiệu ứng ease-in */
+  transition: background-color 0.3s ease-in;
+}
+
+/* Khi di chuột vào nút có lớp "btn" nằm trong ".pd-detail__form" */
+.pd-detail__form .btn:hover {
+  /* Đổi màu chữ thành màu xanh lá cây */
+  color: green;
+  /* Đổi màu nền của nút thành #dbf0e5 (màu xanh nhạt) */
+  background-color: #dbf0e5;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd-detail__form" có phần tử con là "btnn" */
+.pd-detail__form .btnn {
+  /* Đặt viền (border) cho nút với độ rộng 1px và kiểu solid */
+  border: solid 1px;
+  /* Đặt màu chữ của nút là màu xanh lá cây */
+  color: green;
+  /* Đặt kích thước chữ của nút là 14px */
+  font-size: 14px;
+  /* Đặt độ đậm của chữ là 200 (font-weight: light) */
+  font-weight: 200;
+  /* Đặt màu nền của nút là trắng */
+  background-color: white;
+  /* Thêm padding cho nút */
+  padding: 1rem 2rem;
+  /* Bo tròn góc của nút thành 3rem */
+  border-radius: 3rem;
+  /* Đặt màu viền (border) của nút là #2c742f */
+  border-color: #2c742f;
+  /* Tạo hiệu ứng chuyển động màu nền trong thời gian 0.3s với hiệu ứng ease-in */
+  transition: background-color 0.3s ease-in;
+}
+
+/* Khi di chuột vào nút có lớp "btnn" nằm trong ".pd-detail__form" */
+.pd-detail__form .btnn:hover {
+  /* Đổi màu chữ thành trắng */
+  color: white;
+  /* Đổi màu nền của nút thành #2c742f (màu xanh lá cây) */
+  background-color: #2c742f;
+}
+      
 /**
   * Variations
  */
+/* Chọn tất cả các phần tử có lớp là "pd-detail__color" hoặc "pd-detail__size" */
 .pd-detail__color, .pd-detail__size {
+  /* Hiển thị phần tử như một flex container (block-level flex container) */
   display: -ms-flexbox;
   display: flex;
+  /* Cho phép tự động xuống dòng trong trường hợp không đủ chỗ */
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
+/* Chọn tất cả các phần tử có lớp là "color__radio" */
 .color__radio {
+  /* Đặt vị trí tương đối cho phần tử */
   position: relative;
+  /* Đặt chiều cao dòng là 1.89 (line-height: 1.89) */
   line-height: 1.89;
+  /* Tạo khoảng cách bên phải giữa các phần tử "color__radio" */
   margin-right: 36px;
-  display: inline-block; }
+  /* Hiển thị phần tử như một phần tử inline-block */
+  display: inline-block;
+}
 
+/* Chọn tất cả các phần tử input có thuộc tính type là "radio" nằm trong phần tử có lớp là "color__radio" */
 .color__radio [type="radio"] {
+  /* Đặt vị trí tuyệt đối cho input */
   position: absolute;
+  /* Đặt vị trí bên trái và bên trên của input là 0, tức là nằm chồng lên phần tử cha */
   left: 0;
   top: 0;
+  /* Đặt chiều rộng tối thiểu của input là 30px */
   min-width: 30px;
+  /* Đặt chiều rộng của input là 100% của phần tử cha */
   width: 100%;
+  /* Đặt chiều cao của input là 100% của phần tử cha */
   height: 100%;
+  /* Đặt z-index của input là 2 để nó nằm trên cùng */
   z-index: 2;
+  /* Đặt độ mờ của input là 0, tức là không hiển thị nó */
   opacity: 0;
-  cursor: pointer; }
+  /* Đặt kiểu con trỏ của input thành pointer để chỉ ra nó là một điểm nhấn có thể chọn */
+  cursor: pointer;
+}
 
+
+/* Chọn tất cả các phần tử có lớp là "color__radio-label" */
 .color__radio-label {
+  /* Đặt vị trí ban đầu của phần tử */
   position: initial;
-  display: inline-block; }
+  /* Hiển thị phần tử như một phần tử inline-block */
+  display: inline-block;
+}
 
-.color__radio-label:before, .color__radio-label:after {
-  content: '';
-  width: 30px;
-  height: 30px;
-  display: block;
-  border: 2px solid transparent;
-  z-index: 0;
-  position: absolute;
-  left: 0;
-  top: 0; }
-
+/* Chọn tất cả các phần tử có lớp là "color__radio-label" có phần tử trước và phần tử sau */
+.color__radio-label:before,
 .color__radio-label:after {
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
-  background-color: inherit; }
-
-.color__radio input:checked + label:before {
-  border-color: #d2d2d2; }
-
-.size__radio {
-  position: relative;
-  margin: 0 12px 12px 0; }
-
-.size__radio [type="radio"] {
+  /* Thêm nội dung ảo cho phần tử */
+  content: '';
+  /* Đặt chiều rộng của phần tử ảo là 30px */
+  width: 30px;
+  /* Đặt chiều cao của phần tử ảo là 30px */
+  height: 30px;
+  /* Hiển thị phần tử ảo như một phần tử block */
+  display: block;
+  /* Đặt đường viền của phần tử ảo là 2px và màu trong suốt */
+  border: 2px solid transparent;
+  /* Đặt z-index của phần tử ảo là 0 để nó nằm sau phần tử thực tế */
+  z-index: 0;
+  /* Đặt vị trí của phần tử ảo tại góc trên cùng bên trái của phần tử cha */
   position: absolute;
   left: 0;
   top: 0;
+}
+
+
+/* Cho phần tử có lớp "color__radio-label:after" */
+.color__radio-label:after {
+  /* Áp dụng hiệu ứng scale với tỉ lệ 0.6 */
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  /* Đặt màu nền của phần tử ảo là giống với màu nền của phần tử cha */
+  background-color: inherit;
+}
+
+/* Chọn phần tử input có kiểu là "radio" được chọn, nằm sau đó là phần tử label, trước đó là phần tử có lớp "color__radio" */
+.color__radio input:checked + label:before {
+  /* Đặt màu của đường viền của phần tử ảo khi input được chọn là #d2d2d2 */
+  border-color: #d2d2d2;
+}
+
+/* Chọn tất cả các phần tử có lớp là "size__radio" */
+.size__radio {
+  /* Đặt vị trí của phần tử là tương đối */
+  position: relative;
+  /* Tạo khoảng cách với các phần tử xung quanh */
+  margin: 0 12px 12px 0;
+}
+
+/* Chọn tất cả các phần tử input có kiểu là "radio" nằm trong phần tử có lớp "size__radio" */
+.size__radio [type="radio"] {
+  /* Đặt vị trí của input là tuyệt đối */
+  position: absolute;
+  /* Đặt vị trí bên trái và bên trên của input là 0, tức là nằm chồng lên phần tử cha */
+  left: 0;
+  top: 0;
+  /* Đặt chiều rộng của input là 100% của phần tử cha */
   width: 100%;
+  /* Đặt chiều cao của input là 100% của phần tử cha */
   height: 100%;
+  /* Đặt z-index của input là 2 để nó nằm trên cùng */
   z-index: 2;
+  /* Đặt độ mờ của input là 0, tức là không hiển thị nó */
   opacity: 0;
-  cursor: pointer; }
-
-.size__radio-label {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 7px 15px;
-  background-color: #ffffff;
-  font-size: 13px;
-  color: #333333;
+  /* Đặt kiểu con trỏ của input thành pointer để chỉ ra nó là một điểm nhấn có thể chọn */
   cursor: pointer;
-  display: inline-block; }
+}
 
+/* Chọn tất cả các phần tử có lớp là "size__radio-label" */
+.size__radio-label {
+  /* Đặt đường viền của phần tử là 1px và màu rgba(0, 0, 0, 0.08) */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* Thêm padding cho phần tử */
+  padding: 7px 15px;
+  /* Đặt màu nền của phần tử là #ffffff (màu trắng) */
+  background-color: #ffffff;
+  /* Đặt kích thước chữ của văn bản là 13 pixel */
+  font-size: 13px;
+  /* Đặt màu chữ của văn bản là #333333 (màu đen nhẹ) */
+  color: #333333;
+  /* Đặt kiểu con trỏ của phần tử thành pointer để chỉ ra nó có thể chọn */
+  cursor: pointer;
+  /* Hiển thị phần tử như một phần tử inline-block */
+  display: inline-block;
+}
+
+/* Khi input có kiểu là "radio" được chọn, phần tử label liền kề sẽ có đường viền màu #333333 */
 .size__radio input:checked + label {
-  border-color: #333333; }
+  /* Đặt màu đường viền của phần tử là #333333 (màu đen) */
+  border-color: #333333;
+}
 
+/* Chọn tất cả các phần tử có lớp là "pd-detail__policy-list" */
 .pd-detail__policy-list {
+  /* Đặt lề bên trái của phần tử là 26px */
   margin: 0;
   padding-left: 26px;
+  /* Đặt kích thước chữ của văn bản là 14 pixel */
   font-size: 14px;
-  list-style: none; }
-  .pd-detail__policy-list > li i {
-    color: #009444; }
-  .pd-detail__policy-list > li span {
-    color: #7f7f7f; }
+  /* Loại bỏ viền và dấu chấm đầu dòng của danh sách */
+  list-style: none;
+}
 
+/* Chọn tất cả các phần tử "i" nằm trong ".pd-detail__policy-list > li" */
+.pd-detail__policy-list > li i {
+  /* Đặt màu của biểu tượng "i" là #009444 (màu xanh lá cây) */
+  color: #009444;
+}
+
+/* Chọn tất cả các phần tử "span" nằm trong ".pd-detail__policy-list > li" */
+.pd-detail__policy-list > li span {
+  /* Đặt màu chữ của văn bản là #7f7f7f (màu xám nhạt) */
+  color: #7f7f7f;
+}
+
+/* Chọn tất cả các phần tử có lớp là "pd-tab__list" */
 .pd-tab__list {
+  /* Đặt lề bên trái và bên phải của phần tử là 0 */
   margin: 0;
-  border-bottom: 2px solid #e7e7e7; }
-  .pd-tab__list > li {
-    margin-bottom: -2px; }
-    .pd-tab__list > li > a {
-      padding: 10px 0;
-      color: #333333;
-      font-size: 14px;
-      font-weight: 700;
-      border-bottom: 2px solid transparent;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      letter-spacing: .01rem;
-      transition: all .3s; }
-      .pd-tab__list > li > a span {
-        margin-left: 2px;
-        font-size: 12px; }
-      .pd-tab__list > li > a.active {
-        color: #000000;
-        border-color: #000000; }
-    .pd-tab__list > li + li {
-      margin-left: 28px; }
+  /* Đặt đường viền phía dưới của phần tử là 2px và màu #e7e7e7 */
+  border-bottom: 2px solid #e7e7e7;
+}
 
-.pd-tab__desc, .pd-tab__tag {
-  max-width: 691px; }
+/* Chọn tất cả các phần tử "li" nằm trong ".pd-tab__list" */
+.pd-tab__list > li {
+  /* Đặt khoảng cách giữa các phần tử "li" là -2px để loại bỏ đường viền giữa các mục */
+  margin-bottom: -2px;
+}
 
-.pd-tab__desc p{
-  color: black;
+/* Chọn phần tử "a" nằm trong ".pd-tab__list > li" */
+.pd-tab__list > li > a {
+  /* Thêm padding cho phần tử "a" */
+  padding: 10px 0;
+  /* Đặt màu chữ của văn bản là #333333 (màu đen nhẹ) */
+  color: #333333;
+  /* Đặt kích thước chữ của văn bản là 14px */
   font-size: 14px;
-  line-height: 2; }
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+  /* Đặt đường viền phía dưới của phần tử "a" là 2px và màu trong suốt */
+  border-bottom: 2px solid transparent;
+  /* Bo tròn góc trên bên trái của phần tử "a" là 3px */
+  border-top-left-radius: 3px;
+  /* Bo tròn góc trên bên phải của phần tử "a" là 3px */
+  border-top-right-radius: 3px;
+  /* Đặt khoảng cách giữa các ký tự là 0.01rem */
+  letter-spacing: .01rem;
+  /* Tạo hiệu ứng chuyển động cho tất cả các thuộc tính trong thời gian 0.3s */
+  transition: all .3s;
+}
 
+/* Chọn phần tử "span" nằm trong ".pd-tab__list > li > a" */
+.pd-tab__list > li > a span {
+  /* Đặt khoảng cách bên trái của phần tử "span" là 2px */
+  margin-left: 2px;
+  /* Đặt kích thước chữ của văn bản là 12px */
+  font-size: 12px;
+}
+
+/* Khi phần tử "a" có lớp "active" (được chọn) */
+.pd-tab__list > li > a.active {
+  /* Đặt màu chữ của văn bản là #000000 (màu đen) */
+  color: #000000;
+  /* Đặt màu đường viền phía dưới của phần tử "a" là #000000 (màu đen) */
+  border-color: #000000;
+}
+
+/* Chọn phần tử "li" kế tiếp của phần tử "li" trong ".pd-tab__list" */
+.pd-tab__list > li + li {
+  /* Đặt khoảng cách bên trái của phần tử "li" là 28px */
+  margin-left: 28px;
+}
+
+/*PHẦN MÔ TẢ SP*/
+/* Chọn tất cả các phần tử có lớp là "pd-tab__desc" hoặc "pd-tab__tag" */
+.pd-tab__desc, .pd-tab__tag {
+  /* Đặt chiều rộng tối đa của phần tử là 691px */
+  max-width: 691px;
+}
+
+/* Chọn tất cả các đoạn văn bản "p" nằm trong ".pd-tab__desc" */
+.pd-tab__desc p {
+  /* Đặt màu chữ của văn bản là màu đen */
+  color: black;
+  /* Đặt kích thước chữ của văn bản là 14px */
+  font-size: 14px;
+  /* Đặt độ dài của dòng (line-height) là 2 */
+  line-height: 2;
+}
+
+/* Chọn tất cả các danh sách không có dấu đầu dòng nằm trong ".pd-tab__desc ul" */
 .pd-tab__desc ul {
+  /* Đặt lề bên trái của danh sách là 14px */
   margin: 0;
   padding-left: 14px;
-  list-style: none; }
-  .pd-tab__desc ul > li {
-    margin-bottom: 7px;
-    color: #333333;
-    font-size: 14px; }
+  /* Loại bỏ ký tự dấu đầu dòng và đánh dấu của danh sách */
+  list-style: none;
+}
 
-.pd-tab__desc h4 {
-  color: black;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 2; }
-.pd-tab__desc li {
-    color: black;
-    font-size: 14px;
-    line-height: 2; }
-
-.pd-tab__desc .pd-table {
-  overflow: auto; }
-  .pd-tab__desc .pd-table table {
-    width: 100%;
-    border-radius: 2px;
-    border: 1px solid #eee;
-    border-collapse: collapse; }
-  .pd-tab__desc .pd-table tbody tr {
-    border-bottom: 1px solid #eee; }
-  .pd-tab__desc .pd-table tbody td {
-    font-size: 14px;
-    color: #7f7f7f;
-    padding: 12px; }
-  .pd-tab__desc .pd-table tbody td:first-child {
-    color: #333333;
-    font-weight: 600; }
-
-.pd-tab__tag h2 {
-  font-size: 16px;
-  font-weight: 700;
+/* Chọn tất cả các phần tử "li" nằm trong ".pd-tab__desc ul" */
+.pd-tab__desc ul > li {
+  /* Đặt khoảng cách giữa các mục của danh sách là 7px */
+  margin-bottom: 7px;
+  /* Đặt màu chữ của văn bản là #333333 (màu xám đậm) */
   color: #333333;
-  line-height: 1.18; }
-
-.pd-tab__tag form {
-  width: 100%; }
-  .pd-tab__tag form .btn {
-    font-size: 13px;
-    font-weight: 600;
-    border: 0;
-    height: 48px;
-    padding: 17px 18px; }
-  .pd-tab__tag form .input-text {
-    height: 48px;
-    margin-right: 8px;
-    width: 50%; }
-
-.pd-tab__rev-f1 {
-  width: 100%; }
-
-.pd-tab__rev-score {
-  padding: 40px 0;
-  text-align: center;
-  background-color: #f6f6f6; }
-  .pd-tab__rev-score h2 {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 0.875;
-    color: #333333; }
-  .pd-tab__rev-score h4 {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 0.875;
-    color: #333333; }
-
-.rev-f1__group {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
-  .rev-f1__group h2 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #333333;
-    line-height: 1.18; }
-  .rev-f1__group .select-box {
-    border-radius: 0.375rem; }
-
-.rev-f1__review {
-  max-width: 691px; }
-
-.review-o {
-  padding: 1rem 0;
-  border-bottom: 1px solid #f0f0f0; }
-
-.review-o__name {
+  /* Đặt kích thước chữ của văn bản là 14px */
   font-size: 14px;
-  font-weight: 600;
-  color: #333333; }
+}
 
-.review-o__date {
-  margin-left: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #7f7f7f; }
+/* Chọn tất cả các tiêu đề cấp 4 "h4" nằm trong ".pd-tab__desc" */
+.pd-tab__desc h4 {
+  /* Đặt màu chữ của tiêu đề là màu đen */
+  color: black;
+  /* Đặt kích thước chữ của tiêu đề là 16px */
+  font-size: 16px;
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+  /* Đặt độ dài của dòng (line-height) là 2 */
+  line-height: 2;
+}
 
-.review-o__rating span {
-  margin-left: 2px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #7f7f7f; }
+/* Chọn tất cả các phần tử "li" nằm trong ".pd-tab__desc" */
+.pd-tab__desc li {
+  /* Đặt màu chữ của văn bản là màu đen */
+  color: black;
+  /* Đặt kích thước chữ của văn bản là 14px */
+  font-size: 14px;
+  /* Đặt độ dài của dòng (line-height) là 2 */
+  line-height: 2;
+}
 
-.review-o__text {
-  font-size: 13px;
-  color: #7f7f7f; }
+/* Chọn tất cả các phần tử có lớp là "pd-table" nằm trong ".pd-tab__desc" */
+.pd-tab__desc .pd-table {
+  /* Kích thước của bảng vượt qua kích thước của phần tử cha */
+  overflow: auto;
+}
 
-.pd-tab__rev-f2 {
-  width: 100%; }
-  .pd-tab__rev-f2 h2 {
-    font-size: 32px;
-    color: #333333;
-    line-height: 0.90; }
-  .pd-tab__rev-f2 .input-text, .pd-tab__rev-f2 .text-area {
-    width: 100%; }
-  .pd-tab__rev-f2 .text-area {
-    height: 15.625rem; }
-  .pd-tab__rev-f2 .btn {
-    background-color: green;
-    border: none;
-    border-radius: 200px;
-    font-weight: 600;
-    padding: 16px 46px; 
-    transition: background-color 0.5s ease-in}
-    .pd-tab__rev-f2 .btn:hover 
-    {
-      color: #009444;
-      border: solid 1px ;
-      border-color: #009444;
-      background-color: #dbf0e5;
-    } 
-
-
-
-.rev-f2__table-wrap {
-  overflow: auto; }
-
-.rev-f2__table {
+/* Chọn tất cả các bảng nằm trong ".pd-tab__desc .pd-table" */
+.pd-tab__desc .pd-table table {
+  /* Đặt chiều rộng của bảng là 100% */
   width: 100%;
-  table-layout: fixed;
-  text-align: center;
+  /* Bo tròn góc của bảng là 2px */
+  border-radius: 2px;
+  /* Đặt đường viền của bảng là 1px và màu #eee */
+  border: 1px solid #eee;
+  /* Gộp các đường viền của các ô trong bảng */
   border-collapse: collapse;
-  border: 1px solid #dee2e6; }
-  .rev-f2__table th, .rev-f2__table td {
-    padding: 16px 4px;
-    border: 1px solid #d6d6d6; }
-  .rev-f2__table th {
-    width: 120px;
-    color: #333333;
-    background-color: #f0f0f0;
-    font-size: 13px; }
-    .rev-f2__table th span {
-      margin-top: 2px;
-      display: block;
-      font-size: 11px;
-      color: #333333; }
+}
 
-.rev-f2__group {
+/* Chọn tất cả các hàng của nội dung bảng nằm trong ".pd-tab__desc .pd-table tbody" */
+.pd-tab__desc .pd-table tbody tr {
+  /* Đặt đường viền dưới cho từng hàng là 1px và màu #eee */
+  border-bottom: 1px solid #eee;
+}
+
+/* Chọn tất cả các ô nằm trong ".pd-tab__desc .pd-table tbody td" */
+.pd-tab__desc .pd-table tbody td {
+  /* Đặt kích thước chữ của văn bản là 14px */
+  font-size: 14px;
+  /* Đặt màu chữ của văn bản là #7f7f7f (màu xám nhạt) */
+  color: #7f7f7f;
+  /* Thêm padding cho ô */
+  padding: 12px;
+}
+
+/* Chọn ô đầu tiên của mỗi hàng trong ".pd-tab__desc .pd-table tbody" */
+.pd-tab__desc .pd-table tbody td:first-child {
+  /* Đặt màu chữ của văn bản là #333333 (màu xám đậm) */
+  color: #333333;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semibold) */
+  font-weight: 600;
+}
+
+
+/* Chọn phần tử h2 nằm trong ".pd-tab__tag" */
+.pd-tab__tag h2 {
+  /* Đặt kích thước chữ của tiêu đề là 16px */
+  font-size: 16px;
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+  /* Đặt màu chữ của tiêu đề là #333333 (màu xám đậm) */
+  color: #333333;
+  /* Đặt độ dài của dòng (line-height) là 1.18 */
+  line-height: 1.18;
+}
+
+/* Chọn phần tử form nằm trong ".pd-tab__tag" */
+.pd-tab__tag form {
+  /* Đặt chiều rộng của form là 100% */
+  width: 100%;
+}
+
+/* Chọn tất cả các phần tử có lớp là "btn" nằm trong ".pd-tab__tag form" */
+.pd-tab__tag form .btn {
+  /* Đặt kích thước chữ của nút là 13px */
+  font-size: 13px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semibold) */
+  font-weight: 600;
+  /* Loại bỏ đường viền của nút */
+  border: 0;
+  /* Đặt chiều cao của nút là 48px */
+  height: 48px;
+  /* Đặt padding cho nút là 17px 18px */
+  padding: 17px 18px;
+}
+
+/* Chọn tất cả các phần tử có lớp là "input-text" nằm trong ".pd-tab__tag form" */
+.pd-tab__tag form .input-text {
+  /* Đặt chiều cao của ô input là 48px */
+  height: 48px;
+  /* Đặt khoảng cách bên phải của ô input là 8px */
+  margin-right: 8px;
+  /* Đặt chiều rộng của ô input là 50% */
+  width: 50%;
+}
+
+
+/* Chọn phần tử có lớp là "pd-tab__rev-f1" */
+.pd-tab__rev-f1 {
+  /* Đặt chiều rộng của phần tử là 100% */
+  width: 100%;
+}
+
+/* Chọn phần tử có lớp là "pd-tab__rev-score" */
+.pd-tab__rev-score {
+  /* Thêm padding cho phần tử là 40px 0 */
+  padding: 40px 0;
+  /* Căn giữa nội dung của phần tử */
+  text-align: center;
+  /* Đặt màu nền của phần tử là #f6f6f6 */
+  background-color: #f6f6f6;
+}
+
+/* Chọn phần tử h2 nằm trong ".pd-tab__rev-score" */
+.pd-tab__rev-score h2 {
+  /* Đặt kích thước chữ của tiêu đề là 16px */
+  font-size: 16px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semibold) */
+  font-weight: 600;
+  /* Đặt độ dài của dòng (line-height) là 0.875 */
+  line-height: 0.875;
+  /* Đặt màu chữ của tiêu đề là #333333 (màu xám đậm) */
+  color: #333333;
+}
+
+/* Chọn phần tử h4 nằm trong ".pd-tab__rev-score" */
+.pd-tab__rev-score h4 {
+  /* Đặt kích thước chữ của tiêu đề là 14px */
+  font-size: 14px;
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+  /* Đặt độ dài của dòng (line-height) là 0.875 */
+  line-height: 0.875;
+  /* Đặt màu chữ của tiêu đề là #333333 (màu xám đậm) */
+  color: #333333;
+}
+
+
+/* Chọn phần tử có lớp là "rev-f1__group" */
+.rev-f1__group {
+  /* Sử dụng flexbox để sắp xếp và căn giữa nội dung */
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap; }
-  .rev-f2__group div {
-    -ms-flex: 1;
-        flex: 1;
-    margin-right: 14px; }
-    .rev-f2__group div:last-child {
-      margin-right: 0; }
-@media (max-width: 991px) {
-  .pd-text {
-    display: none; }
-  .zoomContainer {
-    display: none; }
-  .rev-f2__group {
-    display: block; }
-    .rev-f2__group div {
-      display: block;
-      margin-right: 0; } }
+  /* Căn giữa các phần tử theo chiều dọc */
+  -ms-flex-align: center;
+  align-items: center;
+  /* Phân chia không gian dư thừa đều cho các phần tử con */
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
 
+/* Chọn phần tử h2 nằm trong ".rev-f1__group" */
+.rev-f1__group h2 {
+  /* Đặt kích thước chữ của tiêu đề là 16px */
+  font-size: 16px;
+  /* Đặt độ đậm của chữ là 700 (font-weight: bold) */
+  font-weight: 700;
+  /* Đặt màu chữ của tiêu đề là #333333 (màu xám đậm) */
+  color: #333333;
+  /* Đặt độ dài của dòng (line-height) là 1.18 */
+  line-height: 1.18;
+}
+
+/* Chọn phần tử có lớp là "select-box" nằm trong ".rev-f1__group" */
+.rev-f1__group .select-box {
+  /* Bo tròn góc của phần tử là 0.375rem */
+  border-radius: 0.375rem;
+}
+
+
+/* Chọn phần tử có lớp là "rev-f1__review" */
+.rev-f1__review {
+  /* Đặt chiều rộng tối đa của phần tử là 691px */
+  max-width: 691px;
+}
+
+/* Chọn phần tử có lớp là "review-o" */
+.review-o {
+  /* Thêm padding cho phần tử là 1rem 0 */
+  padding: 1rem 0;
+  /* Đặt đường viền phía dưới của phần tử là 1px và màu #f0f0f0 */
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Chọn phần tử có lớp là "review-o__name" */
+.review-o__name {
+  /* Đặt kích thước chữ của tên là 14px */
+  font-size: 14px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semibold) */
+  font-weight: 600;
+  /* Đặt màu chữ của tên là #333333 (màu xám đậm) */
+  color: #333333;
+}
+
+/* Chọn phần tử có lớp là "review-o__date" */
+.review-o__date {
+  /* Đặt khoảng cách bên trái của phần tử là 6px */
+  margin-left: 6px;
+  /* Đặt kích thước chữ của ngày đánh giá là 11px */
+  font-size: 11px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semibold) */
+  font-weight: 600;
+  /* Đặt màu chữ của ngày đánh giá là #7f7f7f (màu xám nhạt) */
+  color: #7f7f7f;
+}
+
+/* Chọn phần tử có lớp là "review-o__rating" nằm trong phần tử ".review-o" */
+.review-o__rating span {
+  /* Đặt khoảng cách bên trái của phần tử là 2px */
+  margin-left: 2px;
+  /* Đặt kích thước chữ của điểm đánh giá là 11px */
+  font-size: 11px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semibold) */
+  font-weight: 600;
+  /* Đặt màu chữ của điểm đánh giá là #7f7f7f (màu xám nhạt) */
+  color: #7f7f7f;
+}
+
+/* Chọn phần tử có lớp là "review-o__text" */
+.review-o__text {
+  /* Đặt kích thước chữ của nội dung đánh giá là 13px */
+  font-size: 13px;
+  /* Đặt màu chữ của nội dung đánh giá là #7f7f7f (màu xám nhạt) */
+  color: #7f7f7f;
+}
+
+/* Chọn phần tử có lớp là "pd-tab__rev-f2" */
+.pd-tab__rev-f2 {
+  /* Đặt chiều rộng của phần tử là 100% */
+  width: 100%;
+}
+
+/* Chọn phần tử h2 nằm trong ".pd-tab__rev-f2" */
+.pd-tab__rev-f2 h2 {
+  /* Đặt kích thước chữ của tiêu đề là 32px */
+  font-size: 32px;
+  /* Đặt màu chữ của tiêu đề là #333333 (màu xám đậm) */
+  color: #333333;
+  /* Đặt độ dài của dòng (line-height) là 0.90 */
+  line-height: 0.90;
+}
+
+/* Chọn tất cả các ô input có lớp là "input-text" nằm trong ".pd-tab__rev-f2" */
+.pd-tab__rev-f2 .input-text,
+/* Chọn tất cả các ô textarea có lớp là "text-area" nằm trong ".pd-tab__rev-f2" */
+.pd-tab__rev-f2 .text-area {
+  /* Đặt chiều rộng của ô input và textarea là 100% */
+  width: 100%;
+}
+
+/* Chọn phần tử có lớp là "text-area" nằm trong ".pd-tab__rev-f2" */
+.pd-tab__rev-f2 .text-area {
+  /* Đặt chiều cao của textarea là 15.625rem */
+  height: 15.625rem;
+}
+
+/* Chọn phần tử có lớp là "btn" nằm trong ".pd-tab__rev-f2" */
+.pd-tab__rev-f2 .btn {
+  /* Đặt màu nền của nút là màu xanh lá cây */
+  background-color: green;
+  /* Loại bỏ đường viền của nút */
+  border: none;
+  /* Bo tròn góc của nút là 200px */
+  border-radius: 200px;
+  /* Đặt độ đậm của chữ là 600 (font-weight: semibold) */
+  font-weight: 600;
+  /* Thêm padding cho nút là 16px 46px */
+  padding: 16px 46px;
+  /* Thêm hiệu ứng chuyển đổi cho màu nền khi hover */
+  transition: background-color 0.5s ease-in;
+}
+
+/* Chọn phần tử có lớp là "btn" nằm trong ".pd-tab__rev-f2" khi hover */
+.pd-tab__rev-f2 .btn:hover {
+  /* Đặt màu chữ của nút là màu xanh lá cây đậm */
+  color: #009444;
+  /* Thêm đường viền cho nút */
+  border: solid 1px;
+  /* Đặt màu đường viền của nút là #009444 */
+  border-color: #009444;
+  /* Đặt màu nền của nút khi hover là #dbf0e5 */
+  background-color: #dbf0e5;
+}
+
+
+
+/* Chọn phần tử có lớp là "rev-f2__table-wrap" */
+.rev-f2__table-wrap {
+  /* Cho phép cuộn nội dung bên trong phần tử khi quá tràn */
+  overflow: auto;
+}
+
+/* Chọn phần tử có lớp là "rev-f2__table" */
+.rev-f2__table {
+  /* Đặt chiều rộng của bảng là 100% */
+  width: 100%;
+  /* Đặt layout của bảng là fixed */
+  table-layout: fixed;
+  /* Căn giữa nội dung trong các ô của bảng */
+  text-align: center;
+  /* Gộp viền của ô */
+  border-collapse: collapse;
+  /* Đặt đường viền của bảng là 1px và màu #dee2e6 */
+  border: 1px solid #dee2e6;
+}
+
+/* Chọn phần tử th và td nằm trong ".rev-f2__table" */
+.rev-f2__table th, .rev-f2__table td {
+  /* Thêm padding cho th và td là 16px 4px */
+  padding: 16px 4px;
+  /* Đặt đường viền của th và td là 1px và màu #d6d6d6 */
+  border: 1px solid #d6d6d6;
+}
+
+/* Chọn phần tử th nằm trong ".rev-f2__table" */
+.rev-f2__table th {
+  /* Đặt chiều rộng của th là 120px */
+  width: 120px;
+  /* Đặt màu chữ của th là #333333 (màu xám đậm) */
+  color: #333333;
+  /* Đặt màu nền của th là #f0f0f0 */
+  background-color: #f0f0f0;
+  /* Đặt kích thước chữ của th là 13px */
+  font-size: 13px;
+}
+
+/* Chọn phần tử span nằm trong ".rev-f2__table th" */
+.rev-f2__table th span {
+  /* Đặt khoảng cách từ trên xuống của span là 2px */
+  margin-top: 2px;
+  /* Hiển thị span dưới dạng block */
+  display: block;
+  /* Đặt kích thước chữ của span là 11px */
+  font-size: 11px;
+  /* Đặt màu chữ của span là #333333 (màu xám đậm) */
+  color: #333333;
+}
+
+
+/* Chọn phần tử có lớp là "rev-f2__group" */
+.rev-f2__group {
+  /* Sử dụng flexbox để sắp xếp và căn giữa nội dung */
+  display: -ms-flexbox;
+  display: flex;
+  /* Không cho các phần tử con xuống dòng khi không đủ không gian */
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+/* Chọn tất cả các phần tử div nằm trong ".rev-f2__group" */
+.rev-f2__group div {
+  /* Chia tỉ lệ flex của mỗi div là 1 (chiếm đủ không gian) */
+  -ms-flex: 1;
+  flex: 1;
+  /* Thêm margin bên phải cho mỗi div là 14px */
+  margin-right: 14px;
+}
+
+/* Chọn phần tử div cuối cùng nằm trong ".rev-f2__group" */
+.rev-f2__group div:last-child {
+  /* Loại bỏ margin bên phải của div cuối cùng */
+  margin-right: 0;
+}
+
+
+/*PHẦN RESPONSIVE DESIGN*/
+/* Thêm các quy tắc CSS cho nút đóng */
+/* Media query áp dụng cho các thiết bị có độ rộng màn hình tối đa là 767px */
+@media (max-width: 767px) {
+  /* Chọn phần tử có lớp là "modal" và phần tử con ".modal-content" trong đó */
+  .modal .modal-content {
+    /* Đặt margin trên và dưới là 10%, margin trái và phải tự động căn giữa */
+    margin: 10% auto;
+    /* Đặt chiều rộng tối đa của ".modal-content" là 90% */
+    max-width: 90%;
+  }
+
+  /* Chọn phần tử có lớp là "modal" và phần tử con ".dismiss-button" trong đó */
+  .modal .dismiss-button {
+    /* Đặt vị trí của nút dismiss là tuyệt đối và căn giữa phía trên và phải */
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    /* Đặt kích thước chữ của nút dismiss là 1.5em */
+    font-size: 1.5em;
+  }
+}
+
+
+/* Media query áp dụng cho các thiết bị có độ rộng màn hình tối đa là 991px */
+@media (max-width: 991px) {
+  /* Chọn phần tử có lớp là "pd-text" và ẩn nó đi (không hiển thị) */
+  .pd-text {
+    display: none;
+  }
+
+  /* Chọn phần tử có lớp là "zoomContainer" và ẩn nó đi (không hiển thị) */
+  .zoomContainer {
+    display: none;
+  }
+
+  /* Chọn phần tử có lớp là "rev-f2__group" */
+  .rev-f2__group {
+    /* Hiển thị phần tử là "block" (hiển thị) */
+    display: block;
+  }
+
+  /* Chọn tất cả các phần tử div nằm trong ".rev-f2__group" */
+  .rev-f2__group div {
+    /* Hiển thị div là "block" (hiển thị) */
+    display: block;
+    /* Loại bỏ margin bên phải của div trong ".rev-f2__group" */
+    margin-right: 0;
+  }
+}
+
+/* Media query áp dụng cho các thiết bị có độ rộng màn hình tối đa là 575px */
 @media (max-width: 575px) {
+  /* Chọn phần tử có lớp là "pd-detail-inline-2" */
   .pd-detail-inline-2 {
-    display: block; }
-    .pd-detail-inline-2 div {
-      display: block;
-      margin-right: 0; }
+    /* Hiển thị phần tử là "block" (hiển thị) */
+    display: block;
+  }
+
+  /* Chọn tất cả các phần tử div nằm trong ".pd-detail-inline-2" */
+  .pd-detail-inline-2 div {
+    /* Hiển thị div là "block" (hiển thị) */
+    display: block;
+    /* Loại bỏ margin bên phải của div trong ".pd-detail-inline-2" */
+    margin-right: 0;
+  }
+
+  /* Chọn phần tử có lớp là "rev-f1__group" */
   .rev-f1__group {
-    display: block; } }
-.danhmuc a{
-color: gray;
-font-weight: lighter;
+    /* Hiển thị phần tử là "block" (hiển thị) */
+    display: block;
+  }
 }
-.danhmuc{
+
+/* Chọn phần tử a nằm trong ".danhmuc" */
+.danhmuc a {
+  /* Đặt màu chữ của các liên kết trong ".danhmuc" là gray */
+  color: gray;
+  /* Đặt độ đậm của chữ là lighter */
+  font-weight: lighter;
+}
+
+/* Chọn phần tử có lớp là "danhmuc" */
+.danhmuc {
+  /* Đặt kích thước chữ của ".danhmuc" là 12px */
   font-size: 12px;
+  /* Đặt màu chữ của ".danhmuc" là #000000 (màu đen) */
   color: #000000;
-  font-weight: 100px;
+  /* Đặt độ đậm của chữ là 100px */
+  font-weight: 100;
 }
-.magiamgia
-{
+
+/* Chọn phần tử có lớp là "magiamgia" */
+.magiamgia {
+  /* Đặt kích thước chữ của ".magiamgia" là 12px */
   font-size: 12px;
+  /* Đặt màu chữ của ".magiamgia" là đen */
   color: black;
 }
-.magiamgia a{
+
+/* Chọn phần tử a nằm trong ".magiamgia" */
+.magiamgia a {
+  /* Đặt kích thước chữ của liên kết trong ".magiamgia" là 12px */
   font-size: 12px;
+  /* Đặt màu chữ của liên kết là màu xanh lá cây */
   color: green;
+  /* Đặt màu nền của liên kết là #fae9ce */
   background-color: #fae9ce;
+  /* Bo tròn góc của liên kết là 0.4em */
   border-radius: 0.4em;
+  /* Thêm padding bên trái và bên phải cho liên kết */
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
+
 /*--------------------------------------------------------------
 19.0 Shop-Pages
 --------------------------------------------------------------*/
 .shop-w-master__heading {
+  /* cỡ chữ 18px */
   font-size: 18px;
+  /* màu #333333  */
   color: #333333;
+  /* độ đậm là 700 */
   font-weight: 700;
+  /* khoảng cách dòng 20px */
   line-height: 20px; }
+
 
 .sidebar--bg-snow {
+  /* màu nền #f9f9f9  */
   background-color: #f9f9f9; }
 
+
 .shop-w--style {
+  /* đường viền kích thước 1px hình dạng solid và màu #f1f1f1 */
   border: 1px solid #f1f1f1;
+  /* màu nền #ffffff */
   background-color: #ffffff;
+  /* hiệu ứng đổ bóng trục x 0px, trục y 6px, độ mờ 15px, mở rộng là 0, màu là rgba(36, 37, 38, 0.08) */
   box-shadow: 0 6px 15px 0 rgba(36, 37, 38, 0.08); }
 
+
+/* Tiêu đề của các bộ lọc tìm kiếm */
 .shop-w__intro-wrap {
+  /* Định dạng vị trí tuyệt đối cho các phần từ */
   position: relative; }
+
 
 .shop-w__h {
+  /* cỡ chữ 14px */
   font-size: 14px;
+  /* khoảng cách giữa nội dung với đường viền trên và dưới là 14px, phải và trái là 18px */
   padding: 14px 18px;
+ /* đường viền phía dưới có kích thước 1px hình dạng solid màu #efefef */
   border-bottom: 1px solid #efefef;
+  /* màu #333333 */
   color: #333333;
+  /* độ đậm 700 */
   font-weight: 700;
+  /* khoảng cách giữa dòng la 20px */
   line-height: 20px; }
 
+
 .shop-w__wrap {
+  /* khoảng cách giữa nội dung với đường viền là 14px */
   padding: 14px; }
 
+
+  /* Thu lại thành dấu cộng của các thẻ bên ngoài */
 .shop-w__toggle.collapsed:before {
+  /* chỉnh biểu tượng - thành + khi nhấn vào phần filter tìm kiếm sản phẩm*/
   content: "\F067"; }
 
+
 .shop-w__toggle {
+  /* xác định tọa độ dựa trên thẻ cha là Relative */
   position: absolute;
+  /* đặt khoản cách từ phần tử đến phía trên là 50% giúp phần tử nằm ở giữa theo chiều dọc */
   top: 50%;
+  /* khoảng cách giữa nội dung với đường viền trên và dưới là 8px, phải và trái là 12px */
   padding: 8px 12px;
+  /* màu nền của phần tử là transparent */
   background-color: transparent;
+  /* điều chỉnh vị trí của biểu tượng +, - theo chiều y là -50% để biểu tượng nằm giữa */
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  /* điều chỉnh biểu tượng +,- so với bên phải 10px */
   right: 10px;
+  /* cỡ chữ 12px */
   font-size: 12px;
+  /* Khi di chuột lại vị trí này chuyển thành con trỏ có thể bấm được  */
   cursor: pointer;
+  /* màu #444 */
   color: #444; }
 
+
+  /* chọn tất cả các phần tử ul trong lớp shop-w (Cateogry, rating,...)*/
 .shop-w ul {
+  /* đặt khoảng cách giữa đường viền với các phần tử xung quanh là 0px */
   margin: 0;
+  /* Thông tin được nhập vào hiển thị ngay bên trái, không chứa khoảng cách */
   padding-left: 0;
+  /* Loại bỏ danh sách được mặc định  */
   list-style: none; }
 
-.shop-w__list {
-  overflow: auto;
-  max-height: 290px; }
-  .shop-w__list > li {
-    position: relative;
-    padding: 8px 16px; }
 
-.shop-w__list-2 {
+  /* phần chọn sản phẩm theo đánh giá, giao hàng, nhà cung sản xuất, màu sắc, kích thước */
+.shop-w__list {
+  /* hiển thị thanh cuộn nếu nội dung tràn khỏi khung hình */
   overflow: auto;
+  /* Chiều cao lớn nhất của phần nội dung bên trong là 290px, nhiều hơn thì cắt */
   max-height: 290px; }
-  .shop-w__list-2 > li {
+
+
+  /* chọn tất cả phần tử li là con trực tiếp của lớp shop-w_list*/
+.shop-w__list > li {
+  /* Đặt phần tử ở vị trí như ban đầu */
+  position: relative;
+  /* khoảng cách giữa nội dung với đường viền trên và dưới là 8px, phải và trái là 16px */
+  padding: 8px 16px; }
+
+
+/* Phần chọn sản phẩm theo nhà cung cấp */
+.shop-w__list-2 {
+  /* hiển thị thanh cuộn nếu nội dung tràn khỏi khung hình  */
+  overflow: auto;
+  /* Chiều cao lớn nhất của phần nội dung bên trong là 290px, nhiều hơn thì cắt */
+  max-height: 290px; }
+
+
+/*chọn tất cả phần tử li là con trực tiếp của lớp shop-w_list (Phần chọn sản phẩm theo nhà sản xuất)*/
+.shop-w__list-2 > li {
+    /* khoảng cách giữa nội dung với đường viền trên và dưới là 0.25rem, phải và trái là 0px */
     padding: 0.25rem 0;
+    /* Đặt phần tử ở vị trí như ban đầu */
     position: relative; }
 
+
+    /* Định dạng tên nhà cung cấp */
 .list__content {
+  /* Đặt phần tử ở vị trí như ban đầu */
   position: relative; }
+ 
+  /* Định dạng tên nhà sản xuất là loại checkbox (có thể chọn nhiều) */
   .list__content [type="checkbox"] {
+    /* xác định tọa độ dựa trên thẻ cha là Relative */
     position: absolute;
+    /* điều chỉnh vị trí của nội dung so với bên trái la 0*/
     left: 0;
+    /* điều chỉnh vị trí của nội dung so với phía trên la 0*/
     top: 0;
+    /* chiều rộng tối thiểu là 16px */
     min-width: 16px;
+    /* Chiều rộng và chiều cao 100%, kích thước bằng với phần tử cha */
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 4;
+    /* Chỉnh độ mờ của ô chọn là 0 */
     opacity: 0;
+    /* Khi trỏ chuột vào sẽ hiện kiểu pointer */
     cursor: pointer; }
+
+
+  /* chọn tất cả thẻ span nằm trong lớp list__content (phần tên nhà sản xuất) */
   .list__content span {
+    /* Khoảng cách giữa nội dung với đường viền trên dưới là 8px, trái phải là 16px */
     padding: 8px 16px;
+    /* hiển thị phần tử theo hàng độc lập */
     display: block;
+    /* Cỡ chữ 14px */
     font-size: 14px;
+    /* Hiệu ứng chuyển đổi ease-in-out cho thuộc tính trong thời gian 110ms */
     transition: background-color 110ms ease-in-out,color 110ms ease-in-out;
+    /* màu hiển thị khi đổi theo transition */
     color: #7f7f7f; }
-
+   
+/* hiệu ứng khi trỏ chuột vào của tất cả thẻ span nằm trong lớp list__content (phần tên nhà sản xuất) */
 .list__content:hover span {
+  /* màu chữ đổi thành #333333*/
   color: #333333;
+  /* màu nền đổi thànhh #ececec  */
   background-color: #ececec;
+  /* bo tròn góc .5rem */
   border-radius: .5rem; }
 
+
+/* chọn tất cả các phần tử span nằm ngay sau input được checked trong lớp list__content */
 .list__content input:checked + span {
+  /* màu nền đổi thành #ececec */
   background-color: #ececec;
+  /* màu chữ đổi thành #333333 */
   color: #333333;
+  /* bo tròn góc .5rem */
   border-radius: .5rem; }
 
+
+  /* Hiển thị tổng số sản phẩm được đánh giá theo số sao và nhà sản xuất */
 .shop-w__total-text {
+  /* cỡ chữ 11px */
   font-size: 11px;
+  /* xác định tọa độ dựa trên thẻ cha Relative  */
   position: absolute;
+  /* Khi di chuột lại vị trí này chuyển thành con trỏ có thể bấm được */
   cursor: pointer;
+  /* điều chỉnh vị trí của phần tử 50% (để phần tử nằm giữa theo chiều dọc) */
   top: 50%;
+  /* điều chỉnh vị trí của số lương "(x)" theo chiều y là -50% để biểu tượng nằm giữa */
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  /* màu của số lượng (x) là #333333 */
   color: #333333;
+  /* điều chỉnh vị trí bên phải 13px của số lương "(x)" */
   right: 13px; }
 
+
+  /* Điều chỉnh danh sách danh mục sản phẩm */
 .shop-w__category-list {
+  /* hiển thị thanh cuộn nếu nội dung tràn khỏi khung hình */
   overflow: auto;
+  /* Chiều cao tối đa là 290px */
   max-height: 290px; }
+
+
+  /* chọn tất cả các phần tử li là con trực tiếp của lớp shop-w__category-list (Category)*/
   .shop-w__category-list > li {
+    /* Khoảng cách giữa nội dung với đường viền trên dưới là 4px, trái phải là 14px  */
     padding: 4px 14px; }
+   
+    /*chọn tất cả các phần tử a là con trực tiếp của li và li là con trực tiếp của lớp shop-w__category-list (tên các Category)*/
     .shop-w__category-list > li > a {
+      /* cỡ chữ 14 x*/
       font-size: 14px;
+      /* màu #333333 */
       color: #333333;
+      /* Hiệu ứng chuyển đổi ease-in-out cho thuộc tính trong thời gian 110ms */
       transition: color 110ms ease-in-out; }
+
+
+      /* chọn tất cả các phần tử a khi trỏ chuột vào là con trực tiếp của li và li là con trực tiếp của lớp shop-w__category-list (tên các Category) */
       .shop-w__category-list > li > a:hover {
+        /* màu sắc khi trỏ chuột vào đổi thành green*/
         color: green; }
+
+
+    /* Các sản loại sản phẩm cụ thể của các tên Category */
     .shop-w__category-list > li ul .has-list > a {
+      /* chuyển cỡ chữ thành 13px */
       font-size: 13px;
+      /* chuyển độ đậm thành 700 */
       font-weight: 700;
+      /* giữ nguyên màu #333333 */
       color: #333333; }
-    .shop-w__category-list > li ul {
+     
+      /* Sản phẩm cụ thể trong danh mục sản phẩm */
+      .shop-w__category-list > li ul {
+      /* Ẩn phần tử và các thuộc tính con  */
       display: none;
+      /* khoảng cách giữa nội dung với dường viền trái là 8px */
       padding-left: 8px; }
+     
+      /* Tên các  sản phẩm cụ thể trong danh mục khi nhấn biểu tượng + (Category) */
       .shop-w__category-list > li ul li a {
+        /* Cỡ chữ 13px */
         font-size: 13px;
+        /* Màu #7f7f7f */
         color: #7f7f7f;
+         /* Hiệu ứng chuyển đổi màu ease-in-out cho thuộc tính trong thời gian 110ms */
         transition: color 110ms ease-in-out; }
+
+
+        /* Hiệu ứng cho các sản phẩm trong danh mục sản phẩm */
         .shop-w__category-list > li ul li a:hover {
+          /* màu chuyển thành green */
           color: green; }
 
+
+/* tất sản phẩm cụ thể khi nhấn + 2 lần (Category) */
 .has-list {
+  /* Định dạng vị trí tuyệt đối cho các phần từ */
   position: relative; }
 
+
+  /* Số lượng hiển thị trong ngoặc () sau loại hàng */
 .category-list__text {
+  /* Cỡ chữ 10px */
   font-size: 10px;
+  /* Màu #a0a0a0 */
   color: #a0a0a0; }
 
+
+  /* Điều chỉnh dấu - và + để mở rộng danh mục sản phẩm */
 .js-shop-category-span {
+  /* Ấn trỏ chuột vào dấu + để xem sản tất cả sp trong danh mục và ấn dấu - để ẩn sp đi */
   cursor: pointer;
+  /* Kích cỡ của dấu này là 13px */
   font-size: 13px;
+  /* Màu của dấu là #444 */
   color: #444;
+  /* Hiệu ứng khi nhấn vào dấu là ease-in-out và mất 110ms để chuyển đổi */
   transition: color 110ms ease-in-out; }
+
+
+  /* Hiệu ứng khi di chuột vào dấu -  */
+
+
+  /*Khi trò chuột vào điều chỉnh dấu - và + để mở rộng danh mục sản phẩm */
   .js-shop-category-span:hover {
+    /* Màu chuyển thành #000000  */
+    /* Màu của dấu đỏi thành #000000 */
     color: #000000; }
 
+
+/*  */
+/* Đổi ký tự khi nhấn vào dấu + */
 .js-shop-category-span.is-expanded:before {
+  /* đồi ký tự thành - */
   content: '\f068'; }
 
+
+  /* Phần bộ lọc giá */
 .shop-w__form-p-wrap {
-  display: -ms-flexbox;
+  /* hiển thị flexbox cho trình duyệt không hỗ trợ */
+  /* display: -ms-flexbox; */
+  /* Hiển thị phần tử theo mô hình flexbox */
+  /* hiển thị flexbox*/
   display: flex;
-  -ms-flex-wrap: wrap;
+  /* xuống dòng khi không đủ chỗ */
+  /* -ms-flex-wrap: wrap; */
+  /* Cho phép các phần tử con có thể xuống dòng nếu không fit vào flexbox */
       flex-wrap: wrap;
+  /* Khoảng cách giữa nội dung với đường viền trên dưới là 8px, trái phải là 0  */
+  /* khoảng cách giữa nội dung với dường viền trên dưới và 8px, phải trái là 0px */
   padding: 8px 0; }
+
+
+
+
+  /* Ô giá cao nhất, giá thấp nhất và nút xác nhận của tìm sản phẩm theo giá */
   .shop-w__form-p-wrap div {
+    /* khảng cách giửa đường viền với các phần tửng xung quanh bên phải là 8px */
     margin-right: 8px;
+    /* khảng cách giửa đường viền với các phần tửng xung quanh bên dưới là 12px */
     margin-bottom: 12px; }
+
+
+    /* Nút xác nhận để tìm theo giá */
     .shop-w__form-p-wrap div:last-child {
+      /* khảng cách giửa đường viền với các phần tửng xung quanh bên phải là 0px */
       margin-right: 0; }
+
+
+  /* Ô nhập giá cao nhất, giá thấp nhất, nhút xác nhận tìm*/
   .shop-w__form-p-wrap .input-text, .shop-w__form-p-wrap .btn {
+    /* chiều cao 40px */
     height: 40px;
+    /* khoản cách của nội dung bên trong so với đường viền là 8px */
     padding: 8px;
+    /* bo tròn góc 2px */
     border-radius: 2px; }
+
+
+    /* ô nhập giá cao nhất, thấp nhất */
   .shop-w__form-p-wrap .input-text {
+    /* chiều rông 80px */
     width: 80px; }
+
+
+  /* nút xác nhận tìm theo giá */
   .shop-w__form-p-wrap .btn {
+    /* chiều rông 40px */
     width: 40px; }
 
+
+   
+/* Các ô chọn màu để tìm sản phẩm */
 .color__check {
+  /* Định dạng vị trí tuyệt đối cho phần từ */
   position: relative;
+  /* khoảng cách giữa các dòng là 1.89 */
   line-height: 1.89;
+  /* khoảng cách giữa đường viền với phần tử bền phải là 36px */
   margin-right: 36px;
+  /* hiển thị trên cùng một hàng nhưng nó vẫn thừa hưởng các đặc tính của block*/
   display: inline-block; }
 
+
+/* Các phần tử thuộc kiểu input là con của lớp color__check (các ô màu để chọn) */
 .color__check [type="checkbox"] {
+  /* xác định tọa độ dựa trên thẻ cha Relative  */
   position: absolute;
+  /* đặt phần tử vào góc trên bên trái */
   left: 0;
   top: 0;
+  /* kích thước tối thiểu là 30px */
   min-width: 30px;
+  /* độ rộng 100% */
   width: 100%;
+  /* dộ cao 100% */
   height: 100%;
+  /* độ ưu tiên 2 */
   z-index: 2;
+  /* độ mờ 0 để không hiển thị */
   opacity: 0;
+  /* Khi trỏ chuột vào sẽ hiện kiểu pointer */
   cursor: pointer; }
 
+
+/* ô để làm đường viền xung quanh ô chọn màu */
 .color__check-label {
+  /* dặt vị trí về mặc định */
   position: initial;
+  /* hiển thị trên cùng một hàng nhưng nó vẫn thừa hưởng các đặc tính của block*/
   display: inline-block; }
 
+
+/* Định nghĩa các phần tử trước và sau của lớp color__check-label (Ô chọn màu sắc)*/
 .color__check-label:before, .color__check-label:after {
+  /* Đặt nội dung rỗng */
   content: '';
+  /* Chiều rộng là 30px */
   width: 30px;
+  /* Chiều cao là 30px */
   height: 30px;
+  /* hiển thị phần tử theo hàng độc lập */
   display: block;
+  /* Đường viền rộng 2px, màu trong suốt */
   border: 2px solid transparent;
+  /* Đặt độ ưu tiên là 0 */
   z-index: 0;
+  /* Vị trí tuyệt đối */
   position: absolute;
+  /* Chỉnh vị trí hiển thị góc trái trên */
   left: 0;
   top: 0; }
 
+
+  /* Định nghĩa các thuộc tính cho phần tử sau của lớp color__check-label (Ô chọn màu sắc)*/
 .color__check-label:after {
+  /* Thu nhỏ kích thước xuống 0.6 cho trình duyệt không hỗ trợ*/
   -webkit-transform: scale(0.6);
+  /* Thu nhỏ kích thước xuống 60% */
           transform: scale(0.6);
+  /* Kế thừa màu nền từ phần tử cha */
   background-color: inherit; }
 
+
+  /* Khi lớp color__check input được chọn thì phần tử label liền sau đó sẽ thực hiện hành động (Ô chọn màu sắc) */
 .color__check input:checked + label:before {
+  /* Đổi màu nền thành #d2d2d2 */
   border-color: #d2d2d2; }
 
+
+  /* Thiết lập cho tìm kiếm bằng đánh giá */
 .rating__check {
+  /* Đặt vị trí của phần tử là tương đối so với phần tử cha */
   position: relative;
+  /* Con trỏ chuột đi qua sẽ hiển thị kiểu pointer */
   cursor: pointer; }
+
+
+  /* Thiết lập cài đặt cho các phần tử loại checkbox nằm trong lớp rating__check */
   .rating__check [type="checkbox"] {
+    /* Đặt vị trí của phần tuyệt đối so với phần tử cha */
     position: absolute;
+    /* Đặt vị trí phía trên cùng bên trái */
     left: 0;
     top: 0;
+    /* Đặt chiều rộng tối thiểu của là 16px */
     min-width: 16px;
+    /* Đặt chiều rộng của bằng 100% chiều rộng của phần tử cha */
     width: 100%;
+    /* Đặt chiều cao của bằng 100% chiều rộng của phần tử cha */
     height: 100%;
+    /* Đặt chỉ số z-index là 2, nghĩa là nó sẽ xuất hiện trên các phần tử có z-index thấp hơn */
     z-index: 2;
+    /* Đặt độ trong suốt là 0, nghĩa là không hiển thị */
     opacity: 0;
+    /* Con trỏ chuột đi qua sẽ hiển thị kiểu pointer */
     cursor: pointer; }
 
+
+/* Chọn tất cả các thẻ i có thẻ cha thuộc lớp rating__check-star-wrap (Cáo ngôi sao phần đánh giá sẽ đổi màu)*/
 .rating__check-star-wrap > i {
+  /* Đặt lề trái là 2px */
   margin-left: 2px;
+  /* Đặt màu là màu #ff4500 */
   color: #ff4500;
+  /* chuyển đổi màu sẽ diễn ra trong vòng 0.4 giây với hiệu ứng ease-in-out */
   transition: color .4s ease-in-out; }
+
+
+  /* Chọn thẻ i đầu tiên có thẻ cha thuộc lớp rating__check-star-wrap */
   .rating__check-star-wrap > i:first-child {
+    /* Đặt khoản cách từ đường viền so với bên trái là 0px */
     margin-left: 0; }
 
-.rating__check-star-wrap span {
+
+  /* Chọn các thẻ span có thẻ cha thuộc lớp rating__check-star-wrap (Số lượng các sản phẩm tìm bằng đánh giá) */
+.rating__check-star-wrap span  {
+  /* Đặt kích thước font là 12px */
   font-size: 12px;
+  /* Đặt màu là #333333 */
   color: #333333;
+  /* Đặt khoản cách từ đường viền so với bên trái là 2px */
   margin-right: 2px; }
 
+
+/* khi di chuột qua lớp rating__check, màu của phần tử i trong lớp rating__check-star-wrap sẽ thay đổi */
 .rating__check:hover .rating__check-star-wrap > i {
+  /* đặt màu thành #ff9600 */
   color: #ff9600; }
 
+
+/* Khi phần tử có lớp rating__check được chọn thì thẻ i nằm trực tiếp trong lớp rating__check-star-wrap sẽ thực hiện */
 .rating__check input:checked + .rating__check-star-wrap > i {
+  /* đổi màu phần tử thành #ff9600 */
   color: #ff9600; }
 
+
+/* Phần hiển thị số kết quả dựa trên các lựa chọn tìm kiếm */
 .shop-p__meta-wrap {
+  /* Tạo bóng với dịch chuyển ngang 0px, dọc 8px độ mờ 16px với màu rgba(0, 0, 0, 0.15), 0.15 là độ trong suốt*/
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Khoảng cách từ bên trong đến đường viền là 20px */
   padding: 20px;
+  /* Bo tròn 0.625rem */
   border-radius: 0.625rem; }
 
+
+  /* Phần hiển thị số lượng kết quả tìm kiếm */
 .shop-p__meta-text-1 {
+  /* Hiển thị phần tử theo hàng độc lập */
   display: block;
+  /* Cỡ chữ 14px */
   font-size: 14px;
+  /* Khoảng cách từ đường viền đến bên dưới là 6px */
   margin-bottom: 6px;
+  /* Độ đậm 700 */
   font-weight: 700;
+  /* Màu #333333 */
   color: #333333; }
 
+
+  /* Phần hiển thị các tìm kiếm liên quan */
+  /* Phần hiển thị cách từ khóa đã chọn */
 .shop-p__meta-text-2 {
+  /* Cỡ chữ 14px */
   font-size: 14px;
+  /* Độ đậm 700 */
   font-weight: 700;
+  /* Màu #7f7f7f */
   color: #7f7f7f; }
 
+
+  /* Phần lựa chọn số lượng sản phẩm hiển thị và sắp xếp */
 .shop-p__tool-style {
+  /* hiển thị kểu flex cho trình duyệt không hỗ trợ */
   display: -ms-flexbox;
+  /* hiển thị kểu flex*/
   display: flex;
+  /* căn giữa theo chiều dọc cho trình duyệt không hỗ trợ */
   -ms-flex-align: center;
+  /* căn giữa theo chiều dọc */
       align-items: center;
+  /* căn giữa đồng đều giữa các phần tử cho trình duyệt không hỗ trợ */
   -ms-flex-pack: justify;
+  /* căn giữa đồng đều giữa các phần tử */
       justify-content: space-between; }
 
+
+/* PHẦN HIỂN THỊ LIST */
 .tool-style__group {
   display: -ms-flexbox;
   display: flex;
@@ -6096,132 +6994,305 @@ font-weight: lighter;
     border-color: #ff4500;
     z-index: 2; }
 
+
+/* Ô chọn số trang hiển thị và sắp xếp */
 .tool-style__form-wrap {
+  /* Hiển thị kiểu flex cho trình duyệt không hỗ trợ */
   display: -ms-flexbox;
+  /* Hiển thị kiểu flex */
   display: flex;
+  /* căn giữa nội dung theo chiều dọc cho trình duyệt không hỗ trợ  */
   -ms-flex-align: center;
+  /* căn giữa nội dung theo chiều dọc  */
       align-items: center; }
+
+
+  /* Ô lựa chọn số trang hiển thị và sắp xếp (phần ô)*/
   .tool-style__form-wrap div + div {
+    /* Khoảng cách từ đường viền đến bên trái là 15px*/
     margin-left: 15px; }
+ 
+  /* Ô chứa các lựa chọn số trang hiển thị và sắp xếp (phần chữ) */
   .tool-style__form-wrap select {
+    /* Bo góc 0.25 rem */
     border-radius: .25rem; }
 
+
+/* Phần hiển thị các ô sản phẩm */
 .is-grid-active .product-m {
+/* Đặt vị trí của phần tử là tương đối so với phần tử cha */
   position: relative;
+/* Khoảng cách từ đường viền đến bên dưới là 30px */
   margin-bottom: 30px;
+  /* Chuyển động hoàn thành trong thời gian là 0.3s */
   transition: 0.3s; }
+
+
+  /* Ảnh nền sản phẩm */
   .is-grid-active .product-m__thumb {
+  /* Đặt vị trí của phần tử là tương đối so với phần tử cha */
     position: relative; }
+
+
+    /* Nút thêm vào giỏ hàng */
   .is-grid-active .product-m__add-cart {
+    /* Đặt vị trí của phần tuyệt đối so với phần tử cha */
     position: absolute;
+    /* đặt vị trí so với phía dưới là 15px */
     bottom: 15px;
+    /* đặt vị trí so với cạnh trái là 15px */
     left: 15px;
+    /* đặt vị trí so với cạnh phải là 15px */
     right: 15px;
+    /* độ trong suốt là 0 - khôngo thể thấy */
     opacity: 0;
+    /* ẩn phần tử */
     visibility: hidden;
+     /* Chuyển động hoàn thành trong thời gian là 0.3s */
     transition: 0.3s; }
+
+
+    /* Nút thêm vào giỏ hàng t ong hình ảnh sản phẩm*/
     .is-grid-active .product-m__add-cart > a {
+      /* Khoảng cách từ bên trong đến đường viền là 12px */
       padding: 12px;
+      /* bo góc 0.125rem */
       border-radius: 0.125rem;
+      /* Cỡ chữ 13px */
       font-size: 13px;
+      /* Chiều rộng 100% */
       width: 100%;
+      /* Căn giữa  */
       text-align: center;
+      /* Hiển thị phần tử theo hàng độc lập */
       display: block; }
+     
+    /* Nút xem nhanh sản phẩm */
   .is-grid-active .product-m__quick-look {
     position: absolute;
+    /* Đặt vị trí so với phía trên là 8px*/
     top: 8px;
+    /* đặt vị trí so với cạnh phải là 22px */
     right: 22px;
+    /* độ trong suốt 0 - không thể thấy */
     opacity: 0;
+     /* ẩn phần tử */
     visibility: hidden;
+    /* Chuyển động hoàn thành trong thời gian là 0.3s */
     transition: 0.3s; }
+
+
+    /* Nút xem nhanh sản phẩm */
     .is-grid-active .product-m__quick-look > a {
+      /* Cỡ chữ */
       font-size: 16px;
-      color: green;
+      /* Màu #ff4500 */
+      color: #2C742F;
+      /* Hiệu ứng chuyển đổi màu ease-in-out cho thuộc tính trong thời gian 110ms */
       transition: color 110ms ease-in-out; }
+
+
+    /* Biến đổi khi di chuột vào nút xem nhanh */
       .is-grid-active .product-m__quick-look > a:hover {
-        color: #a0a0a0; }
+    /* Nút xem nhanh chuyển thành màu #a0a0a0 */
+        color: #fa0000; }
+
+
+  /* Phần thông tin bên dưới ảnh sản phẩm (loại sản phẩm, tên sản phẩm, đánh giá, giá tiền) */
   .is-grid-active .product-m__content {
+    /* Khoảng cách từ nội dung đến bên đường viền bên trên là 4px, đến trái - phải là 16px, đến dưới là 6px */
     padding: 4px 16px 6px; }
+   
+    /* Loại sản phẩm (ô)*/
   .is-grid-active .product-m__category {
+    /* Khoảng cách từ đường viền đến bên dưới là 2px */
     margin-bottom: 2px;
+    /* Chiều cao dòng là 1.2 */
     line-height: 1.2; }
+
+
+     /* Loại sản phẩm (phần chữ) */
     .is-grid-active .product-m__category > a {
+      /* Màu #a0a0a0  */
       color: #a0a0a0;
+      /* Chuyển động hoàn thành trong thời gian là 0.5s  */
       transition: color 0.5s;
+      /* Cỡ chữ 12px */
       font-size: 12px; }
+
+
+      /* Biến đổi khi di chuột vào loại sản phẩm (phần chữ) */
       .is-grid-active .product-m__category > a:hover {
-        color: #ff4500; }
+        /* Màu chuyển thành #ff4500 */
+        color: #2C742F; }
+
+
+    /* Tên sản phẩm (phần chữ) */
   .is-grid-active .product-m__name > a {
+    /* Màu chữ #333333 */
     color: #333333;
+    /* Cỡ chữ 14px */
     font-size: 14px;
+    /* Độ đậm 600 */
     font-weight: 600;
+    /* Chuyển động hoàn thành trong thời gian là 0.5s */
     transition: color 0.5s; }
+
+
+    /* Biến đổi khi di chuột vào tên sản phẩm (chữ)*/
     .is-grid-active .product-m__name > a:hover {
-      color: #ff4500; }
+      /* Màu chuyển thành #ff4500 */
+      color: #2C742F; }
+
+
+    /* Giá sản phẩm (phần chữ) */
   .is-grid-active .product-m__price {
+    /* Chiều cao của dòng 1.2 */
     line-height: 1.2;
+    /* Màu #333333 */
     color: #333333;
+    /* Kích thước 14px */
     font-size: 14px;
+    /* Độ đậm 600 */
     font-weight: 600; }
+   
+    /* Giảm giá (phần chữ) */
   .is-grid-active .product-m__discount {
+    /* Độ đậm 600 */
     font-weight: 600;
+    /* Khoảng cách từ đường viền đến bên trái là 30px */
     margin-left: 30px;
+    /* Màu #ff4500 */
     color: #ff4500;
+    /* Kích thước 14px */
     font-size: 14px;
+    /* Thêm đường gạch ngang xóa giá cũ giảm gi*/
     text-decoration: line-through; }
+
+
+    /* Đánh giá (phần ô) */
   .is-grid-active .product-m__rating {
+    /* Khoảng cách từ đường viền đến bên dưới là 6px */
     margin-bottom: 6px; }
+
+
     .is-grid-active .product-m__rating i {
+      /* Kích thước của sao là 12px */
       font-size: 12px; }
+
+
+    /* Số lượt đánh giá (phần chữ) */
   .is-grid-active .product-m__review {
+    /* Khoảng cách từ đường viền đến bên trái là 4px */
     margin-left: 4px;
+   
+    /* Cỡ chữ 11px */
     font-size: 11px;
+    /* Màu chữ #a0a0a0 */
     color: #a0a0a0; }
+
+
+    /* Biến đổi khi di chuột vào ảnh (hiển thị chi tiết sản phẩm)  */
   .is-grid-active .product-m__hover {
+    /* Đặt vị trí của phần tuyệt đối so với phần tử cha */
     position: absolute;
+    /* Đặt vị trí của phẩn tử cách phía trên 96% so với phần tử cha */
     top: 96%;
+    /* Độ rộng 100% so với phần tử cha */
     width: 100%;
+    /* Độ ưu tiên hiển thị là 9 */
     z-index: 9;
+    /* Khoảng cách so với đường viền: bên trên 4px, trái phải 16px, dưới 14px */
     padding: 4px 16px 14px;
     left: 0;
+    /* Màu nền #ffffff */
     background: #ffffff;
+    /* Tạo bóng với dịch chuyển ngang 0px, dọc 6px độ mờ 7px với màu rgba(0, 0, 0, 0.2) - 0,2 là độ trong suốt*/
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+    /* Chuyển động ease-in-out cho tất cả các phần tử trong thời gian 300ms */
     transition: all 300ms ease-in-out;
+    /* độ trong suốt 0 - không thể thấy */
     opacity: 0;
+    /* ẩn phần tử */
     visibility: hidden; }
+
+
+  /* Thêm vào danh sách yêu thích (phần ô)*/
   .is-grid-active .product-m__wishlist {
+    /* Vị trí của ô sẽ về bên phải */
     text-align: right; }
+
+
+    /* Biểu tượng trái tim - thêm vào danh sách yêu thích (phần biểu tượng)*/
     .is-grid-active .product-m__wishlist a {
+      /* Kích thước biểu tượng là 16px */
       font-size: 16px;
-      color: #a0a0a0;
+      /* Màu sắc biểu tượng #2C742F*/
+      color: #2C742F;
+      /* Chuyển động hoàn thành trong thời gian là 110s với hiêu ứng ease-in-out*/
       transition: color 110ms ease-in-out; }
+
+
+      /* Biểu tượng danh sách yêu thích khi trỏ chuột vào */
       .is-grid-active .product-m__wishlist a:hover {
-        color: green; }
+        /* Màu sắc của biểu tượng đổi thành #ff4500 */
+        color: #ff0000;}
+
+
+  /* Thông tin mô tả sản phẩm (phần chữ) */
   .is-grid-active .product-m__preview-description {
+    /* Khoảng cách giữa đường viền so với phần tử bên dưới là 8px */
     margin-bottom: 8px;
+    /* Cỡ chữ 12px */
     font-size: 12px;
+    /* Màu #7f7f7f  */
     color: #7f7f7f; }
 
+
+    /* Biến đổi khi di chuột vào phần sản phẩm */
 .is-grid-active .product-m:hover {
+  /* Tạo bóng với dịch chuyển ngang 0px, dọc 0px độ mờ 15px với màu rgba(0, 0, 0, 0.2) - 0,2 là độ trong suốt*/
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2); }
+ 
   .is-grid-active .product-m:hover .product-m__add-cart {
+    /* độ trong suốt là 1 - mặc định */
     opacity: 1;
+    /* Hiển thị một phần tử có thể nhìn thấy  */
     visibility: visible; }
+
+
+  /* Xem nhanh sản phẩm (phần ô) */
   .is-grid-active .product-m:hover .product-m__quick-look {
+    /* độ trong suốt là 1 - mặc định */
     opacity: 1;
+    /* Hiển thị một phần tử có thể nhìn thấy  */
     visibility: visible; }
+   
+  /* Phần hiển thị mô tả chi tiết (phần ô) */
   .is-grid-active .product-m:hover .product-m__hover {
+    /* Đặt vị trí của phẩn tử cách phía trên 96% so với phần tử cha */
     top: 99%;
+    /* độ trong suốt là 1 - mặc định */
     opacity: 1;
+    /* Hiển thị một phần tử có thể nhìn thấy  */
     visibility: visible; }
+
 
 .is-list-active {
+  /* Hiển thị phần tử theo hàng độc lập */
   display: block; }
+
+
   .is-list-active [class*="col-"] {
+    /* Hiển thị phần tử theo hàng độc lập */
     display: block;
+    /* Độ rộng lớn nhất 100% */
     max-width: 100%;
+    /* Độ rộng 100% */
     width: 100%; }
 
+
+/* PHẦN LIST BỎ */
 .is-list-active .product-m {
   padding: 15px 0;
   transition: 0.3s;
@@ -6321,6 +7392,7 @@ font-weight: lighter;
       .is-list-active .product-m__wishlist a:hover {
         color: #ff4500; }
 
+
 .is-list-active .product-m:hover {
   background: #ffffff;
   border-radius: 0.1875rem;
@@ -6332,37 +7404,79 @@ font-weight: lighter;
     opacity: 1;
     visibility: visible; }
 
+
+/* Điều hướng sang trang hiển thị sản phẩm khác */
 .shop-p__pagination {
+  /* Không có khoảng cách giữa đường viền với các phần tử xung quanh*/
   margin: 0;
+  /* Không có khoảng cách giữa nội dung và đường viền */
   padding: 0;
+  /* Xóa bỏ các dấu mặc định của ul và ol*/
   list-style: none;
+  /* canh giữa nội dung theo chiều ngang cho trình duyệt không hỗ trợ */
   -ms-flex-pack: center;
+  /* canh giữa nội dung theo chiều ngàng */
       justify-content: center;
+  /* hiển thị kiểu flex cho trình duyệt không hỗ trợ */
   display: -ms-flexbox;
+   /* hiển thị kểu flex*/
   display: flex;
+  /* căn giữa nội dung cho trình duyệt không hỗ trợ  */
   -ms-flex-align: center;
+  /* căn giữa nội dung theo chiều dọc */
       align-items: center; }
+
+
+  /* Các ô trong phần điều hướng sang trang hiển thị sản phẩm khác */
   .shop-p__pagination > li {
+    /* Khoảng cách giữa đường viền so với phần tử bên phải là 14px */
     margin-right: 14px; }
+
+
+    /* Ô đầu tiên trong phần điều hướng sang trang hiển thị sản phẩm khác (phần ô)*/
     .shop-p__pagination > li:last-child {
+      /* Khoảng cách giữa đường viền so với phần tử bên phải là 0 */
       margin-right: 0; }
+     
+    /* Ô đầu tiên trong phần điều hướng sang trang hiển thị sản phẩm khác (phần chữ) */
     .shop-p__pagination > li > a {
+      /* Độ rộng 42px */
       width: 42px;
+      /* Căn giữa nội dung theo trục ngang  */
       text-align: center;
+      /* Chiều cao 42px */
       height: 42px;
+      /* Cách dòng 42px (để chữ canh giữa theo chiều dọc)*/
       line-height: 42px;
+      /* Kích cỡ là 42px */
       font-size: 12px;
+      /* Hiển thị phần tử theo hàng độc lập */
       display: block;
+      /* Độ đậm 600 */
       font-weight: 600;
+      /* Bo góc 50% */
       border-radius: 50%;
+      /* Màu nền transparent - trong suốt*/
       background-color: transparent;
+      /* Màu  #333333  */
       color: #333333; }
+
+
+    /* Ô chuyển trang khi được chọn */
   .shop-p__pagination > li.is-active > a {
-    background-color: #f7f7f7; }
+    /* Màu nền #f7f7f7  */
+    background-color: #2C742F;
+    color: #ffffff;}
+   
+    /* Biến đổi khi di chuột vào ô chuyển trang */
   .shop-p__pagination > li:not(.is-active) > a:hover {
-    color: green;
+    /* Màu chuyển thành #ff4500  */
+    color: #2C742F;
+    /* Gạch chân */
     text-decoration: underline; }
 
+
+/* Class này không thấy trong trang */
 .shop-a__wrap {
   position: fixed;
   top: 0;
@@ -6379,17 +7493,23 @@ font-weight: lighter;
   visibility: hidden;
   opacity: 0; }
 
+
+/* Class này không thấy trong trang)*/
 .shop-a__inner {
   overflow: auto;
   height: 100%;
   padding: 1.25rem 1.125rem; }
 
+
+/* Class này không thấy trong trang)*/
 .shop-a.is-open .shop-a__wrap {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
   visibility: visible;
   opacity: 1; }
 
+
+/* Responsive của trang cừa hàng */
 @media (max-width: 575px) {
   .is-list-active .product-m__thumb {
     margin-bottom: 30px;
@@ -6407,8 +7527,9 @@ font-weight: lighter;
     display: block; }
   .tool-style__form-wrap {
     display: block; }
-    .tool-style__form-wrap div + div {
-      margin-left: 0; } }
+  .tool-style__form-wrap div + div {
+    margin-left: 0; } }
+
 
 /*--------------------------------------------------------------
 20.0 Vendor Extension Pages
@@ -7444,4 +8565,3 @@ font-weight: lighter;
           padding-right: 0.2em;
           vertical-align: 5px;
         }
-
