@@ -1,0 +1,884 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Thẻ Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Tiêu đề trang -->
+    <title>Mã giảm giá</title>
+
+    <!-- Favicon (Biểu tượng trang web) -->
+    <link rel="shortcut icon" href=".\images\logo\Logo.png">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Các Plugin Sử Dụng -->
+    <link rel="stylesheet" href="assets\css\vendor.min.css">
+    <link rel="stylesheet" href="assets\vendor\icon-set\style.css">
+    <link rel="stylesheet" href="..\node_modules\chart.js\dist\Chart.min.css">
+
+    <!-- CSS Front Template (Giao diện trang web) -->
+    <link rel="stylesheet" href="assets\css\theme.min.css?v=1.0">
+</head>
+<body class="bg-white">
+    <!-- Search Form -->
+    <!-- Tạo ô tìm kiếm cho màn hình bé hơn medium -->
+    <div id="searchDropdown" class="hs-unfold-content dropdown-unfold search-fullwidth d-md-none">
+        <!-- tạo form nhập chiếm toàn bộ chiều rộng của ô tìm kiếm -->
+        <form class="input-group input-group-merge input-group-borderless">
+            <!-- tạo vùng chứa trước ô nhập liệu -->
+            <div class="input-group-prepend">
+                <!-- tạo icon tìm kiếm -->
+                <div class="input-group-text">
+                    <i class="tio-search"></i>
+                </div>
+            </div>
+            <!-- ô nhập liệu -->
+            <input class="form-control rounded-0" type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm...">
+            <!-- tạo vùng sau ô nhập liệu -->
+            <div class="input-group-append">
+                <!-- tạo liên kết thực hiện đóng ô tìm kiếm bằng chữ Đóng-->
+                <div class="input-group-text">
+                    <div class="hs-unfold">
+                        <a class="js-hs-unfold-invoker" href="javascript:;" data-hs-unfold-options='{
+                 "target": "#searchDropdown",
+                 "type": "css-animation",
+                 "animationIn": "fadeIn",
+                 "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                 "closeBreakpoint": "md"
+               }'>
+                            <span>Đóng</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Kết thúc Search Form -->
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand-lg navbar-bordered flex-lg-column px-0">
+        <div class="navbar-white w-100">
+            <div class="container-fluid">
+                <div class="navbar-nav-wrap">
+                    <div class="navbar-brand-wrapper">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="ecommerce.html">
+                            <img class="navbar-brand-logo" src="./images/logo/Logo.png" alt="Logo">
+                        </a>
+                        <!-- Kết thúc Logo -->
+                    </div>
+                    <div class="navbar-nav-wrap-content-left">
+                        <!-- Search Form -->
+                        <!-- Tạo ô tìm kiếm cho màn hình medium trở lên-->
+                        <div class="d-none d-lg-block">
+                            <form class="position-relative">
+                                <!-- Input Group -->
+                                <!-- tạo vùng chứa chiếm toàn bộ chiều rộng của form nhập -->
+                                <div class="input-group input-group-merge input-group-borderless input-group-hover-light navbar-input-group">
+                                    <!-- tạo vùng chứa trước ô nhập liệu -->
+                                    <div class="input-group-prepend">
+                                        <!-- tạo icon tìm kiếm -->
+                                        <div class="input-group-text">
+                                            <i class="tio-search"></i>
+                                        </div>
+                                    </div>
+                                    <!-- ô nhập liệu với các chức năng: xóa nội dung tìm kiếm, hiển thị kết quả tìm kiếm -->
+                                    <input type="search" class="js-form-search form-control" placeholder="Tìm kiếm..." aria-label="Search in front" data-hs-form-search-options='{
+                                                                                                                                        "clearIcon": "#clearSearchResultsIcon",
+                                                                                                                                        "dropMenuElement": "#searchDropdownMenu",
+                                                                                                                                        "dropMenuOffset": 20,
+                                                                                                                                        "toggleIconOnFocus": true,
+                                                                                                                                        "activeClass": "focus"
+                                                                                                                                    }'>
+                                    <!-- tạo vùng sau ô nhập liệu -->
+                                    <a class="input-group-append" href="javascript:;">
+                                        <!-- Icon xóa kết quả tìm kiếm, ẩn khi trang web được tải lần đầu (khi nhập là block)-->
+                                        <span class="input-group-text">
+                                            <i id="clearSearchResultsIcon" class="tio-clear" style="display: none;"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- Kết thúc Input Group -->
+                                <!-- Card Search Content -->
+                                <div id="searchDropdownMenu" class="hs-form-search-menu-content card dropdown-menu dropdown-card overflow-hidden">
+                                    <!-- Body -->
+                                    <!-- Tạo vùng chứa kết quả tìm kiếm gần đây -->
+                                    <div class="card-body-height py-3">
+                                        <!-- Tiêu đề -->
+                                        <small class="dropdown-header mb-n2">Tìm kiếm gần đây</small>
+                                        <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                        <div class="dropdown-item bg-transparent text-wrap my-2">
+                                            <!-- 1 mục tìm kiếm gần đây, có icon search ở cuối -->
+                                            <div class="h4 mr-1">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Doanh thu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mã giảm giá <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sản phẩm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Sáp thơm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Tinh dầu <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Mấy giờ tan làm <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                            <!-- Tạo vùng chứa nội dung, tràn thì ngắt xuống dòng -->
+                                            <div class="h4">
+                                                <a class="btn btn-xs btn-green btn-pill" href="ecommerce.html">
+                                                    Khi nào đến Tết <i class="tio-search ml-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Kết thúc Body -->
+                                    <!-- Footer -->
+                                    <a class="card-footer text-center" href="#">
+                                        Xem toàn bộ kết quả
+                                        <i class="tio-chevron-right"></i>
+                                    </a>
+                                    <!-- Kết thúc Footer -->
+                                </div>
+                                <!-- Kết thúc Card Search Content -->
+                            </form>
+                        </div>
+                        <!-- Kết thúc Search Form -->
+                    </div>
+
+                    <!-- Secondary Content -->
+                    <div class="navbar-nav-wrap-content-right">
+                        <!-- Navbar -->
+                        <ul class="navbar-nav align-items-center flex-row">
+                            <li class="nav-item d-lg-none">
+                                <!-- Search Trigger -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon search có hiệu ứng dropdown màn hình < medium -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon .btn-ghost-dark rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#searchDropdown",
+                       "type": "css-animation",
+                       "animationIn": "fadeIn",
+                       "hasOverlay": "rgba(46, 52, 81, 0.1)",
+                       "closeBreakpoint": "md"
+                     }'>
+                                        <i class="tio-search"></i>
+                                    </a>
+                                </div>
+                                <!-- Kết thúc Search Trigger -->
+                            </li>
+
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <!-- Notification -->
+                                <div class="hs-unfold">
+                                    <!-- tạo nút icon thông báo có hiệu ứng dropdown -->
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-light rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#notificationNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <i class="tio-notifications-on-outlined"></i>
+                                        <span class="btn-status btn-sm-status btn-status-danger"></span>
+                                    </a>
+
+                                    <div id="notificationNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu" style="width: 25rem;">
+                                        <!-- Header -->
+                                        <div class="card-header">
+                                            <span class="card-title h4">Thông báo</span>
+
+                                            <!-- Unfold -->
+                                            <div class="hs-unfold">
+                                                <!-- tạo nút icon more có hiệu ứng dropdown -->
+                                                <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="javascript:;" data-hs-unfold-options='{
+                             "target": "#notificationSettingsOneDropdown",
+                             "type": "css-animation"
+                           }'>
+                                                    <i class="tio-more-vertical"></i>
+                                                </a>
+                                                <!-- nội dung dropdown, bao gồm icon và văn bản tương ứng -->
+                                                <div id="notificationSettingsOneDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-all-done dropdown-item-icon"></i> Đánh dấu là đã xem
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="tio-toggle-off dropdown-item-icon"></i> Tắt thông báo
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Kết thúc Unfold -->
+                                        </div>
+                                        <!-- Kết thúc Header -->
+                                        <!-- Body -->
+                                        <div class="card-body-height">
+                                            <!-- Tab Content -->
+                                            <div class="tab-content" id="notificationTabContent">
+                                                <div class="tab-pane fade show active" id="notificationNavOne" role="tabpanel">
+                                                    <ul class="list-group list-group-flush navbar-card-list-group">
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <!-- Tạo cột đầu có chiều rộng tự động dựa trên độ dài nội dung -->
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <!-- Tạo checkbox đã xem hay chưa, checked thì gán đã xem và đổi nền và ngược lại -->
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck1" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck1"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Tạo cột 2 -->
+                                                                <div class="col ml-n3">
+                                                                    <!-- Tiêu đề -->
+                                                                    <span class="card-title h5">Tinh dầu Amber Noir</span>
+                                                                    <!-- Nội dung -->
+                                                                    <p class="card-text font-size-sm">đã hết hàng</p>
+                                                                </div>
+                                                                <!-- Tạo cột 3 auto -->
+                                                                <small class="col-auto text-muted text-cap">2 phút trước</small>
+                                                            </div>
+                                                            <!-- Tạo liên kết chiếm toàn bộ diện tích của mục danh sách -->
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- Kết thúc Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck2" checked="">
+                                                                            <label class="custom-control-label" for="notificationCheck2"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-soft-dark avatar-circle">
+                                                                            <img class="avatar-img" src="https://i.pinimg.com/236x/e1/6c/70/e16c704fc0b655e553dd7a1a8a00475d.jpg" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Phương Thảo</span>
+                                                                    <p class="card-text font-size-sm">đã đánh giá sản phẩm Nến thơm Lemon & Lavender (230g)</p>
+                                                                    <blockquote class="blockquote blockquote-sm">
+                                                                        Thơm nứt mũi lun cả nhà ơi, chốt đơn chốt đơn
+                                                                    </blockquote>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">2 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- Kết thúc Item -->
+                                                        <!-- Tương tự trên -->
+                                                        <!-- Item -->
+                                                        <li class="list-group-item custom-checkbox-list-wrapper">
+                                                            <div class="row">
+                                                                <div class="col-auto position-static">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="custom-control custom-checkbox custom-checkbox-list">
+                                                                            <input type="checkbox" class="custom-control-input" id="notificationCheck5">
+                                                                            <label class="custom-control-label" for="notificationCheck5"></label>
+                                                                            <span class="custom-checkbox-list-stretched-bg"></span>
+                                                                        </div>
+                                                                        <div class="avatar avatar-sm avatar-circle">
+                                                                            <img class="avatar-img" src="https://bizweb.dktcdn.net/100/438/408/files/meme-meo-cute-yody-vn-1.jpg?v=1690276113335" alt="Image Description">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col ml-n3">
+                                                                    <span class="card-title h5">Như Uyên</span>
+                                                                    <p class="card-text font-size-sm">đã đăng sản phẩm mới</p>
+                                                                </div>
+                                                                <small class="col-auto text-muted text-cap">10 tiếng trước</small>
+                                                            </div>
+                                                            <a class="stretched-link" href="#"></a>
+                                                        </li>
+                                                        <!-- Kết thúc Item -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Kết thúc Tab Content -->
+                                        </div>
+                                        <!-- Kết thúc Body -->
+                                        <!-- Card Footer -->
+                                        <a class="card-footer text-center" href="#">
+                                            Xem tất cả thông báo
+                                            <i class="tio-chevron-right"></i>
+                                        </a>
+                                        <!-- Kết thúc Card Footer -->
+                                    </div>
+                                </div>
+                                <!-- Kết thúc Notification -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Account -->
+                                <div class="hs-unfold">
+                                    <!-- Tạo hình avatar có chức năng dropdown -->
+                                    <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#accountNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                                        <div class="avatar avatar-sm avatar-circle">
+                                            <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                            <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                        </div>
+                                    </a>
+                                    <!-- Nội dung dropdown -->
+                                    <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                                        <div class="dropdown-item-text">
+                                            <div class="media align-items-center">
+                                                <!-- avatar nhỏ -->
+                                                <div class="avatar avatar-sm avatar-circle mr-2">
+                                                    <img class="avatar-img" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/Thay_manh-tuan_sua-e1500813009544.jpg" alt="Image Description">
+                                                </div>
+                                                <!-- Thông tin account admin -->
+                                                <div class="media-body">
+                                                    <span class="card-title h5">Nguyễn Mạnh Tuấn</span>
+                                                    <span class="card-text">tuannm@ueh.edu.vn</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- đường phân cách -->
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Profile &amp; account">Thông tin tài khoản</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="text-truncate pr-2" title="Sign out">Đăng xuất</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Kết thúc Account -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- Toggle -->
+                                <!-- Nút menu màn hình < medium -->
+                                <button type="button" class="navbar-toggler btn btn-ghost-light rounded-circle" aria-expanded="false" aria-controls="navbarNavMenu" data-toggle="collapse" data-target="#navbarNavMenu">
+                                    <i class="tio-menu-hamburger"></i>
+                                </button>
+                                <!-- Kết thúc Toggle -->
+                            </li>
+                        </ul>
+                        <!-- Kết thúc Navbar -->
+                    </div>
+                    <!-- Kết thúc Secondary Content -->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <nav class="js-mega-menu flex-grow-1">
+                <!-- Navbar -->
+                <div class="navbar-nav-wrap-navbar collapse navbar-collapse" id="navbarNavMenu">
+                    <div class="navbar-body">
+                        <ul class="navbar-nav flex-grow-1">
+                            <!-- Overview -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> TỔNG QUAN
+                                </a>
+                            </li>
+                            <!-- Kết thúc Overview -->
+                            <!-- Product -->
+                            <li class="hs-has-sub-menu">
+                                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> SẢN PHẨM
+                                </a>
+                                <!-- Dropdown -->
+                                <ul id="navLinkPagesDropdownEcommerceProducts" class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-products.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ SẢN PHẨM
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-product.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM SẢN PHẨM
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Kết thúc Dropdown -->
+                            </li>
+                            <!-- Kết thúc Product -->
+                            <!-- CATEGORY -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-categories.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> DANH MỤC SẢN PHẨM
+                                </a>
+                            </li>
+                            <!-- Kết thúc CATEGORY -->
+                            <!-- Discount -->
+                            <li class="hs-has-sub-menu">
+                                <a class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> MÃ GIẢM GIÁ
+                                </a>
+                                <!-- Dropdown -->
+                                <ul class="hs-sub-menu dropdown-menu dropdown-menu-lg" style="min-width: 16rem;">
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-discounts.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> TẤT CẢ MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="ecommerce-add-discount.html">
+                                            <span class="tio-circle nav-indicator-icon"></span> THÊM MÃ GIẢM GIÁ
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Kết thúc Dropdown -->
+                            </li>
+                            <!-- Kết thúc Discount -->
+                            <!-- Order -->
+                            <li>
+                                <a class="navbar-nav-link nav-link" href="ecommerce-orders.html">
+                                    <span class="tio-circle-outlined nav-indicator-icon"></span> ĐƠN HÀNG
+                                </a>
+                            </li>
+                            <!-- Kết thúc Order -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Kết thúc Navbar -->
+            </nav>
+        </div>
+    </header>
+    <!-- ========== KẾT THÚC HEADER ========== -->
+
+    <!-- ========== NỘI DUNG CHÍNH ========== -->
+    <!-- Navbar Vertical -->
+    <!-- Kết thúc Navbar Vertical -->
+
+    <main id="content" role="main" class="main">
+        <!-- Nội dung -->
+        <div class="content container-fluid">
+            <!-- Tiêu đề trang -->
+            <div class="page-header">
+                <!-- Dòng để căn chỉnh các mục -->
+                <div class="row align-items-center">
+                    <div class="col-sm mb-2 mb-sm-0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb breadcrumb-no-gutter">
+                                <li class="breadcrumb-item"><a class="breadcrumb-link" href="ecommerce-discounts.html">Mã giảm giá</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Thêm mã giảm</li>
+                            </ol>
+                        </nav>
+                        <!-- Tiêu đề trang -->
+                        <h1 class="page-header-title">Thêm mã giảm</h1>
+                    </div>
+                </div>
+                <!-- Kết thúc dòng -->
+            </div>
+            <!-- Kết thúc Tiêu đề trang -->
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Card -->
+                    <div class="card mb-3 mb-lg-5">
+                        <!-- Phần đầu -->
+                        <div class="card-header">
+                            <!-- Tiêu đề thẻ Card -->
+                            <h4 class="card-header-title">Thông tin mã giảm</h4>
+                        </div>
+                        <!-- Kết thúc Phần đầu thẻ Card -->
+                        <!-- Phần thân -->
+                        <div class="card-body">
+                            <!-- Nhóm Form -->
+                            <div class="form-group">
+                                <!-- Nhãn cho ô nhập liệu -->
+                                <label for="discountNameLabel" class="input-label">Tên<i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Mã giảm giá mà bạn muốn tạo."></i></label>
+                                <!-- Ô nhập liệu kiểu văn bản -->
+                                <input type="text" class="form-control" name="discountName" id="discountNameLabel" placeholder="freeship10k, scentia15k, etc." aria-label="freeship10k, scentia15k, etc.">
+                            </div>
+                            <!-- Kết thúc Nhóm Form -->
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- Nhóm Form -->
+                                    <div class="form-group">
+                                        <label for="countLabel" class="input-label">Số lượng</label>
+
+                                        <input type="text" class="form-control" name="count" id="countLabel" placeholder="100" aria-label="100">
+                                    </div>
+                                    <!-- Kết thúc Nhóm Form -->
+                                </div>
+
+                                <div class="col-sm-6">
+                                <!-- Nút chuyển đổi Toggle Switch -->
+                            <label class="row toggle-switch" for="freeshipSwitch1">
+                                <!-- Phần hiển thị nội dung của nút chuyển đổi -->
+                                <span class="col-8 col-sm-9 toggle-switch-content">
+                                    <span class="text-dark">Cho phép giao hàng miễn phí</span>
+                                </span>
+                                <!-- Phần nút chuyển đổi -->
+                                <span class="col-4 col-sm-3">
+                                    <input type="checkbox" class="toggle-switch-input" id="freeshipSwitch1">
+                                    <span class="toggle-switch-label ml-auto">
+                                        <span class="toggle-switch-indicator"></span>
+                                    </span>
+                                </span>
+                            </label>
+                            <!-- Kết thúc Nút chuyển đổi -->
+                            <!-- Văn bản nhỏ giải thích ý nghĩa của nút chuyển đổi -->    
+                            <small class="form-text">Đánh dấu nếu mã ưu đãi dành cho giao hàng miễn phí. Loại hình giao hàng miễn phí phải được bật trong khu vực giao hàng và đặt bắt buộc "mã miễn phí giao hàng"</small>
+                                </div>
+                            </div>
+                            <!-- Kết thúc Row -->
+
+                            <label class="input-label">Mô tả <span class="input-label-secondary">(Nếu có)</span></label>
+
+                            <!-- Quill -->
+                            <div class="quill-custom">
+                                <div class="js-quill" style="min-height: 15rem;" data-hs-quill-options='{
+                          "placeholder": "Nhập mô tả..."
+                         }'>
+                                </div>
+                            </div>
+                            <!-- Kết thúc Quill -->
+                        </div>
+                        <!-- Phần thân -->
+                    </div>
+                    <!-- Kết thúc Card -->
+                    <!-- Card -->
+                    <div class="card mb-3 mb-lg-5">
+                        <!-- Phần đầu -->
+                        <div class="card-header">
+                             <!-- Tiêu đề thẻ Card -->
+                            <h4 class="card-header-title">Phương tiện</h4>
+
+                            <!-- Unfold -->
+                            <div class="hs-unfold">
+                                <!-- Liên kết kích hoạt mở rộng -->
+                                <a class="js-hs-unfold-invoker btn btn-sm btn-ghost-secondary" href="javascript:;" data-hs-unfold-options='{
+                       "target": "#mediaDropdown",
+                       "type": "css-animation"
+                     }'>
+                                    Thêm phương tiện từ URL <i class="tio-chevron-down"></i>
+                                </a>
+
+                                <!-- Nội dung mở rộng -->
+                                <div id="mediaDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                                    <!-- Liên kết thêm hình ảnh từ URL -->
+                                    <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#addImageFromURLModal">
+                                        <i class="tio-link dropdown-item-icon"></i> Thêm hình ảnh từ URL
+                                    </a>
+                                    <!-- Liên kết nhúng video -->
+                                    <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#embedVideoModal">
+                                        <i class="tio-youtube-outlined dropdown-item-icon"></i> Nhúng video
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Kết thúc Unfold -->
+                        </div>
+                        <!-- Kết thúc phần đầu -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Dropzone -->
+                            <div id="attachFilesNewProjectLabel" class="js-dropzone dropzone-custom custom-file-boxed">
+                                <div class="dz-message custom-file-boxed-label">
+                                    <img class="avatar avatar-xl avatar-4by3 mb-3" src="https://www.iconpacks.net/icons/1/free-search-icon-337-thumb.png" alt="Hình ảnh mô tả">
+                                    <h5 class="mb-1">Chọn tệp để tải lên</h5>
+                                    <p class="mb-2">hoặc</p>
+                                    <span class="btn btn-sm btn-primary">Duyệt tệp</span>
+                                </div>
+                            </div>
+                            <!-- Kết thúc Dropzone -->
+                        </div>
+                        <!-- Kết thúc Body -->
+                    </div>
+                    <!-- Kết thúc Card -->
+                    
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Card -->
+                    <div class="card mb-3 mb-lg-5">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Mức ưu đãi</h4>
+                        </div>
+                        <!-- Kết thúc Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="priceNameLabel" class="input-label"></label>
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="priceName" id="priceNameLabel" placeholder="20" aria-label="20">
+
+                                    <div class="input-group-append">
+                                        <!-- Select -->
+                                        <div id="priceSelect" class="select2-custom select2-custom-right">
+                                            <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" data-hs-select2-options='{
+                                    "dropdownParent": "#priceSelect",
+                                    "dropdownAutoWidth": true,
+                                    "width": true
+                                  }'>
+                                                <option value="%" selected="">%</option>
+                                                <option value="VNĐ">VNĐ</option>
+                                            </select>
+                                        </div>
+                                        <!-- Kết thúc Select -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Kết thúc Form Group -->
+                            <hr class="my-4">
+                        </div>
+                        <!-- Body -->
+                    </div>
+                    <!-- Kết thúc Card -->
+                    <!-- Card -->
+                    <div class="card">
+                        <!-- Header -->
+                        <div class="card-header">
+                            <h4 class="card-header-title">Giới hạn sử dụng</h4>
+                        </div>
+                        <!-- Kết thúc Header -->
+                        <!-- Body -->
+                        <div class="card-body">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="IDLabel" class="input-label">ID Sản phẩm<i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Các sản phẩm được sử dụng hoặc cần trong giỏ hàng để có thể áp dụng mã ưu đãi"></i></label>
+                                <input type="text" class="form-control" name="vendor" id="IDLabel" placeholder="123" aria-label="123">
+                                
+                            </div>
+                            <!-- Kết thúc Form Group -->
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="deadlineLabel" class="input-label">Ngày hết hạn mã ưu đãi</label>
+                                <input type="date" class="form-control"name="deadline" min="1970-01-01" required>  
+                            </div>
+                            <!-- Form Group -->
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="minLabel" class="input-label">Chi tiêu tối thiểu</label>
+
+                                <div class="input-group input-group-merge">
+                                    <input type="text" class="form-control" name="minName" id="minLabel" placeholder="100000" aria-label="100000">
+                                    <div class="input-group-append">
+                                        <!-- Select -->
+                                        <div id="minSelect" class="select2-custom select2-custom-right">
+                                            <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" data-hs-select2-options='{
+                              "dropdownParent": "#weightSelect",
+                              "dropdownAutoWidth": true,
+                              "width": true
+                            }'>
+                                                <option value="VNĐ">VNĐ</option>
+
+                                            </select>
+                                        </div>
+                                        <!-- Kết thúc Select -->
+                                    </div>
+                                </div>
+
+                                <small class="form-text">Trường này cho phép bạn thiết lập các tổng phụ tối thiểu để sử dụng các mã ưu đãi.</small>
+                            </div>
+                            <!-- Kết thúc Form Group -->
+                            
+                        <!-- Kết thúc Body -->
+                    </div>
+                    <!-- Kết thúc Card -->
+                </div>
+            </div>
+            <!-- Kết thúc Row -->
+            <!--tạo vùng không di chuyển ở dưới màn hình-->
+            <div class="position-fixed bottom-0 content-centered-x w-100 z-index-99 mb-3" style="max-width: 40rem;">
+                <!-- Card -->
+                <div style="background-color: #f5f5f5" class="card card-sm border-dark mx-2">
+                    <div class="card-body">
+                        <div class="row justify-content-center justify-content-sm-between">
+                            <!--bên trái là nút xóa-->
+                            <div class="col">
+                                <button type="button" class="btn btn-soft-danger">Xóa</button>
+                            </div>
+                            <!--bên phải là nút lưu-->
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-green">Lưu</button>
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                    </div>
+                </div>
+                <!-- End Card -->
+            </div>
+        </div>
+        <!-- End Content -->
+
+        <!-- Footer -->
+        <div class="card-footer">
+            <div class="row justify-content-between align-items-center">
+                <div class="col">
+                    <p class="font-size-sm mb-0">&copy; <span class="d-none d-sm-inline-block">SCENTIA</span></p>
+                </div>
+                <div class="col-auto">
+                    <div class="d-flex justify-content-end">
+                        <!-- List Dot -->
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">FAQ</a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a class="list-separator-link" href="#">License</a>
+                            </li>
+                        </ul>
+                        <!-- Kết thúc List Dot -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Kết thúc Footer -->
+    </main>
+    <!-- ========== KẾT THÚC MAIN CONTENT ========== -->
+    <!-- Cài đặt các Plugins JS -->
+    <script src="assets\js\vendor.min.js"></script>
+    <script src="assets\vendor\chart.js\dist\Chart.min.js"></script>
+    <script src="assets\vendor\chart.js.extensions\chartjs-extensions.js"></script>
+    <script src="assets\vendor\chartjs-plugin-datalabels\dist\chartjs-plugin-datalabels.min.js"></script>
+
+    <!-- JS Front -->
+    <script src="assets\js\theme.min.js"></script>
+    <script src="..\assets\js\hs.chartjs.js"></script>
+
+    <!-- Khởi tạo JS Plugins. -->
+    <script>
+        $(document).on('ready', function () {
+            // ONLY DEV
+            // =======================================================
+
+            if (window.localStorage.getItem('hs-builder-popover') === null) {
+                $('#builderPopover').popover('show')
+                    .on('shown.bs.popover', function () {
+                        $('.popover').last().addClass('popover-dark')
+                    });
+
+                $(document).on('click', '#closeBuilderPopover', function () {
+                    window.localStorage.setItem('hs-builder-popover', true);
+                    $('#builderPopover').popover('dispose');
+                });
+            } else {
+                $('#builderPopover').on('show.bs.popover', function () {
+                    return false
+                });
+            }
+
+            // END ONLY DEV
+            // =======================================================
+
+
+            // BUILDER TOGGLE INVOKER
+            // =======================================================
+            $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+                $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+            });
+
+
+            // KHỞI TẠO MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+
+
+
+            // KHỞI TẠO NAVBAR VERTICAL NAVIGATION
+            // =======================================================
+            var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
+            // KHỞI TẠO TOOLTIP TRONG MENU NAVBAR VERTICAL
+            // =======================================================
+            $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
+
+            $(".js-nav-tooltip-link").on("show.bs.tooltip", function (e) {
+                if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+                    return false;
+                }
+            });
+
+
+            // KHỞI TẠO UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+
+
+            // KHỞI TẠO FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+
+
+            // KHỞI TẠO SELECT2
+            // =======================================================
+            $('.js-select2-custom').each(function () {
+                var select2 = $.HSCore.components.HSSelect2.init($(this));
+            });
+
+            // KHỞI TẠO QUILLJS EDITOR
+            // =======================================================
+            var quill = $.HSCore.components.HSQuill.init('.js-quill');
+
+
+            // KHỞI TẠO ADD INPUT FILED
+            // =======================================================
+            $('.js-add-field').each(function () {
+                new HSAddField($(this), {
+                    addedField: function () {
+                        $('.js-add-field .js-select2-custom-dynamic').each(function () {
+                            var select2dynamic = $.HSCore.components.HSSelect2.init($(this));
+                        });
+                    }
+                }).init();
+            });
+
+
+            // KHỞI TẠO TAGIFY
+            // =======================================================
+            $('.js-tagify').each(function () {
+                var tagify = $.HSCore.components.HSTagify.init($(this));
+            });
+
+
+            // KHỞI TẠO DROPZONE FILE ATTACH MODULE
+            // =======================================================
+            $('.js-dropzone').each(function () {
+                var dropzone = $.HSCore.components.HSDropzone.init('#' + $(this).attr('id'));
+            });
+        });
+    </script>
+
+    <!-- IE Support -->
+    <script>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+</body>
+</html>
+
+
